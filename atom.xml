@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Mustache :{]]></title>
-  <link href="http://aanoaa.github.com/atom.xml" rel="self"/>
-  <link href="http://aanoaa.github.com/"/>
-  <updated>2013-12-20T01:11:59+09:00</updated>
-  <id>http://aanoaa.github.com/</id>
+  <link href="http://aanoaa.github.com/aanoaa/atom.xml" rel="self"/>
+  <link href="http://aanoaa.github.com/aanoaa/"/>
+  <updated>2013-12-20T02:12:27+09:00</updated>
+  <id>http://aanoaa.github.com/aanoaa/</id>
   <author>
     <name><![CDATA[Hyungsuk Hong]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[coffeescript-compile-args]]></title>
-    <link href="http://aanoaa.github.com/blog/2013/12/20/coffeescript-compile-args/"/>
+    <link href="http://aanoaa.github.com/aanoaa/blog/2013/12/20/coffeescript-compile-args/"/>
     <updated>2013-12-20T00:34:00+09:00</updated>
-    <id>http://aanoaa.github.com/blog/2013/12/20/coffeescript-compile-args</id>
+    <id>http://aanoaa.github.com/aanoaa/blog/2013/12/20/coffeescript-compile-args</id>
     <content type="html"><![CDATA[<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
@@ -178,9 +178,9 @@ function wrapper</code></p></li>
   
   <entry>
     <title type="html"><![CDATA[p5-hubot onto heroku]]></title>
-    <link href="http://aanoaa.github.com/blog/2013/06/10/p5-hubot-onto-heroku/"/>
+    <link href="http://aanoaa.github.com/aanoaa/blog/2013/06/10/p5-hubot-onto-heroku/"/>
     <updated>2013-06-10T17:31:00+09:00</updated>
-    <id>http://aanoaa.github.com/blog/2013/06/10/p5-hubot-onto-heroku</id>
+    <id>http://aanoaa.github.com/aanoaa/blog/2013/06/10/p5-hubot-onto-heroku</id>
     <content type="html"><![CDATA[<p>오리지날 <a href="https://github.com/github/hubot">hubot</a> 에는
 <a href="https://www.heroku.com/">heroku</a> 어쩌고 저쩌고 하는 기능이 있습니다.</p>
 
@@ -323,9 +323,9 @@ $ hubot -c ~/Desktop/hubot
   
   <entry>
     <title type="html"><![CDATA[p5-hubot]]></title>
-    <link href="http://aanoaa.github.com/blog/2012/10/04/p5-hubot/"/>
+    <link href="http://aanoaa.github.com/aanoaa/blog/2012/10/04/p5-hubot/"/>
     <updated>2012-10-04T15:30:00+09:00</updated>
-    <id>http://aanoaa.github.com/blog/2012/10/04/p5-hubot</id>
+    <id>http://aanoaa.github.com/aanoaa/blog/2012/10/04/p5-hubot</id>
     <content type="html"><![CDATA[<h3>p5-hubot scipts explained</h3>
 
 <p>필요해서 <a href="https://github.com/github/hubot">hubot</a> 을 <code>perl</code> 로 옮기고
@@ -519,9 +519,9 @@ $ hubot -c ~/Desktop/hubot
   
   <entry>
     <title type="html"><![CDATA[tidyall]]></title>
-    <link href="http://aanoaa.github.com/blog/2012/09/12/tidyall/"/>
+    <link href="http://aanoaa.github.com/aanoaa/blog/2012/09/12/tidyall/"/>
     <updated>2012-09-12T01:11:00+09:00</updated>
-    <id>http://aanoaa.github.com/blog/2012/09/12/tidyall</id>
+    <id>http://aanoaa.github.com/aanoaa/blog/2012/09/12/tidyall</id>
     <content type="html"><![CDATA[<p>Perl 에는 Best Practices 가 있습니다.</p>
 
 <p><img src="http://akamaicovers.oreilly.com/images/9780596001735/cat.gif"></p>
@@ -607,9 +607,9 @@ $ hubot -c ~/Desktop/hubot
   
   <entry>
     <title type="html"><![CDATA[git push --force]]></title>
-    <link href="http://aanoaa.github.com/blog/2012/09/11/git-push-force/"/>
+    <link href="http://aanoaa.github.com/aanoaa/blog/2012/09/11/git-push-force/"/>
     <updated>2012-09-11T23:28:00+09:00</updated>
-    <id>http://aanoaa.github.com/blog/2012/09/11/git-push-force</id>
+    <id>http://aanoaa.github.com/aanoaa/blog/2012/09/11/git-push-force</id>
     <content type="html"><![CDATA[<p>저는 <code>pull-request workflow</code>가 갑이라고 생각합니다.
 비동기 방식으로 업무가 진행되고, merge 하기전에 자연스런 review 도
 되고요.</p>
@@ -793,9 +793,9 @@ $ hubot -c ~/Desktop/hubot
   
   <entry>
     <title type="html"><![CDATA[chrome scrollbar style]]></title>
-    <link href="http://aanoaa.github.com/blog/2012/07/02/chrome-scrollbar-style/"/>
+    <link href="http://aanoaa.github.com/aanoaa/blog/2012/07/02/chrome-scrollbar-style/"/>
     <updated>2012-07-02T12:50:00+09:00</updated>
-    <id>http://aanoaa.github.com/blog/2012/07/02/chrome-scrollbar-style</id>
+    <id>http://aanoaa.github.com/aanoaa/blog/2012/07/02/chrome-scrollbar-style</id>
     <content type="html"><![CDATA[<p><code>$HOME/.config/google-chrome/Default/User StyleSheets/Custom.css</code> 에다가
 아래 내용을 추가하면 scroll-bar 가 얄상하니 이쁩니다.</p>
 
@@ -850,9 +850,9 @@ $ hubot -c ~/Desktop/hubot
   
   <entry>
     <title type="html"><![CDATA[perl y operator]]></title>
-    <link href="http://aanoaa.github.com/blog/2012/06/21/perl-y-operator/"/>
+    <link href="http://aanoaa.github.com/aanoaa/blog/2012/06/21/perl-y-operator/"/>
     <updated>2012-06-21T13:59:00+09:00</updated>
-    <id>http://aanoaa.github.com/blog/2012/06/21/perl-y-operator</id>
+    <id>http://aanoaa.github.com/aanoaa/blog/2012/06/21/perl-y-operator</id>
     <content type="html"><![CDATA[<h2>사건의 발단</h2>
 
 <p>어느날 오후 @freenode #perl-kr 에서 일어난 일입니다.</p>
@@ -1141,9 +1141,9 @@ $ hubot -c ~/Desktop/hubot
   
   <entry>
     <title type="html"><![CDATA[같이걸을까 게스트하우스]]></title>
-    <link href="http://aanoaa.github.com/blog/2012/04/27/gatigeoleulgga-geseuteuhauseu/"/>
+    <link href="http://aanoaa.github.com/aanoaa/blog/2012/04/27/gatigeoleulgga-geseuteuhauseu/"/>
     <updated>2012-04-27T17:43:00+09:00</updated>
-    <id>http://aanoaa.github.com/blog/2012/04/27/gatigeoleulgga-geseuteuhauseu</id>
+    <id>http://aanoaa.github.com/aanoaa/blog/2012/04/27/gatigeoleulgga-geseuteuhauseu</id>
     <content type="html"><![CDATA[<h2>제목은 회이크</h2>
 
 <p>그냥 어제 오늘 있엇던 일을 적을까 합니다.
@@ -1208,9 +1208,9 @@ $ hubot -c ~/Desktop/hubot
   
   <entry>
     <title type="html"><![CDATA[backbon.js jsonp collection sync]]></title>
-    <link href="http://aanoaa.github.com/blog/2012/02/27/backbon-dot-js-jsonp-collection-sync/"/>
+    <link href="http://aanoaa.github.com/aanoaa/blog/2012/02/27/backbon-dot-js-jsonp-collection-sync/"/>
     <updated>2012-02-27T05:07:00+09:00</updated>
-    <id>http://aanoaa.github.com/blog/2012/02/27/backbon-dot-js-jsonp-collection-sync</id>
+    <id>http://aanoaa.github.com/aanoaa/blog/2012/02/27/backbon-dot-js-jsonp-collection-sync</id>
     <content type="html"><![CDATA[<p>외부 도메인을 사용하고자 할때 <code>jsonp</code> 를 이용해야 하는데,
 이때, <code>Backbone.sync</code> 메소드를 override 해서 쓸 수 있습니다.</p>
 
@@ -1258,9 +1258,9 @@ query_parameter 를 추가해줍니다.</p>
   
   <entry>
     <title type="html"><![CDATA[bitlbee]]></title>
-    <link href="http://aanoaa.github.com/blog/2012/01/06/bitlbee/"/>
+    <link href="http://aanoaa.github.com/aanoaa/blog/2012/01/06/bitlbee/"/>
     <updated>2012-01-06T18:49:00+09:00</updated>
-    <id>http://aanoaa.github.com/blog/2012/01/06/bitlbee</id>
+    <id>http://aanoaa.github.com/aanoaa/blog/2012/01/06/bitlbee</id>
     <content type="html"><![CDATA[<p>근데 제가 <a href="http://www.bitlbee.org/main.php/news.r.html">BitlBee</a> 를
 사용하는 이유는 바로 이겁니다.</p>
 
@@ -1311,9 +1311,9 @@ don&#8217;t want to run an additional MSN/AIM/whatever client.</p></blockquote>
   
   <entry>
     <title type="html"><![CDATA[org-mode]]></title>
-    <link href="http://aanoaa.github.com/blog/2012/01/06/org-mode/"/>
+    <link href="http://aanoaa.github.com/aanoaa/blog/2012/01/06/org-mode/"/>
     <updated>2012-01-06T14:55:00+09:00</updated>
-    <id>http://aanoaa.github.com/blog/2012/01/06/org-mode</id>
+    <id>http://aanoaa.github.com/aanoaa/blog/2012/01/06/org-mode</id>
     <content type="html"><![CDATA[<ul>
 <li><a href="https://mail.google.com/mail/help/tasks/">Google tasks</a></li>
 <li><a href="http://www.rememberthemilk.com/">remember the milk</a></li>
@@ -1349,9 +1349,9 @@ iphone app 도 있습니다. 근데 배우고 알아야 할게 너무 많습니�
   
   <entry>
     <title type="html"><![CDATA[picasa upload script]]></title>
-    <link href="http://aanoaa.github.com/blog/2012/01/03/picasa-upload-script/"/>
+    <link href="http://aanoaa.github.com/aanoaa/blog/2012/01/03/picasa-upload-script/"/>
     <updated>2012-01-03T23:18:00+09:00</updated>
-    <id>http://aanoaa.github.com/blog/2012/01/03/picasa-upload-script</id>
+    <id>http://aanoaa.github.com/aanoaa/blog/2012/01/03/picasa-upload-script</id>
     <content type="html"><![CDATA[<div><script src='https://gist.github.com/1444684.js?file='></script>
 <noscript><pre><code>&lt;html&gt;&lt;body&gt;You are being &lt;a href=&quot;https://github.com/gist/1444684&quot;&gt;redirected&lt;/a&gt;.&lt;/body&gt;&lt;/html&gt;</code></pre></noscript></div>
 
@@ -1427,9 +1427,9 @@ https://lh4.googleusercontent.com/-mmv40wXKaM4/TwMP0BKUVhI/AAAAAAAAABA/AM3KBgCuf
   
   <entry>
     <title type="html"><![CDATA[sass &amp; scss]]></title>
-    <link href="http://aanoaa.github.com/blog/2011/12/17/sass-and-scss/"/>
+    <link href="http://aanoaa.github.com/aanoaa/blog/2011/12/17/sass-and-scss/"/>
     <updated>2011-12-17T00:08:00+09:00</updated>
-    <id>http://aanoaa.github.com/blog/2011/12/17/sass-and-scss</id>
+    <id>http://aanoaa.github.com/aanoaa/blog/2011/12/17/sass-and-scss</id>
     <content type="html"><![CDATA[<p><code>oops.scss</code> 파일을 아래처럼 맨들고,</p>
 
 <figure class='code'><figcaption><span>oops.scss</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
@@ -1595,9 +1595,9 @@ practice</code>를 <code>import</code> 해서 쓸 수 있습니다.</p>
   
   <entry>
     <title type="html"><![CDATA[emacs mo-git-blame mode]]></title>
-    <link href="http://aanoaa.github.com/blog/2011/12/02/emacs-mo-git-blame-mode/"/>
+    <link href="http://aanoaa.github.com/aanoaa/blog/2011/12/02/emacs-mo-git-blame-mode/"/>
     <updated>2011-12-02T15:07:00+09:00</updated>
-    <id>http://aanoaa.github.com/blog/2011/12/02/emacs-mo-git-blame-mode</id>
+    <id>http://aanoaa.github.com/aanoaa/blog/2011/12/02/emacs-mo-git-blame-mode</id>
     <content type="html"><![CDATA[<h2>프로젝트 환경</h2>
 
 <p><a href="http://www.facebook.com/silexkr">silex</a>라는 조그마한 회사를 댕기고 있습니다.</p>
@@ -1721,9 +1721,9 @@ l
   
   <entry>
     <title type="html"><![CDATA[termiator]]></title>
-    <link href="http://aanoaa.github.com/blog/2011/11/10/termiator/"/>
+    <link href="http://aanoaa.github.com/aanoaa/blog/2011/11/10/termiator/"/>
     <updated>2011-11-10T05:59:00+09:00</updated>
-    <id>http://aanoaa.github.com/blog/2011/11/10/termiator</id>
+    <id>http://aanoaa.github.com/aanoaa/blog/2011/11/10/termiator</id>
     <content type="html"><![CDATA[<p><img src="http://k.minus.com/jO0Dl3TGpMeZW.png"></p>
 
 <p><a href="https://launchpad.net/terminator/+download">terminator</a>를 사용하면 emacs를 쓰지 않고도 하나의 window 내에서 여러개의 terminal 을 사용할 수 있습니다.</p>
@@ -1751,9 +1751,9 @@ l
   
   <entry>
     <title type="html"><![CDATA[Blogging basics]]></title>
-    <link href="http://aanoaa.github.com/blog/2011/10/27/blogging-basics/"/>
+    <link href="http://aanoaa.github.com/aanoaa/blog/2011/10/27/blogging-basics/"/>
     <updated>2011-10-27T04:38:00+09:00</updated>
-    <id>http://aanoaa.github.com/blog/2011/10/27/blogging-basics</id>
+    <id>http://aanoaa.github.com/aanoaa/blog/2011/10/27/blogging-basics</id>
     <content type="html"><![CDATA[<ul>
 <li><a href="http://pages.github.com/">http://pages.github.com/</a></li>
 <li><a href="http://octopress.org/docs/">http://octopress.org/docs/</a></li>
@@ -1892,9 +1892,9 @@ git push origin source
   
   <entry>
     <title type="html"><![CDATA[hello world]]></title>
-    <link href="http://aanoaa.github.com/blog/2011/10/27/hello-world/"/>
+    <link href="http://aanoaa.github.com/aanoaa/blog/2011/10/27/hello-world/"/>
     <updated>2011-10-27T04:16:00+09:00</updated>
-    <id>http://aanoaa.github.com/blog/2011/10/27/hello-world</id>
+    <id>http://aanoaa.github.com/aanoaa/blog/2011/10/27/hello-world</id>
     <content type="html"><![CDATA[<h1>hello world</h1>
 
 <blockquote><p>hello world</p></blockquote>

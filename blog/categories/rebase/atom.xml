@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: rebase | Mustache :{]]></title>
-  <link href="http://aanoaa.github.com/blog/categories/rebase/atom.xml" rel="self"/>
-  <link href="http://aanoaa.github.com/"/>
-  <updated>2013-12-20T01:11:59+09:00</updated>
-  <id>http://aanoaa.github.com/</id>
+  <link href="http://aanoaa.github.com/aanoaa/blog/categories/rebase/atom.xml" rel="self"/>
+  <link href="http://aanoaa.github.com/aanoaa/"/>
+  <updated>2013-12-20T02:12:27+09:00</updated>
+  <id>http://aanoaa.github.com/aanoaa/</id>
   <author>
     <name><![CDATA[Hyungsuk Hong]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[git push --force]]></title>
-    <link href="http://aanoaa.github.com/blog/2012/09/11/git-push-force/"/>
+    <link href="http://aanoaa.github.com/aanoaa/blog/2012/09/11/git-push-force/"/>
     <updated>2012-09-11T23:28:00+09:00</updated>
-    <id>http://aanoaa.github.com/blog/2012/09/11/git-push-force</id>
+    <id>http://aanoaa.github.com/aanoaa/blog/2012/09/11/git-push-force</id>
     <content type="html"><![CDATA[<p>저는 <code>pull-request workflow</code>가 갑이라고 생각합니다.
 비동기 방식으로 업무가 진행되고, merge 하기전에 자연스런 review 도
 되고요.</p>

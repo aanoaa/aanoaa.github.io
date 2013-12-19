@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: hubot | Mustache :{]]></title>
-  <link href="http://aanoaa.github.com/blog/categories/hubot/atom.xml" rel="self"/>
-  <link href="http://aanoaa.github.com/"/>
-  <updated>2013-12-20T01:11:59+09:00</updated>
-  <id>http://aanoaa.github.com/</id>
+  <link href="http://aanoaa.github.com/aanoaa/blog/categories/hubot/atom.xml" rel="self"/>
+  <link href="http://aanoaa.github.com/aanoaa/"/>
+  <updated>2013-12-20T02:12:27+09:00</updated>
+  <id>http://aanoaa.github.com/aanoaa/</id>
   <author>
     <name><![CDATA[Hyungsuk Hong]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[p5-hubot onto heroku]]></title>
-    <link href="http://aanoaa.github.com/blog/2013/06/10/p5-hubot-onto-heroku/"/>
+    <link href="http://aanoaa.github.com/aanoaa/blog/2013/06/10/p5-hubot-onto-heroku/"/>
     <updated>2013-06-10T17:31:00+09:00</updated>
-    <id>http://aanoaa.github.com/blog/2013/06/10/p5-hubot-onto-heroku</id>
+    <id>http://aanoaa.github.com/aanoaa/blog/2013/06/10/p5-hubot-onto-heroku</id>
     <content type="html"><![CDATA[<p>오리지날 <a href="https://github.com/github/hubot">hubot</a> 에는
 <a href="https://www.heroku.com/">heroku</a> 어쩌고 저쩌고 하는 기능이 있습니다.</p>
 
@@ -148,9 +148,9 @@ $ hubot -c ~/Desktop/hubot
   
   <entry>
     <title type="html"><![CDATA[p5-hubot]]></title>
-    <link href="http://aanoaa.github.com/blog/2012/10/04/p5-hubot/"/>
+    <link href="http://aanoaa.github.com/aanoaa/blog/2012/10/04/p5-hubot/"/>
     <updated>2012-10-04T15:30:00+09:00</updated>
-    <id>http://aanoaa.github.com/blog/2012/10/04/p5-hubot</id>
+    <id>http://aanoaa.github.com/aanoaa/blog/2012/10/04/p5-hubot</id>
     <content type="html"><![CDATA[<h3>p5-hubot scipts explained</h3>
 
 <p>필요해서 <a href="https://github.com/github/hubot">hubot</a> 을 <code>perl</code> 로 옮기고

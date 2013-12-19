@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: coffeescript | Mustache :{]]></title>
-  <link href="http://aanoaa.github.com/blog/categories/coffeescript/atom.xml" rel="self"/>
-  <link href="http://aanoaa.github.com/"/>
-  <updated>2013-12-20T01:11:59+09:00</updated>
-  <id>http://aanoaa.github.com/</id>
+  <link href="http://aanoaa.github.com/aanoaa/blog/categories/coffeescript/atom.xml" rel="self"/>
+  <link href="http://aanoaa.github.com/aanoaa/"/>
+  <updated>2013-12-20T02:12:27+09:00</updated>
+  <id>http://aanoaa.github.com/aanoaa/</id>
   <author>
     <name><![CDATA[Hyungsuk Hong]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[coffeescript-compile-args]]></title>
-    <link href="http://aanoaa.github.com/blog/2013/12/20/coffeescript-compile-args/"/>
+    <link href="http://aanoaa.github.com/aanoaa/blog/2013/12/20/coffeescript-compile-args/"/>
     <updated>2013-12-20T00:34:00+09:00</updated>
-    <id>http://aanoaa.github.com/blog/2013/12/20/coffeescript-compile-args</id>
+    <id>http://aanoaa.github.com/aanoaa/blog/2013/12/20/coffeescript-compile-args</id>
     <content type="html"><![CDATA[<p>```
 $ coffee -h</p>
 

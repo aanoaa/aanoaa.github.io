@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: utility | Mustache :{]]></title>
-  <link href="http://aanoaa.github.com/blog/categories/utility/atom.xml" rel="self"/>
-  <link href="http://aanoaa.github.com/"/>
-  <updated>2013-12-20T01:11:59+09:00</updated>
-  <id>http://aanoaa.github.com/</id>
+  <link href="http://aanoaa.github.com/aanoaa/blog/categories/utility/atom.xml" rel="self"/>
+  <link href="http://aanoaa.github.com/aanoaa/"/>
+  <updated>2013-12-20T02:12:27+09:00</updated>
+  <id>http://aanoaa.github.com/aanoaa/</id>
   <author>
     <name><![CDATA[Hyungsuk Hong]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[termiator]]></title>
-    <link href="http://aanoaa.github.com/blog/2011/11/10/termiator/"/>
+    <link href="http://aanoaa.github.com/aanoaa/blog/2011/11/10/termiator/"/>
     <updated>2011-11-10T05:59:00+09:00</updated>
-    <id>http://aanoaa.github.com/blog/2011/11/10/termiator</id>
+    <id>http://aanoaa.github.com/aanoaa/blog/2011/11/10/termiator</id>
     <content type="html"><![CDATA[<p><img src="http://k.minus.com/jO0Dl3TGpMeZW.png"></p>
 
 <p><a href="https://launchpad.net/terminator/+download">terminator</a>를 사용하면 emacs를 쓰지 않고도 하나의 window 내에서 여러개의 terminal 을 사용할 수 있습니다.</p>

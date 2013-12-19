@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: 게스트하우스 | Mustache :{]]></title>
-  <link href="http://aanoaa.github.com/blog/categories/게스트하우스/atom.xml" rel="self"/>
-  <link href="http://aanoaa.github.com/"/>
-  <updated>2013-12-20T01:11:59+09:00</updated>
-  <id>http://aanoaa.github.com/</id>
+  <link href="http://aanoaa.github.com/aanoaa/blog/categories/게스트하우스/atom.xml" rel="self"/>
+  <link href="http://aanoaa.github.com/aanoaa/"/>
+  <updated>2013-12-20T02:12:27+09:00</updated>
+  <id>http://aanoaa.github.com/aanoaa/</id>
   <author>
     <name><![CDATA[Hyungsuk Hong]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[같이걸을까 게스트하우스]]></title>
-    <link href="http://aanoaa.github.com/blog/2012/04/27/gatigeoleulgga-geseuteuhauseu/"/>
+    <link href="http://aanoaa.github.com/aanoaa/blog/2012/04/27/gatigeoleulgga-geseuteuhauseu/"/>
     <updated>2012-04-27T17:43:00+09:00</updated>
-    <id>http://aanoaa.github.com/blog/2012/04/27/gatigeoleulgga-geseuteuhauseu</id>
+    <id>http://aanoaa.github.com/aanoaa/blog/2012/04/27/gatigeoleulgga-geseuteuhauseu</id>
     <content type="html"><![CDATA[<h2>제목은 회이크</h2>
 
 <p>그냥 어제 오늘 있엇던 일을 적을까 합니다.

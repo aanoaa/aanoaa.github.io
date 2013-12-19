@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: org-mode | Mustache :{]]></title>
-  <link href="http://aanoaa.github.com/blog/categories/org-mode/atom.xml" rel="self"/>
-  <link href="http://aanoaa.github.com/"/>
-  <updated>2013-12-20T01:11:59+09:00</updated>
-  <id>http://aanoaa.github.com/</id>
+  <link href="http://aanoaa.github.com/aanoaa/blog/categories/org-mode/atom.xml" rel="self"/>
+  <link href="http://aanoaa.github.com/aanoaa/"/>
+  <updated>2013-12-20T02:12:27+09:00</updated>
+  <id>http://aanoaa.github.com/aanoaa/</id>
   <author>
     <name><![CDATA[Hyungsuk Hong]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[org-mode]]></title>
-    <link href="http://aanoaa.github.com/blog/2012/01/06/org-mode/"/>
+    <link href="http://aanoaa.github.com/aanoaa/blog/2012/01/06/org-mode/"/>
     <updated>2012-01-06T14:55:00+09:00</updated>
-    <id>http://aanoaa.github.com/blog/2012/01/06/org-mode</id>
+    <id>http://aanoaa.github.com/aanoaa/blog/2012/01/06/org-mode</id>
     <content type="html"><![CDATA[<ul>
 <li><a href="https://mail.google.com/mail/help/tasks/">Google tasks</a></li>
 <li><a href="http://www.rememberthemilk.com/">remember the milk</a></li>

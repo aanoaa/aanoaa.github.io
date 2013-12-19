@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: critic | Mustache :{]]></title>
-  <link href="http://aanoaa.github.com/blog/categories/critic/atom.xml" rel="self"/>
-  <link href="http://aanoaa.github.com/"/>
-  <updated>2013-12-20T01:11:59+09:00</updated>
-  <id>http://aanoaa.github.com/</id>
+  <link href="http://aanoaa.github.com/aanoaa/blog/categories/critic/atom.xml" rel="self"/>
+  <link href="http://aanoaa.github.com/aanoaa/"/>
+  <updated>2013-12-20T02:12:27+09:00</updated>
+  <id>http://aanoaa.github.com/aanoaa/</id>
   <author>
     <name><![CDATA[Hyungsuk Hong]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[tidyall]]></title>
-    <link href="http://aanoaa.github.com/blog/2012/09/12/tidyall/"/>
+    <link href="http://aanoaa.github.com/aanoaa/blog/2012/09/12/tidyall/"/>
     <updated>2012-09-12T01:11:00+09:00</updated>
-    <id>http://aanoaa.github.com/blog/2012/09/12/tidyall</id>
+    <id>http://aanoaa.github.com/aanoaa/blog/2012/09/12/tidyall</id>
     <content type="html"><![CDATA[<p>Perl 에는 Best Practices 가 있습니다.</p>
 
 <p><img src="http://akamaicovers.oreilly.com/images/9780596001735/cat.gif"></p>

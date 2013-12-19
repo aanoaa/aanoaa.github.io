@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: scss | Mustache :{]]></title>
-  <link href="http://aanoaa.github.com/blog/categories/scss/atom.xml" rel="self"/>
-  <link href="http://aanoaa.github.com/"/>
-  <updated>2013-12-20T01:11:59+09:00</updated>
-  <id>http://aanoaa.github.com/</id>
+  <link href="http://aanoaa.github.com/aanoaa/blog/categories/scss/atom.xml" rel="self"/>
+  <link href="http://aanoaa.github.com/aanoaa/"/>
+  <updated>2013-12-20T02:12:27+09:00</updated>
+  <id>http://aanoaa.github.com/aanoaa/</id>
   <author>
     <name><![CDATA[Hyungsuk Hong]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[sass &amp; scss]]></title>
-    <link href="http://aanoaa.github.com/blog/2011/12/17/sass-and-scss/"/>
+    <link href="http://aanoaa.github.com/aanoaa/blog/2011/12/17/sass-and-scss/"/>
     <updated>2011-12-17T00:08:00+09:00</updated>
-    <id>http://aanoaa.github.com/blog/2011/12/17/sass-and-scss</id>
+    <id>http://aanoaa.github.com/aanoaa/blog/2011/12/17/sass-and-scss</id>
     <content type="html"><![CDATA[<p><code>oops.scss</code> 파일을 아래처럼 맨들고,</p>
 
 <p>```scss oops.scss

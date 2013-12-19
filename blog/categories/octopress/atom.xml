@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: octopress | Mustache :{]]></title>
-  <link href="http://aanoaa.github.com/blog/categories/octopress/atom.xml" rel="self"/>
-  <link href="http://aanoaa.github.com/"/>
-  <updated>2013-12-20T01:11:59+09:00</updated>
-  <id>http://aanoaa.github.com/</id>
+  <link href="http://aanoaa.github.com/aanoaa/blog/categories/octopress/atom.xml" rel="self"/>
+  <link href="http://aanoaa.github.com/aanoaa/"/>
+  <updated>2013-12-20T02:12:27+09:00</updated>
+  <id>http://aanoaa.github.com/aanoaa/</id>
   <author>
     <name><![CDATA[Hyungsuk Hong]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Blogging basics]]></title>
-    <link href="http://aanoaa.github.com/blog/2011/10/27/blogging-basics/"/>
+    <link href="http://aanoaa.github.com/aanoaa/blog/2011/10/27/blogging-basics/"/>
     <updated>2011-10-27T04:38:00+09:00</updated>
-    <id>http://aanoaa.github.com/blog/2011/10/27/blogging-basics</id>
+    <id>http://aanoaa.github.com/aanoaa/blog/2011/10/27/blogging-basics</id>
     <content type="html"><![CDATA[<ul>
 <li><a href="http://pages.github.com/">http://pages.github.com/</a></li>
 <li><a href="http://octopress.org/docs/">http://octopress.org/docs/</a></li>

@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: perl | Mustache :{]]></title>
-  <link href="http://aanoaa.github.com/blog/categories/perl/atom.xml" rel="self"/>
-  <link href="http://aanoaa.github.com/"/>
-  <updated>2013-12-20T01:11:59+09:00</updated>
-  <id>http://aanoaa.github.com/</id>
+  <link href="http://aanoaa.github.com/aanoaa/blog/categories/perl/atom.xml" rel="self"/>
+  <link href="http://aanoaa.github.com/aanoaa/"/>
+  <updated>2013-12-20T02:12:27+09:00</updated>
+  <id>http://aanoaa.github.com/aanoaa/</id>
   <author>
     <name><![CDATA[Hyungsuk Hong]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[tidyall]]></title>
-    <link href="http://aanoaa.github.com/blog/2012/09/12/tidyall/"/>
+    <link href="http://aanoaa.github.com/aanoaa/blog/2012/09/12/tidyall/"/>
     <updated>2012-09-12T01:11:00+09:00</updated>
-    <id>http://aanoaa.github.com/blog/2012/09/12/tidyall</id>
+    <id>http://aanoaa.github.com/aanoaa/blog/2012/09/12/tidyall</id>
     <content type="html"><![CDATA[<p>Perl 에는 Best Practices 가 있습니다.</p>
 
 <p><img src="http://akamaicovers.oreilly.com/images/9780596001735/cat.gif"></p>
@@ -91,9 +91,9 @@ argv = -severity 5
   
   <entry>
     <title type="html"><![CDATA[perl y operator]]></title>
-    <link href="http://aanoaa.github.com/blog/2012/06/21/perl-y-operator/"/>
+    <link href="http://aanoaa.github.com/aanoaa/blog/2012/06/21/perl-y-operator/"/>
     <updated>2012-06-21T13:59:00+09:00</updated>
-    <id>http://aanoaa.github.com/blog/2012/06/21/perl-y-operator</id>
+    <id>http://aanoaa.github.com/aanoaa/blog/2012/06/21/perl-y-operator</id>
     <content type="html"><![CDATA[<h2>사건의 발단</h2>
 
 <p>어느날 오후 @freenode #perl-kr 에서 일어난 일입니다.</p>
@@ -311,9 +311,9 @@ tr [\200-\377]
   
   <entry>
     <title type="html"><![CDATA[picasa upload script]]></title>
-    <link href="http://aanoaa.github.com/blog/2012/01/03/picasa-upload-script/"/>
+    <link href="http://aanoaa.github.com/aanoaa/blog/2012/01/03/picasa-upload-script/"/>
     <updated>2012-01-03T23:18:00+09:00</updated>
-    <id>http://aanoaa.github.com/blog/2012/01/03/picasa-upload-script</id>
+    <id>http://aanoaa.github.com/aanoaa/blog/2012/01/03/picasa-upload-script</id>
     <content type="html"><![CDATA[<p><div><script src='https://gist.github.com/1444684.js?file='></script>
 <noscript><pre><code>&lt;html&gt;&lt;body&gt;You are being &lt;a href=&quot;https://github.com/gist/1444684&quot;&gt;redirected&lt;/a&gt;.&lt;/body&gt;&lt;/html&gt;</code></pre></noscript></div>
 </p>

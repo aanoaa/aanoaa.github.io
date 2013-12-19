@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: BitlBee | Mustache :{]]></title>
-  <link href="http://aanoaa.github.com/blog/categories/bitlbee/atom.xml" rel="self"/>
-  <link href="http://aanoaa.github.com/"/>
-  <updated>2013-12-20T01:11:59+09:00</updated>
-  <id>http://aanoaa.github.com/</id>
+  <link href="http://aanoaa.github.com/aanoaa/blog/categories/bitlbee/atom.xml" rel="self"/>
+  <link href="http://aanoaa.github.com/aanoaa/"/>
+  <updated>2013-12-20T02:12:27+09:00</updated>
+  <id>http://aanoaa.github.com/aanoaa/</id>
   <author>
     <name><![CDATA[Hyungsuk Hong]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[bitlbee]]></title>
-    <link href="http://aanoaa.github.com/blog/2012/01/06/bitlbee/"/>
+    <link href="http://aanoaa.github.com/aanoaa/blog/2012/01/06/bitlbee/"/>
     <updated>2012-01-06T18:49:00+09:00</updated>
-    <id>http://aanoaa.github.com/blog/2012/01/06/bitlbee</id>
+    <id>http://aanoaa.github.com/aanoaa/blog/2012/01/06/bitlbee</id>
     <content type="html"><![CDATA[<p>근데 제가 <a href="http://www.bitlbee.org/main.php/news.r.html">BitlBee</a> 를
 사용하는 이유는 바로 이겁니다.</p>
 

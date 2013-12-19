@@ -1,79 +1,81 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
     <url>
-        <loc>http://aanoaa.github.com/blog/2011/10/27/hello-world/</loc>
-        <lastmod>2013-12-20T01:11:54+09:00</lastmod>
+        <loc>http://aanoaa.github.com/aanoaa/blog/2011/10/27/hello-world/</loc>
+        <lastmod>2013-12-20T02:11:54+09:00</lastmod>
     </url>
     <url>
-        <loc>http://aanoaa.github.com/blog/2011/10/27/blogging-basics/</loc>
-        <lastmod>2013-12-20T01:11:54+09:00</lastmod>
+        <loc>http://aanoaa.github.com/aanoaa/blog/2011/10/27/blogging-basics/</loc>
+        <lastmod>2013-12-20T02:11:54+09:00</lastmod>
     </url>
     <url>
-        <loc>http://aanoaa.github.com/blog/2011/11/10/termiator/</loc>
-        <lastmod>2013-12-20T01:11:54+09:00</lastmod>
+        <loc>http://aanoaa.github.com/aanoaa/blog/2011/11/10/termiator/</loc>
+        <lastmod>2013-12-20T02:11:54+09:00</lastmod>
     </url>
     <url>
-        <loc>http://aanoaa.github.com/blog/2011/12/02/emacs-mo-git-blame-mode/</loc>
-        <lastmod>2013-12-20T01:11:54+09:00</lastmod>
+        <loc>http://aanoaa.github.com/aanoaa/blog/2011/12/02/emacs-mo-git-blame-mode/</loc>
+        <lastmod>2013-12-20T02:11:54+09:00</lastmod>
     </url>
     <url>
-        <loc>http://aanoaa.github.com/blog/2011/12/17/sass-and-scss/</loc>
-        <lastmod>2013-12-20T01:11:54+09:00</lastmod>
+        <loc>http://aanoaa.github.com/aanoaa/blog/2011/12/17/sass-and-scss/</loc>
+        <lastmod>2013-12-20T02:11:54+09:00</lastmod>
     </url>
     <url>
-        <loc>http://aanoaa.github.com/blog/2012/01/03/picasa-upload-script/</loc>
-        <lastmod>2013-12-20T01:11:54+09:00</lastmod>
+        <loc>http://aanoaa.github.com/aanoaa/blog/2012/01/03/picasa-upload-script/</loc>
+        <lastmod>2013-12-20T02:11:54+09:00</lastmod>
     </url>
     <url>
-        <loc>http://aanoaa.github.com/blog/2012/01/06/org-mode/</loc>
-        <lastmod>2013-12-20T01:11:54+09:00</lastmod>
+        <loc>http://aanoaa.github.com/aanoaa/blog/2012/01/06/org-mode/</loc>
+        <lastmod>2013-12-20T02:11:54+09:00</lastmod>
     </url>
     <url>
-        <loc>http://aanoaa.github.com/blog/2012/01/06/bitlbee/</loc>
-        <lastmod>2013-12-20T01:11:54+09:00</lastmod>
+        <loc>http://aanoaa.github.com/aanoaa/blog/2012/01/06/bitlbee/</loc>
+        <lastmod>2013-12-20T02:11:54+09:00</lastmod>
     </url>
     <url>
-        <loc>http://aanoaa.github.com/blog/2012/02/27/backbon-dot-js-jsonp-collection-sync/</loc>
-        <lastmod>2013-12-20T01:11:54+09:00</lastmod>
+        <loc>
+            http://aanoaa.github.com/aanoaa/blog/2012/02/27/backbon-dot-js-jsonp-collection-sync/
+        </loc>
+        <lastmod>2013-12-20T02:11:54+09:00</lastmod>
     </url>
     <url>
-        <loc>http://aanoaa.github.com/blog/2012/04/27/gatigeoleulgga-geseuteuhauseu/</loc>
-        <lastmod>2013-12-20T01:11:54+09:00</lastmod>
+        <loc>http://aanoaa.github.com/aanoaa/blog/2012/04/27/gatigeoleulgga-geseuteuhauseu/</loc>
+        <lastmod>2013-12-20T02:11:54+09:00</lastmod>
     </url>
     <url>
-        <loc>http://aanoaa.github.com/blog/2012/06/21/perl-y-operator/</loc>
-        <lastmod>2013-12-20T01:11:54+09:00</lastmod>
+        <loc>http://aanoaa.github.com/aanoaa/blog/2012/06/21/perl-y-operator/</loc>
+        <lastmod>2013-12-20T02:11:54+09:00</lastmod>
     </url>
     <url>
-        <loc>http://aanoaa.github.com/blog/2012/07/02/chrome-scrollbar-style/</loc>
-        <lastmod>2013-12-20T01:11:54+09:00</lastmod>
+        <loc>http://aanoaa.github.com/aanoaa/blog/2012/07/02/chrome-scrollbar-style/</loc>
+        <lastmod>2013-12-20T02:11:54+09:00</lastmod>
     </url>
     <url>
-        <loc>http://aanoaa.github.com/blog/2012/09/11/git-push-force/</loc>
-        <lastmod>2013-12-20T01:11:54+09:00</lastmod>
+        <loc>http://aanoaa.github.com/aanoaa/blog/2012/09/11/git-push-force/</loc>
+        <lastmod>2013-12-20T02:11:54+09:00</lastmod>
     </url>
     <url>
-        <loc>http://aanoaa.github.com/blog/2012/09/12/tidyall/</loc>
-        <lastmod>2013-12-20T01:11:54+09:00</lastmod>
+        <loc>http://aanoaa.github.com/aanoaa/blog/2012/09/12/tidyall/</loc>
+        <lastmod>2013-12-20T02:11:54+09:00</lastmod>
     </url>
     <url>
-        <loc>http://aanoaa.github.com/blog/2012/10/04/p5-hubot/</loc>
-        <lastmod>2013-12-20T01:11:54+09:00</lastmod>
+        <loc>http://aanoaa.github.com/aanoaa/blog/2012/10/04/p5-hubot/</loc>
+        <lastmod>2013-12-20T02:11:54+09:00</lastmod>
     </url>
     <url>
-        <loc>http://aanoaa.github.com/blog/2013/06/10/p5-hubot-onto-heroku/</loc>
-        <lastmod>2013-12-20T01:11:54+09:00</lastmod>
+        <loc>http://aanoaa.github.com/aanoaa/blog/2013/06/10/p5-hubot-onto-heroku/</loc>
+        <lastmod>2013-12-20T02:11:54+09:00</lastmod>
     </url>
     <url>
-        <loc>http://aanoaa.github.com/blog/2013/12/20/coffeescript-compile-args/</loc>
-        <lastmod>2013-12-20T01:11:54+09:00</lastmod>
+        <loc>http://aanoaa.github.com/aanoaa/blog/2013/12/20/coffeescript-compile-args/</loc>
+        <lastmod>2013-12-20T02:11:54+09:00</lastmod>
     </url>
     <url>
-        <loc>http://aanoaa.github.com/blog/archives/</loc>
-        <lastmod>2013-12-20T01:11:54+09:00</lastmod>
+        <loc>http://aanoaa.github.com/aanoaa/blog/archives/</loc>
+        <lastmod>2013-12-20T02:11:54+09:00</lastmod>
     </url>
     <url>
-        <loc>http://aanoaa.github.com/</loc>
-        <lastmod>2013-12-20T01:11:54+09:00</lastmod>
+        <loc>http://aanoaa.github.com/aanoaa/</loc>
+        <lastmod>2013-12-20T02:11:54+09:00</lastmod>
     </url>
 </urlset>
