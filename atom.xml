@@ -1,121 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
 
-<!DOCTYPE html>
-<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
-<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
-<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
-<head>
-  <meta charset="utf-8">
-  <title>Mustache :{</title>
-  <meta name="author" content="Hyungsuk Hong">
-
-  
-  <meta name="description" content="1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-$ coffee -h Usage: coffee [options] path/to/script.coffee -- [args] If called without &hellip;">
-  
-
-  <!-- http://t.co/dKP3o1e -->
-  <meta name="HandheldFriendly" content="True">
-  <meta name="MobileOptimized" content="320">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  
-  <link rel="canonical" href="http://aanoaa.github.com/">
-  <link href="/favicon.png" rel="icon">
-  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
-  <script src="/javascripts/modernizr-2.0.js"></script>
-  <script src="/javascripts/ender.js"></script>
-  <script src="/javascripts/octopress.js" type="text/javascript"></script>
-  <link href="/atom.xml" rel="alternate" title="Mustache :{" type="application/atom+xml">
-  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
-<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
-<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
-
-  
-
-</head>
-
-<body   >
-  <header role="banner"><hgroup>
-  <h1><a href="/">Mustache :{</a></h1>
-  
-    <h2>use perl</h2>
-  
-</hgroup>
-
-</header>
-  <nav role="navigation"><ul class="subscription" data-subscription="rss">
-  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
-  
-</ul>
-  
-<form action="http://google.com/search" method="get">
-  <fieldset role="search">
-    <input type="hidden" name="q" value="site:aanoaa.github.com" />
-    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
-  </fieldset>
-</form>
-  
-<ul class="main-navigation">
-  <li><a href="/">Blog</a></li>
-  <li><a href="/blog/archives">Archives</a></li>
-</ul>
-
-</nav>
-  <div id="main">
-    <div id="content">
-      <div class="blog-index">
-  
-  
-  
-    <article>
-      
-  <header>
+  <title><![CDATA[Mustache :{]]></title>
+  <link href="http://aanoaa.github.com/atom.xml" rel="self"/>
+  <link href="http://aanoaa.github.com/"/>
+  <updated>2013-12-20T01:11:59+09:00</updated>
+  <id>http://aanoaa.github.com/</id>
+  <author>
+    <name><![CDATA[Hyungsuk Hong]]></name>
     
-      <h1 class="entry-title"><a href="/blog/2013/12/20/coffeescript-compile-args/">Coffeescript-compile-args</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
 
   
-
-
-<time datetime="2013-12-20T00:34:00+09:00" pubdate data-updated="true">Dec 20<span>th</span>, 2013</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+  <entry>
+    <title type="html"><![CDATA[coffeescript-compile-args]]></title>
+    <link href="http://aanoaa.github.com/blog/2013/12/20/coffeescript-compile-args/"/>
+    <updated>2013-12-20T00:34:00+09:00</updated>
+    <id>http://aanoaa.github.com/blog/2013/12/20/coffeescript-compile-args</id>
+    <content type="html"><![CDATA[<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
@@ -270,42 +173,15 @@ function wrapper</code></p></li>
 </span><span class='line'><span class="p">)</span>
 </span></code></pre></td></tr></table></div></figure>
 
-</div>
+]]></content>
+  </entry>
   
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/06/10/p5-hubot-onto-heroku/">P5-hubot Onto Heroku</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-06-10T17:31:00+09:00" pubdate data-updated="true">Jun 10<span>th</span>, 2013</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>오리지날 <a href="https://github.com/github/hubot">hubot</a> 에는
+  <entry>
+    <title type="html"><![CDATA[p5-hubot onto heroku]]></title>
+    <link href="http://aanoaa.github.com/blog/2013/06/10/p5-hubot-onto-heroku/"/>
+    <updated>2013-06-10T17:31:00+09:00</updated>
+    <id>http://aanoaa.github.com/blog/2013/06/10/p5-hubot-onto-heroku</id>
+    <content type="html"><![CDATA[<p>오리지날 <a href="https://github.com/github/hubot">hubot</a> 에는
 <a href="https://www.heroku.com/">heroku</a> 어쩌고 저쩌고 하는 기능이 있습니다.</p>
 
 <p>이제 <a href="https://github.com/aanoaa/p5-hubot">p5-hubot</a> 에서도 됩니다.</p>
@@ -442,42 +318,15 @@ $ hubot -c ~/Desktop/hubot
 <li><a href="https://devcenter.heroku.com/articles/procfile">Process Types and the Procfile</a></li>
 </ul>
 
-</div>
+]]></content>
+  </entry>
   
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/10/04/p5-hubot/">P5-hubot</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-10-04T15:30:00+09:00" pubdate data-updated="true">Oct 4<span>th</span>, 2012</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><h3>p5-hubot scipts explained</h3>
+  <entry>
+    <title type="html"><![CDATA[p5-hubot]]></title>
+    <link href="http://aanoaa.github.com/blog/2012/10/04/p5-hubot/"/>
+    <updated>2012-10-04T15:30:00+09:00</updated>
+    <id>http://aanoaa.github.com/blog/2012/10/04/p5-hubot</id>
+    <content type="html"><![CDATA[<h3>p5-hubot scipts explained</h3>
 
 <p>필요해서 <a href="https://github.com/github/hubot">hubot</a> 을 <code>perl</code> 로 옮기고
 있습니다. - <a href="https://github.com/aanoaa/p5-hubot">p5-hubot</a></p>
@@ -665,42 +514,15 @@ $ hubot -c ~/Desktop/hubot
 <li><a href="http://theprogrammingbutler.com/blog/archives/2011/10/28/hubot-scripts-explained/">hubot Scripts Explained</a></li>
 </ul>
 
-</div>
+]]></content>
+  </entry>
   
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/09/12/tidyall/">Tidyall</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-09-12T01:11:00+09:00" pubdate data-updated="true">Sep 12<span>th</span>, 2012</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Perl 에는 Best Practices 가 있습니다.</p>
+  <entry>
+    <title type="html"><![CDATA[tidyall]]></title>
+    <link href="http://aanoaa.github.com/blog/2012/09/12/tidyall/"/>
+    <updated>2012-09-12T01:11:00+09:00</updated>
+    <id>http://aanoaa.github.com/blog/2012/09/12/tidyall</id>
+    <content type="html"><![CDATA[<p>Perl 에는 Best Practices 가 있습니다.</p>
 
 <p><img src="http://akamaicovers.oreilly.com/images/9780596001735/cat.gif"></p>
 
@@ -780,42 +602,15 @@ $ hubot -c ~/Desktop/hubot
 <li><a href="http://www.openswartz.com/2012/08/21/one-tidier-to-rule-them-all/">One tidier to rule them all</a></li>
 </ul>
 
-</div>
+]]></content>
+  </entry>
   
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/09/11/git-push-force/">Git Push &#8211;force</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-09-11T23:28:00+09:00" pubdate data-updated="true">Sep 11<span>th</span>, 2012</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>저는 <code>pull-request workflow</code>가 갑이라고 생각합니다.
+  <entry>
+    <title type="html"><![CDATA[git push --force]]></title>
+    <link href="http://aanoaa.github.com/blog/2012/09/11/git-push-force/"/>
+    <updated>2012-09-11T23:28:00+09:00</updated>
+    <id>http://aanoaa.github.com/blog/2012/09/11/git-push-force</id>
+    <content type="html"><![CDATA[<p>저는 <code>pull-request workflow</code>가 갑이라고 생각합니다.
 비동기 방식으로 업무가 진행되고, merge 하기전에 자연스런 review 도
 되고요.</p>
 
@@ -993,42 +788,15 @@ $ hubot -c ~/Desktop/hubot
 협업간에 불화가 생길 수 있습니다.</p>
 
 <p>어떻게들 사용하시나요?</p>
-</div>
+]]></content>
+  </entry>
   
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/07/02/chrome-scrollbar-style/">Chrome Scrollbar Style</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-07-02T12:50:00+09:00" pubdate data-updated="true">Jul 2<span>nd</span>, 2012</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><code>$HOME/.config/google-chrome/Default/User StyleSheets/Custom.css</code> 에다가
+  <entry>
+    <title type="html"><![CDATA[chrome scrollbar style]]></title>
+    <link href="http://aanoaa.github.com/blog/2012/07/02/chrome-scrollbar-style/"/>
+    <updated>2012-07-02T12:50:00+09:00</updated>
+    <id>http://aanoaa.github.com/blog/2012/07/02/chrome-scrollbar-style</id>
+    <content type="html"><![CDATA[<p><code>$HOME/.config/google-chrome/Default/User StyleSheets/Custom.css</code> 에다가
 아래 내용을 추가하면 scroll-bar 가 얄상하니 이쁩니다.</p>
 
 <p>근데 불편해서 안쓸라고.. 나중에 검색하기 힘들까봐 로그 남겨 둡니다.</p>
@@ -1077,42 +845,15 @@ $ hubot -c ~/Desktop/hubot
 </span><span class='line'><span class="p">}</span>
 </span></code></pre></td></tr></table></div></figure>
 
-</div>
+]]></content>
+  </entry>
   
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/06/21/perl-y-operator/">Perl Y Operator</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-06-21T13:59:00+09:00" pubdate data-updated="true">Jun 21<span>st</span>, 2012</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><h2>사건의 발단</h2>
+  <entry>
+    <title type="html"><![CDATA[perl y operator]]></title>
+    <link href="http://aanoaa.github.com/blog/2012/06/21/perl-y-operator/"/>
+    <updated>2012-06-21T13:59:00+09:00</updated>
+    <id>http://aanoaa.github.com/blog/2012/06/21/perl-y-operator</id>
+    <content type="html"><![CDATA[<h2>사건의 발단</h2>
 
 <p>어느날 오후 @freenode #perl-kr 에서 일어난 일입니다.</p>
 
@@ -1395,42 +1136,15 @@ $ hubot -c ~/Desktop/hubot
 
 
 <p>오늘도 즐거운 하루중입니다.</p>
-</div>
+]]></content>
+  </entry>
   
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/04/27/gatigeoleulgga-geseuteuhauseu/">같이걸을까 게스트하우스</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-04-27T17:43:00+09:00" pubdate data-updated="true">Apr 27<span>th</span>, 2012</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><h2>제목은 회이크</h2>
+  <entry>
+    <title type="html"><![CDATA[같이걸을까 게스트하우스]]></title>
+    <link href="http://aanoaa.github.com/blog/2012/04/27/gatigeoleulgga-geseuteuhauseu/"/>
+    <updated>2012-04-27T17:43:00+09:00</updated>
+    <id>http://aanoaa.github.com/blog/2012/04/27/gatigeoleulgga-geseuteuhauseu</id>
+    <content type="html"><![CDATA[<h2>제목은 회이크</h2>
 
 <p>그냥 어제 오늘 있엇던 일을 적을까 합니다.
 지금 묵고 있는 데가 <a href="http://www.facebook.com/togetherjeju">같이걸을까 게스트하우스</a> 입니다.
@@ -1489,42 +1203,15 @@ $ hubot -c ~/Desktop/hubot
 <p>친구네집 놀러온 느낌입니다. <a href="http://www.facebook.com/togetherjeju">여기</a>에서 사진보세여.
 무계획으로 있엇는데 대장님이 어디어디 괜찮을 거라고 추천해줘서 거기
 갓다가 아마 내일도 여기에 묵지 않을까 싶습니다. 맥주도 맨드신다고..</p>
-</div>
+]]></content>
+  </entry>
   
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/02/27/backbon-dot-js-jsonp-collection-sync/">backbon.js Jsonp Collection Sync</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-02-27T05:07:00+09:00" pubdate data-updated="true">Feb 27<span>th</span>, 2012</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>외부 도메인을 사용하고자 할때 <code>jsonp</code> 를 이용해야 하는데,
+  <entry>
+    <title type="html"><![CDATA[backbon.js jsonp collection sync]]></title>
+    <link href="http://aanoaa.github.com/blog/2012/02/27/backbon-dot-js-jsonp-collection-sync/"/>
+    <updated>2012-02-27T05:07:00+09:00</updated>
+    <id>http://aanoaa.github.com/blog/2012/02/27/backbon-dot-js-jsonp-collection-sync</id>
+    <content type="html"><![CDATA[<p>외부 도메인을 사용하고자 할때 <code>jsonp</code> 를 이용해야 하는데,
 이때, <code>Backbone.sync</code> 메소드를 override 해서 쓸 수 있습니다.</p>
 
 <p>jquery <code>$.ajax</code> 메소드의 옵션을 보면 <code>dataType</code>을 <code>jsonp</code>로 설정하면
@@ -1566,42 +1253,15 @@ query_parameter 를 추가해줍니다.</p>
 </pre></td><td class='code'><pre><code class='coffeescript'><span class='line'><span class="nx">jqueryblablablabla_timestamp</span><span class="p">(</span><span class="o">&lt;</span><span class="nx">stringifiedJSON</span><span class="o">&gt;</span><span class="p">)</span>
 </span></code></pre></td></tr></table></div></figure>
 
-</div>
+]]></content>
+  </entry>
   
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/01/06/bitlbee/">Bitlbee</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-01-06T18:49:00+09:00" pubdate data-updated="true">Jan 6<span>th</span>, 2012</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>근데 제가 <a href="http://www.bitlbee.org/main.php/news.r.html">BitlBee</a> 를
+  <entry>
+    <title type="html"><![CDATA[bitlbee]]></title>
+    <link href="http://aanoaa.github.com/blog/2012/01/06/bitlbee/"/>
+    <updated>2012-01-06T18:49:00+09:00</updated>
+    <id>http://aanoaa.github.com/blog/2012/01/06/bitlbee</id>
+    <content type="html"><![CDATA[<p>근데 제가 <a href="http://www.bitlbee.org/main.php/news.r.html">BitlBee</a> 를
 사용하는 이유는 바로 이겁니다.</p>
 
 <blockquote><p>BitlBee brings IM (instant messaging) to IRC clients. It&#8217;s a great
@@ -1646,154 +1306,606 @@ don&#8217;t want to run an additional MSN/AIM/whatever client.</p></blockquote>
 <p>누가 말시키면 그냥 버퍼 나뉘어져서 바로 보여요</p>
 
 <p><img src="http://www.bitlbee.org/img/comic_3.0.png" alt="comic" /></p>
-</div>
+]]></content>
+  </entry>
   
+  <entry>
+    <title type="html"><![CDATA[org-mode]]></title>
+    <link href="http://aanoaa.github.com/blog/2012/01/06/org-mode/"/>
+    <updated>2012-01-06T14:55:00+09:00</updated>
+    <id>http://aanoaa.github.com/blog/2012/01/06/org-mode</id>
+    <content type="html"><![CDATA[<ul>
+<li><a href="https://mail.google.com/mail/help/tasks/">Google tasks</a></li>
+<li><a href="http://www.rememberthemilk.com/">remember the milk</a></li>
+<li><a href="http://tadalist.com/">Tada list</a></li>
+<li><a href="https://trello.com/">trello</a></li>
+<li><a href="https://workflowy.com/">workflowy</a></li>
+<li>그냥 <code>excel</code></li>
+</ul>
+
+
+<p>제가 그간 거쳐왔던 훌륭한 task 관리 툴입니다.
+근데 저는 몇일 쓰다보면 못쓰겟더라고요.</p>
+
+<p>그리고 얼마전에 emacs <code>org-mode</code> 라는 것을 알게 되었습니다. org-mode
+참 좋습니다. pdf, excel, plain/text, html, latex, .. 으로 export 되고
+단축키로 뿅뿅 눌러서 TODO 관리도 할 수 있고 emacs 안에서, 오프라인에서
+일정관리도 되고, 태그도 되고, 해야할 일을 쉽게 내 todo 에 올릴 수도
+있고요..</p>
+
+<p>기능도 많고 안되는게 없고 문서화도 아주 잘되어 있습니다 android,
+iphone app 도 있습니다. 근데 배우고 알아야 할게 너무 많습니다.</p>
+
+<p>되돌아 보면, github issue 만 사용할때 가장 업무 효율이 높았던 것
+같습니다.</p>
+
+<p>github 만세입니다.</p>
+
+<h3>결론은 버킹검</h3>
+
+<p>아아 뭔소리래..</p>
+]]></content>
+  </entry>
   
+  <entry>
+    <title type="html"><![CDATA[picasa upload script]]></title>
+    <link href="http://aanoaa.github.com/blog/2012/01/03/picasa-upload-script/"/>
+    <updated>2012-01-03T23:18:00+09:00</updated>
+    <id>http://aanoaa.github.com/blog/2012/01/03/picasa-upload-script</id>
+    <content type="html"><![CDATA[<div><script src='https://gist.github.com/1444684.js?file='></script>
+<noscript><pre><code>&lt;html&gt;&lt;body&gt;You are being &lt;a href=&quot;https://github.com/gist/1444684&quot;&gt;redirected&lt;/a&gt;.&lt;/body&gt;&lt;/html&gt;</code></pre></noscript></div>
 
 
-    </article>
+<p><code>$HOME/.google.conf</code> 에다가 자신의 계정 정보를 슥슥하고요.</p>
+
+<p><strong>이중보안 설정한 계정은 업로드 안됩니다.</strong></p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>picasa-upload.pl &lt;PHOTO.png&gt;
+</span></code></pre></td></tr></table></div></figure>
+
+
+<pre><code>https://lh4.googleusercontent.com/-mmv40wXKaM4/TwMP0BKUVhI/AAAAAAAAABA/AM3KBgCuf8Q/2011082200618_10.jpg
+</code></pre>
+
+<p>제가 샘플로 올린 이미지 퍼블릭 링크입니다.</p>
+
+<p><code>어쩌고저쩌고/s[SIZE]/파일명.jpg</code> 으로 바꾸면 파일크기가 바뀌어서
+보여집니다. 굳 :+1:</p>
+
+<pre><code>https://lh4.googleusercontent.com/-mmv40wXKaM4/TwMP0BKUVhI/AAAAAAAAABA/AM3KBgCuf8Q/s72/2011082200618_10.jpg
+https://lh4.googleusercontent.com/-mmv40wXKaM4/TwMP0BKUVhI/AAAAAAAAABA/AM3KBgCuf8Q/s144/2011082200618_10.jpg
+https://lh4.googleusercontent.com/-mmv40wXKaM4/TwMP0BKUVhI/AAAAAAAAABA/AM3KBgCuf8Q/s200/2011082200618_10.jpg
+https://lh4.googleusercontent.com/-mmv40wXKaM4/TwMP0BKUVhI/AAAAAAAAABA/AM3KBgCuf8Q/s320/2011082200618_10.jpg
+https://lh4.googleusercontent.com/-mmv40wXKaM4/TwMP0BKUVhI/AAAAAAAAABA/AM3KBgCuf8Q/s400/2011082200618_10.jpg
+https://lh4.googleusercontent.com/-mmv40wXKaM4/TwMP0BKUVhI/AAAAAAAAABA/AM3KBgCuf8Q/s512/2011082200618_10.jpg
+</code></pre>
+
+<ul>
+<li>s72</li>
+<li>s144</li>
+<li>s200</li>
+<li>s320</li>
+<li>s400</li>
+<li>s512</li>
+<li>s576</li>
+<li>s640</li>
+<li>s720</li>
+<li>s800</li>
+<li>s912</li>
+<li>s1024</li>
+<li>s1152</li>
+<li>s1280</li>
+<li>s1440</li>
+<li>s1600</li>
+</ul>
+
+
+<p>뭐 사이즈는 요로코롬 슥슥해서 쓰면 되겠죠.</p>
+
+<p><img src="https://lh4.googleusercontent.com/-mmv40wXKaM4/TwMP0BKUVhI/AAAAAAAAABA/AM3KBgCuf8Q/2011082200618_10.jpg" alt="원본" /></p>
+
+<p>원본이고요</p>
+
+<p><img src="https://lh4.googleusercontent.com/-mmv40wXKaM4/TwMP0BKUVhI/AAAAAAAAABA/AM3KBgCuf8Q/s72/2011082200618_10.jpg" alt="s72" />
+<img src="https://lh4.googleusercontent.com/-mmv40wXKaM4/TwMP0BKUVhI/AAAAAAAAABA/AM3KBgCuf8Q/s144/2011082200618_10.jpg" alt="s144" />
+<img src="https://lh4.googleusercontent.com/-mmv40wXKaM4/TwMP0BKUVhI/AAAAAAAAABA/AM3KBgCuf8Q/s200/2011082200618_10.jpg" alt="s200" />
+<img src="https://lh4.googleusercontent.com/-mmv40wXKaM4/TwMP0BKUVhI/AAAAAAAAABA/AM3KBgCuf8Q/s320/2011082200618_10.jpg" alt="s320" />
+<img src="https://lh4.googleusercontent.com/-mmv40wXKaM4/TwMP0BKUVhI/AAAAAAAAABA/AM3KBgCuf8Q/s400/2011082200618_10.jpg" alt="s400" />
+<img src="https://lh4.googleusercontent.com/-mmv40wXKaM4/TwMP0BKUVhI/AAAAAAAAABA/AM3KBgCuf8Q/s512/2011082200618_10.jpg" alt="s512" /></p>
+
+<p>72, 144, 200, 320, 400, 512 입니다.</p>
+
+<p>파일 한개를 간편하게 올려서 요로코롬 크기를 조절해가면서 사용할 수
+있습니다.
+게다가 <strong>무료</strong>! google++</p>
+
+<p>편리한 스크립트를 맨들어주시고 유용한 팁까지 알려주신
+<a href="https://twitter.com/pung96">@pung96</a>++ 님 감사합니다.</p>
+]]></content>
+  </entry>
   
-  <div class="pagination">
-    
-      <a class="prev" href="/blog/page/2/">&larr; Older</a>
-    
-    <a href="/blog/archives">Blog Archives</a>
-    
-  </div>
-</div>
-<aside class="sidebar">
+  <entry>
+    <title type="html"><![CDATA[sass &amp; scss]]></title>
+    <link href="http://aanoaa.github.com/blog/2011/12/17/sass-and-scss/"/>
+    <updated>2011-12-17T00:08:00+09:00</updated>
+    <id>http://aanoaa.github.com/blog/2011/12/17/sass-and-scss</id>
+    <content type="html"><![CDATA[<p><code>oops.scss</code> 파일을 아래처럼 맨들고,</p>
+
+<figure class='code'><figcaption><span>oops.scss</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+</pre></td><td class='code'><pre><code class='scss'><span class='line'><span class="k">@import</span> <span class="s2">&quot;compass/css3&quot;</span><span class="p">;</span>
+</span><span class='line'><span class="nn">#header</span><span class="o">,</span><span class="nn">#footer</span> <span class="p">{</span>
+</span><span class='line'>    <span class="na">margin</span><span class="o">:</span> <span class="mi">0</span> <span class="no">auto</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'><span class="nc">.error</span> <span class="p">{</span>
+</span><span class='line'>    <span class="k">@include</span><span class="nd"> border-radius</span><span class="p">(</span><span class="mi">5</span><span class="kt">px</span><span class="p">);</span>
+</span><span class='line'>    <span class="na">background-color</span><span class="o">:</span> <span class="mh">#DD0000</span><span class="p">;</span>
+</span><span class='line'>    <span class="nc">.important</span> <span class="p">{</span>
+</span><span class='line'>        <span class="na">border-width</span><span class="o">:</span> <span class="mi">3</span><span class="kt">px</span><span class="p">;</span>
+</span><span class='line'>    <span class="p">}</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>콤퓨타로 뭔가를 하면,</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>sass --watch oops.scss:oops.css
+</span><span class='line'>
+</span><span class='line'>or
+</span><span class='line'>
+</span><span class='line'><span class="nv">$ </span>compass watch /path/to/     <span class="c"># 끝판왕임 저는 이렇게 씀</span>
+</span><span class='line'>
+</span><span class='line'>or
+</span><span class='line'>
+</span><span class='line'><span class="c"># emacs scss-mode 쓰면 그냥 저장함과 동시에 변환할 수 있는데 compass</span>
+</span><span class='line'><span class="c"># 의 기능은 사용할 수 없음</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p><code>oops.css</code> 파일을 맨들어 줍니다.</p>
+
+<figure class='code'><figcaption><span>oops.css</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+</pre></td><td class='code'><pre><code class='css'><span class='line'><span class="c">/* line 2, ../sass/oops.scss */</span>
+</span><span class='line'><span class="nf">#header</span><span class="o">,</span> <span class="nf">#footer</span> <span class="p">{</span>
+</span><span class='line'>  <span class="k">margin</span><span class="o">:</span> <span class="m">0</span> <span class="k">auto</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="c">/* line 5, ../sass/oops.scss */</span>
+</span><span class='line'><span class="nc">.error</span> <span class="p">{</span>
+</span><span class='line'>  <span class="o">-</span><span class="n">moz</span><span class="o">-</span><span class="k">border</span><span class="o">-</span><span class="n">radius</span><span class="o">:</span> <span class="m">5px</span><span class="p">;</span>
+</span><span class='line'>  <span class="o">-</span><span class="n">webkit</span><span class="o">-</span><span class="k">border</span><span class="o">-</span><span class="n">radius</span><span class="o">:</span> <span class="m">5px</span><span class="p">;</span>
+</span><span class='line'>  <span class="o">-</span><span class="n">o</span><span class="o">-</span><span class="k">border</span><span class="o">-</span><span class="n">radius</span><span class="o">:</span> <span class="m">5px</span><span class="p">;</span>
+</span><span class='line'>  <span class="o">-</span><span class="n">ms</span><span class="o">-</span><span class="k">border</span><span class="o">-</span><span class="n">radius</span><span class="o">:</span> <span class="m">5px</span><span class="p">;</span>
+</span><span class='line'>  <span class="o">-</span><span class="n">khtml</span><span class="o">-</span><span class="k">border</span><span class="o">-</span><span class="n">radius</span><span class="o">:</span> <span class="m">5px</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">border</span><span class="o">-</span><span class="n">radius</span><span class="o">:</span> <span class="m">5px</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">background-color</span><span class="o">:</span> <span class="m">#DD0000</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'><span class="c">/* line 8, ../sass/oops.scss */</span>
+</span><span class='line'><span class="nc">.error</span> <span class="nc">.important</span> <span class="p">{</span>
+</span><span class='line'>  <span class="k">border-width</span><span class="o">:</span> <span class="m">3px</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>이처럼 <a href="http://sass-lang.com/">sass</a>는 <code>.sass</code> 또는 <code>.scss</code>를 <code>.css</code>로 맨들어 줍니다.</p>
+
+<p>장점으로는 <code>oops.scss</code>에서 <code>@include border-radius(5px);</code> 를 보듯이
+함수와 변수를 사용할 수 있다는 것입니다. 코드의 중복을 막아주고(Don&#8217;t
+Repeat Yourself), 셀렉터들의 계층을 두어서 쉽게 작성할 수 있습니다.
+<code>compass</code>를 함께 사용하면 이미 흔하게 사용되고 있는 선조들의 <code>best
+practice</code>를 <code>import</code> 해서 쓸 수 있습니다.</p>
+
+<h1>설치 및 사용</h1>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>gem install sass compass    <span class="c"># 저는 compass도 씀</span>
+</span><span class='line'><span class="nv">$ </span>compass create /path/to/Your-Awesome-Project/
+</span><span class='line'><span class="c"># config.rb 를 수정하고, stylesheets, sass, images 등의 경로를</span>
+</span><span class='line'><span class="c"># 프로젝트 환경에 맞게 바꿔줍니다. rails 라면 필요없어 보입니다.</span>
+</span><span class='line'><span class="nv">$ </span>compass watch .    <span class="c"># config.rb 있는 곳을 지정해 줘야 합니다.</span>
+</span><span class='line'><span class="c"># scss 파일을 수정하면 css 파일에도 반영됩니다.</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>저는 <code>config.rb</code> 를 다음과 같이 변경해서 사용중입니다.</p>
+
+<figure class='code'><figcaption><span>config.rb</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='rb'><span class='line'><span class="n">http_path</span> <span class="o">=</span> <span class="s2">&quot;/&quot;</span>
+</span><span class='line'><span class="n">css_dir</span> <span class="o">=</span> <span class="s2">&quot;static/css&quot;</span>
+</span><span class='line'><span class="n">sass_dir</span> <span class="o">=</span> <span class="s2">&quot;static/sass&quot;</span>
+</span><span class='line'><span class="n">images_dir</span> <span class="o">=</span> <span class="s2">&quot;static/images&quot;</span>
+</span><span class='line'><span class="n">javascripts_dir</span> <span class="o">=</span> <span class="s2">&quot;static/scripts&quot;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h1>그밖에..</h1>
+
+<p>emacs <a href="http://www.emacswiki.org/emacs/ScssMode">scss-mode</a>를 사용하면 watcher 를 띄우지 않고도
+저장과 동시에 <code>css</code>파일을 맨들 수 있습니다.</p>
+
+<figure class='code'><figcaption><span>config.rb</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='rb'><span class='line'><span class="p">(</span><span class="n">add</span><span class="o">-</span><span class="n">to</span><span class="o">-</span><span class="n">list</span> <span class="s1">&#39;load-path &quot;~/.emacs.d/vendor/scss-mode&quot;)</span>
+</span><span class='line'><span class="s1">(require &#39;</span><span class="n">scss</span><span class="o">-</span><span class="n">mode</span><span class="p">)</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p><a href="http://blueprintcss.org/">blueprint</a>와 같은 grid framework 와 함께 사용할 수
+있습니다. 저는 그렇게 쓰고 있습니다.</p>
+
+<p><code>octopress</code> 도 <code>scss</code>사용합니다.</p>
+
+<h1>결론</h1>
+
+<p><code>ruby</code> 모듈이자 툴입니다. 저희 회사는 <code>perl</code>로 개발합니다만 물론
+사용할 수 있습니다. 너무나도 훌륭한 오픈소스 입니다.</p>
+
+<p>훌륭한 개발환경을 가지고 있고, 프로그래밍에는 능숙하지만, <code>css</code>만
+잡으면 한없이 약해지는 분들이라면 간단한 <code>scss</code>문법을 공부하고
+<code>compass</code>툴 사용법을 익혀서 써먹으면 좋을 것 같습니다.</p>
+]]></content>
+  </entry>
   
-    <section>
-  <h1>Recent Posts</h1>
-  <ul id="recent_posts">
-    
-      <li class="post">
-        <a href="/blog/2013/12/20/coffeescript-compile-args/">coffeescript-compile-args</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/06/10/p5-hubot-onto-heroku/">p5-hubot onto heroku</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2012/10/04/p5-hubot/">p5-hubot</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2012/09/12/tidyall/">tidyall</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2012/09/11/git-push-force/">git push &#8211;force</a>
-      </li>
-    
-  </ul>
-</section>
+  <entry>
+    <title type="html"><![CDATA[emacs mo-git-blame mode]]></title>
+    <link href="http://aanoaa.github.com/blog/2011/12/02/emacs-mo-git-blame-mode/"/>
+    <updated>2011-12-02T15:07:00+09:00</updated>
+    <id>http://aanoaa.github.com/blog/2011/12/02/emacs-mo-git-blame-mode</id>
+    <content type="html"><![CDATA[<h2>프로젝트 환경</h2>
 
-<section>
-  <h1>GitHub Repos</h1>
-  <ul id="gh_repos">
-    <li class="loading">Status updating&#8230;</li>
-  </ul>
+<p><a href="http://www.facebook.com/silexkr">silex</a>라는 조그마한 회사를 댕기고 있습니다.</p>
+
+<p>소스관리는 <a href="http://git-scm.com/">git</a>사용하고 있고요, 내부에도 <a href="http://scie.nti.st/2007/11/14/hosting-git-repositories-the-easy-and-secure-way">gitosis</a>를
+운영하고 있긴 하지만, 주요 프로젝트는 <a href="https://github.com/">github</a> 유료 서비스를
+사용하고 있습니다. 이슈 관리도 <a href="https://github.com/">github</a>에서
+합니다. (버그질라를 사용하는 프로젝트도 있습니다)</p>
+
+<h2>코드리뷰</h2>
+
+<p>아주 느슨합니다.
+repo 접근 권한이 있다면 누구나 commit, push 할 수 있습니다.
+코드 리뷰는 push후에 프로젝트 참여자가 알아서 합니다.</p>
+
+<blockquote><p>이건 요래서 그지같고, 저건 조래서 다시해라, 발로 썻냐 등등..</p></blockquote>
+
+<p>좋은 얘기도 합니다만, 지적질이 대세를 이루죠.</p>
+
+<p>몇일전에는 바로 옆에서 <a href="https://twitter.com/#!/jeen_lee">jeen</a>님이 그지같이 썻다고 해서
+소주병 나발을 불기도 하고 뭐 그랬습니다.</p>
+
+<h2>git blame</h2>
+
+<p>누가 무슨 짓 했는지 다 알 수 있습니다.</p>
+
+<pre><code>519aaa9b (yongbin       2011-07-23 23:23:33 +0900 1) #!/bin/sh
+686cb0fb (Yongbin Yu    2011-09-24 15:58:03 +0900 2) TRUNNER_CONFDIR=t/selenium \
+2b3e6736 (Hyungsuk Hong 2011-10-13 11:25:22 +0900 3) plackup -Ilib -s Starman -p 3000 -a best_web.psgi --access-log /dev/null
+</code></pre>
+
+<h2>문제점 그리고 새로운 인력의 투입</h2>
+
+<ul>
+<li>push 했을때 review 하지 못하고 그냥 넘길때가 있습니다(많습니다)</li>
+<li>프로젝트 중간에 커밋터 보급받았을때</li>
+</ul>
+
+
+<p>남이 써놓은 코드를 열었는데 그지 같으면 말해줘서 바로 잡아야 합니다.
+쓰다보니 거지 같아서 <code>git blame</code>으로 살폈는데 제 코드일 수도 있습니다.</p>
+
+<p>뭐 어찌됐든 이 일련의 과정을 커맨트라인으로 하려면 불편합니다.</p>
+
+<pre><code>while(1) {
+    $ git blame oops
+    $ git log 72ddf38
+}
+</code></pre>
+
+<h2><a href="http://www.vim.org/">vim</a> vs <a href="http://www.gnu.org/s/emacs/">emacs</a></h2>
+
+<blockquote><p>@JEEN_LEE,  about 2 hours ago:
+  예를 들어 vim 으로 특정 코드부분을 주시한다고 할 때, 어.. 이거 누가
+  고쳤지 하는 부분이 있는데&#8230; 그때마다 blame 으로 파일을 지정해서
+  찾아보는 데, 그 라인에서 어떻게 바로 뿅하고
+  알 수 있게끔 하는 거 없을까.. // from Twitter for iPhone [Seoul,
+  Korea]</p></blockquote>
+
+<p>조금 찾아 봤는데 뭐 그런거 없습니다.</p>
+
+<blockquote><p>@semtlnori,  18 minutes ago:
+  @JEEN_LEE :exe &#8220;!git blame -L&#8221;.line(&#8220;.&#8221;).&#8221;,&#8221;.line(&#8220;.&#8221;).&#8221; &#8211; %&#8221; 이거
+  단축키 바인딩해서 쓰는 방법도 대충 될듯요. // from web [Seoul] in
+  reply to JEEN_LEE</p></blockquote>
+
+<p>@semtlnori: ㄱㅅ</p>
+
+<p>회사에서 저만 <a href="http://www.gnu.org/s/emacs/">emacs</a>씁니다.
+<code>해서</code>, 찾아봤더니 <a href="https://github.com/voins/mo-git-blame">mo-git-blame</a>이 있었습니다.</p>
+
+<h2>mo-git-blame</h2>
+
+<h3>설치</h3>
+
+<p><code>.emacs.d/vendor/mo-git-blame/mo-git-blame.el</code>을 두었습니다.</p>
+
+<h3>설정</h3>
+
+<pre><code>;; mo-git-blame
+(add-to-list 'load-path "~/.emacs.d/vendor/mo-git-blame")
+(require 'mo-git-blame)
+(global-set-key [?\C-c ?g ?c] 'mo-git-blame-current)
+(global-set-key [?\C-c ?g ?f] 'mo-git-blame-file)
+</code></pre>
+
+<h3>사용법</h3>
+
+<ul>
+<li>파일을 열고 작업을 합니다.</li>
+<li>거지같은 코드를 발견합니다.</li>
+<li><code>C-c g c</code>(command git current 의 약자인듯..)</li>
+<li><p>커맨드를 마구마구 입력하면서 확인합니다.</p>
+
+<pre><code>TAB
+l
+s
+Ctrl + n
+Ctrl + n
+Ctrl + n
+TAB
+l
+...
+</code></pre></li>
+<li><p>내가 했던거면 말없이 수정하고, 남이 한거면 <em>Scratch</em> 에 메세지를
+남겨두거나 바로 지적질 합니다.(아직 어케 할지 몰겟네요)</p></li>
+</ul>
+
+
+<h2>캡쳐화면</h2>
+
+<p><img src="http://k.minus.com/jwKlv6EpzfEwJ.png">
+<img src="http://k.minus.com/jIDbCjAJe4qWD.png">
+<img src="http://k.minus.com/jG5TPNm1TKCVP.png"></p>
+
+<h1>결론</h1>
+
+<h1>vim 이 뭐져?</h1>
+]]></content>
+  </entry>
   
-  <a href="https://github.com/aanoaa">@aanoaa</a> on GitHub
+  <entry>
+    <title type="html"><![CDATA[termiator]]></title>
+    <link href="http://aanoaa.github.com/blog/2011/11/10/termiator/"/>
+    <updated>2011-11-10T05:59:00+09:00</updated>
+    <id>http://aanoaa.github.com/blog/2011/11/10/termiator</id>
+    <content type="html"><![CDATA[<p><img src="http://k.minus.com/jO0Dl3TGpMeZW.png"></p>
+
+<p><a href="https://launchpad.net/terminator/+download">terminator</a>를 사용하면 emacs를 쓰지 않고도 하나의 window 내에서 여러개의 terminal 을 사용할 수 있습니다.</p>
+
+<h2>install</h2>
+
+<p>ubuntu:</p>
+
+<pre><code>$ sudo apt-get install terminator
+</code></pre>
+
+<p>기본적으로 등록되어 있는 keybinding 은 아래와 같습니다.</p>
+
+<ul>
+<li><code>Ctrl + Shift + O</code> 수평분할</li>
+<li><code>Ctrl + Shift + E</code> 수직분할</li>
+<li><code>Crtl + Shift + Z</code> 최대화 토글</li>
+<li><code>Alt + 방향키</code> 이동</li>
+</ul>
+
+
+<p>여러개의 로그를 동시에 볼때 유용합니다.</p>
+]]></content>
+  </entry>
   
-  <script type="text/javascript">
-    $.domReady(function(){
-        if (!window.jXHR){
-            var jxhr = document.createElement('script');
-            jxhr.type = 'text/javascript';
-            jxhr.src = '/javascripts/libs/jXHR.js';
-            var s = document.getElementsByTagName('script')[0];
-            s.parentNode.insertBefore(jxhr, s);
-        }
-
-        github.showRepos({
-            user: 'aanoaa',
-            count: 5,
-            skip_forks: true,
-            target: '#gh_repos'
-        });
-    });
-  </script>
-  <script src="/javascripts/github.js" type="text/javascript"> </script>
-</section>
+  <entry>
+    <title type="html"><![CDATA[Blogging basics]]></title>
+    <link href="http://aanoaa.github.com/blog/2011/10/27/blogging-basics/"/>
+    <updated>2011-10-27T04:38:00+09:00</updated>
+    <id>http://aanoaa.github.com/blog/2011/10/27/blogging-basics</id>
+    <content type="html"><![CDATA[<ul>
+<li><a href="http://pages.github.com/">http://pages.github.com/</a></li>
+<li><a href="http://octopress.org/docs/">http://octopress.org/docs/</a></li>
+<li><a href="http://octopress.org/docs/blogging/">http://octopress.org/docs/blogging/</a></li>
+<li><a href="http://octopress.org/docs/configuring/">http://octopress.org/docs/configuring/</a></li>
+<li><a href="http://octopress.org/docs/deploying/">http://octopress.org/docs/deploying/</a></li>
+</ul>
 
 
-<section>
-  <h1>Latest Tweets</h1>
-  <ul id="tweets">
-    <li class="loading">Status updating&#8230;</li>
-  </ul>
-  <script type="text/javascript">
-    $.domReady(function(){
-      getTwitterFeed("aanoaa", 4, false);
-    });
-  </script>
-  <script src="/javascripts/twitter.js" type="text/javascript"> </script>
+<h3>new post</h3>
+
+<pre><code>rake new_post["Blogging basics"]
+</code></pre>
+
+<p><code>source/_posts/YYYY-MM-DD-blogging-basics.markdown</code> 파일이 맨들어짐</p>
+
+<pre><code>---
+layout: post
+title: "Blogging basics"
+date: 2011-10-27 04:38
+comments: true
+categories: octopress               # 여러개도 가능함   ex: [one, two, three]
+published: false                    # optional for draft
+author: [Yongbin Yu, Keedi Kim]     # optional for multiple author
+---
+</code></pre>
+
+<p><code>.markdown</code> 대신에 <code>.html</code> 로도 맨들 수 있음</p>
+
+<h3>generate, preview and deploy</h3>
+
+<pre><code>rake generate
+rake watch
+rake preview    # http://localhost:4000/
+</code></pre>
+
+<p><a href="http://pow.cx/">POW</a> 라는 것도 이용할 수 있는가 보네 멋진뎅</p>
+
+<pre><code>rake deploy
+git add .                       # 여기부턴 optional, 하는게 좋겟지
+git cm -am "what the commit"
+git push origin source
+</code></pre>
+
+<p><code>source/_posts/YYYY-MM-DD-blogging-basics.markdown</code> 의 전체 내용</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>---
+</span><span class='line'>layout: post
+</span><span class='line'>title: "Blogging basics"
+</span><span class='line'>date: 2011-10-27 04:38
+</span><span class='line'>comments: true
+</span><span class='line'>categories: octopress
+</span><span class='line'>---
+</span><span class='line'>
+</span><span class='line'>- [http://octopress.org/docs/](http://octopress.org/docs/)
+</span><span class='line'>- [http://octopress.org/docs/blogging/](http://octopress.org/docs/blogging/)
+</span><span class='line'>- [http://octopress.org/docs/configuring/](http://octopress.org/docs/configuring/)
+</span><span class='line'>- [http://octopress.org/docs/deploying/](http://octopress.org/docs/deploying/)
+</span><span class='line'>
+</span><span class='line'>### new post
+</span><span class='line'>
+</span><span class='line'>    rake new_post["Blogging basics"]
+</span><span class='line'>
+</span><span class='line'>`source/_posts/YYYY-MM-DD-blogging-basics.markdown` 파일이 맨들어짐
+</span><span class='line'>
+</span><span class='line'>    ---
+</span><span class='line'>    layout: post
+</span><span class='line'>    title: "Blogging basics"
+</span><span class='line'>    date: 2011-10-27 04:38
+</span><span class='line'>    comments: true
+</span><span class='line'>    categories: octopress               # 여러개도 가능함   ex: [one, two, three]
+</span><span class='line'>    published: false                    # optional for draft
+</span><span class='line'>    author: [Yongbin Yu, Keedi Kim]     # optional for multiple author
+</span><span class='line'>    ---
+</span><span class='line'>
+</span><span class='line'>`.markdown` 대신에 `.html` 로도 맨들 수 있음
+</span><span class='line'>
+</span><span class='line'>### generate, preview and deploy
+</span><span class='line'>
+</span><span class='line'>    rake generate
+</span><span class='line'>    rake watch
+</span><span class='line'>    rake preview    # http://localhost:4000/
+</span><span class='line'>
+</span><span class='line'>[POW](http://pow.cx/) 라는 것도 이용할 수 있는가 보네 멋진뎅
+</span><span class='line'>
+</span><span class='line'>    rake deploy
+</span><span class='line'>    git add .                       # 여기부턴 optional, 하는게 좋겟지
+</span><span class='line'>    git cm -am "what the commit"
+</span><span class='line'>    git push origin source</span></code></pre></td></tr></table></div></figure>
+
+]]></content>
+  </entry>
   
-    <a href="http://twitter.com/aanoaa" class="twitter-follow-button" data-show-count="false">Follow @aanoaa</a>
+  <entry>
+    <title type="html"><![CDATA[hello world]]></title>
+    <link href="http://aanoaa.github.com/blog/2011/10/27/hello-world/"/>
+    <updated>2011-10-27T04:16:00+09:00</updated>
+    <id>http://aanoaa.github.com/blog/2011/10/27/hello-world</id>
+    <content type="html"><![CDATA[<h1>hello world</h1>
+
+<blockquote><p>hello world</p></blockquote>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='perl'><span class='line'><span class="c1">#!/usr/bin/env perl</span>
+</span><span class='line'><span class="k">print</span> <span class="s">&quot;hello world\n&quot;</span><span class="p">;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+]]></content>
+  </entry>
   
-</section>
-
-
-
-
-
-  
-</aside>
-
-    </div>
-  </div>
-  <footer role="contentinfo"><p>
-  Copyright &copy; 2013 - Hyungsuk Hong -
-  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
-</p>
-
-</footer>
-  
-
-<script type="text/javascript">
-      var disqus_shortname = 'aanoaa-mustache';
-      
-        
-        var disqus_script = 'count.js';
-      
-    (function () {
-      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
-      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    }());
-</script>
-
-
-
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) {return;}
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
-
-
-
-
-
-  <script type="text/javascript">
-    (function(){
-      var twitterWidgets = document.createElement('script');
-      twitterWidgets.type = 'text/javascript';
-      twitterWidgets.async = true;
-      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
-      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
-    })();
-  </script>
-
-
-
-
-
-</body>
-</html>
+</feed>

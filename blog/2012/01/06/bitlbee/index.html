@@ -1,0 +1,343 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>bitlbee - Mustache :{</title>
+  <meta name="author" content="Hyungsuk Hong">
+
+  
+  <meta name="description" content="근데 제가 BitlBee 를
+사용하는 이유는 바로 이겁니다. BitlBee brings IM (instant messaging) to IRC clients. It&#8217;s a great
+solution for people who have an IRC client &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://aanoaa.github.com/blog/2012/01/06/bitlbee/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="Mustache :{" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Mustache :{</a></h1>
+  
+    <h2>use perl</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:aanoaa.github.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Bitlbee</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-01-06T18:49:00+09:00" pubdate data-updated="true">Jan 6<span>th</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>근데 제가 <a href="http://www.bitlbee.org/main.php/news.r.html">BitlBee</a> 를
+사용하는 이유는 바로 이겁니다.</p>
+
+<blockquote><p>BitlBee brings IM (instant messaging) to IRC clients. It&#8217;s a great
+solution for people who have an IRC client running all the time and
+don&#8217;t want to run an additional MSN/AIM/whatever client.</p></blockquote>
+
+<p>irc client 로는 emacs <a href="http://www.emacswiki.org/emacs/ERC">erc</a> 를
+사용합니다.</p>
+
+<p>메신져는 <a href="http://www.google.com/talk/">gtalk</a> 을 씁니다.</p>
+
+<p>꼭 erc 를 사용하지 않더라도 bitlbee 를 통해, 선호하는 irc client
+안에서 IM 서비스를 이용할 수 있습니다.</p>
+
+<h2>설치</h2>
+
+<p>우분투에서..</p>
+
+<pre><code>$ sudo apt-get install bitlbee
+</code></pre>
+
+<h2>사용</h2>
+
+<ul>
+<li>irc client 설정파일에 localhost:6667 에 연결하도록 추가합니다.</li>
+<li>접속합니다.</li>
+<li><p>&amp;bitlbee 버퍼에 다음과 같이 설정합니다.</p>
+
+<pre><code>  ERC&gt; account add jabber username@gmail.com mypasswd talk.google.com:5223:ssl
+  ERC&gt; save
+</code></pre></li>
+</ul>
+
+
+<p>안될수도 있습니다.
+저도 예전에 한번 설정하고 까먹엇거든요.
+검색해서 잘 해보세요</p>
+
+<p>아무튼 접속되었으면 <code>ERC&gt; /query ID</code> 해서 슥슥
+대화합니다. 편리합니다. 좋습니다.</p>
+
+<p>누가 말시키면 그냥 버퍼 나뉘어져서 바로 보여요</p>
+
+<p><img src="http://www.bitlbee.org/img/comic_3.0.png" alt="comic" /></p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Hyungsuk Hong</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-01-06T18:49:00+09:00" pubdate data-updated="true">Jan 6<span>th</span>, 2012</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/bitlbee/'>BitlBee</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://aanoaa.github.com/blog/2012/01/06/bitlbee/" data-via="aanoaa" data-counturl="http://aanoaa.github.com/blog/2012/01/06/bitlbee/" >Tweet</a>
+  
+  
+  
+    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2012/01/06/org-mode/" title="Previous Post: org-mode">&laquo; org-mode</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2012/02/27/backbon-dot-js-jsonp-collection-sync/" title="Next Post: backbon.js jsonp collection sync">backbon.js jsonp collection sync &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/12/20/coffeescript-compile-args/">coffeescript-compile-args</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/06/10/p5-hubot-onto-heroku/">p5-hubot onto heroku</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/10/04/p5-hubot/">p5-hubot</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/09/12/tidyall/">tidyall</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/09/11/git-push-force/">git push --force</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/aanoaa">@aanoaa</a> on GitHub
+  
+  <script type="text/javascript">
+    $.domReady(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'aanoaa',
+            count: 5,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+<section>
+  <h1>Latest Tweets</h1>
+  <ul id="tweets">
+    <li class="loading">Status updating...</li>
+  </ul>
+  <script type="text/javascript">
+    $.domReady(function(){
+      getTwitterFeed("aanoaa", 4, false);
+    });
+  </script>
+  <script src="/javascripts/twitter.js" type="text/javascript"> </script>
+  
+    <a href="http://twitter.com/aanoaa" class="twitter-follow-button" data-show-count="false">Follow @aanoaa</a>
+  
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2013 - Hyungsuk Hong -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'aanoaa-mustache';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://aanoaa.github.com/blog/2012/01/06/bitlbee/';
+        var disqus_url = 'http://aanoaa.github.com/blog/2012/01/06/bitlbee/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

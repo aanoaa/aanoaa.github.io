@@ -1,0 +1,487 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>p5-hubot - Mustache :{</title>
+  <meta name="author" content="Hyungsuk Hong">
+
+  
+  <meta name="description" content="p5-hubot scipts explained 필요해서 hubot 을 perl 로 옮기고
+있습니다. - p5-hubot 아직 해야할 일이 많지만 테스트 + 문서화를 해서
+CPAN 에 올릴 생각입니다. hubot-scripts contributors
+는 100명이 &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://aanoaa.github.com/blog/2012/10/04/p5-hubot/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="Mustache :{" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Mustache :{</a></h1>
+  
+    <h2>use perl</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:aanoaa.github.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">P5-hubot</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-10-04T15:30:00+09:00" pubdate data-updated="true">Oct 4<span>th</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><h3>p5-hubot scipts explained</h3>
+
+<p>필요해서 <a href="https://github.com/github/hubot">hubot</a> 을 <code>perl</code> 로 옮기고
+있습니다. - <a href="https://github.com/aanoaa/p5-hubot">p5-hubot</a></p>
+
+<p>아직 해야할 일이 많지만 테스트 + 문서화를 해서
+<a href="http://search.cpan.org/">CPAN</a> 에 올릴 생각입니다.</p>
+
+<p><a href="https://github.com/github/hubot-scripts/graphs/contributors">hubot-scripts contributors</a>
+는 100명이 넘습니다.</p>
+
+<p><code>p5-hubot</code> 도 도움을 받아서 멋진 기능을 장착하고 싶습니다.</p>
+
+<p><a href="http://search.cpan.org/">CPAN</a> 에 <code>Hubot::Scripts::*</code> 모듈이
+많아지면 좋겠습니다.</p>
+
+<p>robot 에게 <code>http://twitter.com/&lt;username&gt;/status/&lt;tweetid&gt;</code> 의 패턴이
+들리면 그 내용을 파싱해서 말하는 스크립트 입니다.</p>
+
+<figure class='code'><figcaption><span>Hubot::Scripts::tweet</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+<span class='line-number'>45</span>
+</pre></td><td class='code'><pre><code class='perl'><span class='line'><span class="nb">package</span> <span class="nn">Hubot::Scripts::</span><span class="n">tweet</span><span class="p">;</span>
+</span><span class='line'><span class="k">use</span> <span class="n">strict</span><span class="p">;</span>
+</span><span class='line'><span class="k">use</span> <span class="n">warnings</span><span class="p">;</span>
+</span><span class='line'><span class="k">use</span> <span class="nn">JSON::</span><span class="n">XS</span><span class="p">;</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">sub </span><span class="nf">load</span> <span class="p">{</span>
+</span><span class='line'>    <span class="k">my</span> <span class="p">(</span> <span class="nv">$class</span><span class="p">,</span> <span class="nv">$robot</span> <span class="p">)</span> <span class="o">=</span> <span class="nv">@_</span><span class="p">;</span>
+</span><span class='line'>    <span class="nv">$robot</span><span class="o">-&gt;</span><span class="n">hear</span><span class="p">(</span>
+</span><span class='line'>        <span class="sx">qr/https?:\/</span><span class="o">\</span><span class="sr">/(mobile\.)?twitter\.com\/.*?\/status\/([0-9]+)/i</span><span class="p">,</span>
+</span><span class='line'>        <span class="k">sub </span><span class="p">{</span>
+</span><span class='line'>            <span class="k">my</span> <span class="nv">$msg</span> <span class="o">=</span> <span class="nb">shift</span><span class="p">;</span>    <span class="c1"># Hubot::Response</span>
+</span><span class='line'>            <span class="nv">$msg</span><span class="o">-&gt;</span><span class="n">http</span><span class="p">(</span> <span class="s">&#39;https://api.twitter.com/1/statuses/show/&#39;</span>
+</span><span class='line'>                  <span class="o">.</span> <span class="nv">$msg</span><span class="o">-&gt;</span><span class="n">match</span><span class="o">-&gt;</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+</span><span class='line'>                  <span class="o">.</span> <span class="s">&#39;.json&#39;</span> <span class="p">)</span><span class="o">-&gt;</span><span class="n">get</span><span class="p">(</span>
+</span><span class='line'>                <span class="k">sub </span><span class="p">{</span>
+</span><span class='line'>                    <span class="k">my</span> <span class="p">(</span> <span class="nv">$body</span><span class="p">,</span> <span class="nv">$hdr</span> <span class="p">)</span> <span class="o">=</span> <span class="nv">@_</span><span class="p">;</span>
+</span><span class='line'>                    <span class="k">return</span> <span class="k">if</span> <span class="p">(</span> <span class="o">!</span><span class="nv">$body</span> <span class="o">||</span> <span class="o">!</span><span class="nv">$hdr</span><span class="o">-&gt;</span><span class="p">{</span><span class="n">Status</span><span class="p">}</span> <span class="o">=~</span><span class="sr"> /^2/</span> <span class="p">);</span>
+</span><span class='line'>                    <span class="k">my</span> <span class="nv">$tweet</span> <span class="o">=</span> <span class="n">decode_json</span><span class="p">(</span><span class="nv">$body</span><span class="p">);</span>
+</span><span class='line'>                    <span class="nv">$msg</span><span class="o">-&gt;</span><span class="nb">send</span><span class="p">(</span><span class="s">&quot;$tweet-&gt;{user}{screen_name}: $tweet-&gt;{text}&quot;</span><span class="p">);</span>
+</span><span class='line'>                <span class="p">}</span>
+</span><span class='line'>                  <span class="p">);</span>
+</span><span class='line'>            <span class="nv">$msg</span><span class="o">-&gt;</span><span class="n">message</span><span class="o">-&gt;</span><span class="n">finish</span><span class="p">;</span>
+</span><span class='line'>        <span class="p">}</span>
+</span><span class='line'>    <span class="p">);</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="mi">1</span><span class="p">;</span>
+</span><span class='line'>
+</span><span class='line'><span class="cm">=head1 SYNOPSIS</span>
+</span><span class='line'>
+</span><span class='line'><span class="cm">http://twitter.com/&lt;username&gt;/status/&lt;tweetid&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="cm">=head1 DEPENDENCIES</span>
+</span><span class='line'>
+</span><span class='line'><span class="cm">None</span>
+</span><span class='line'>
+</span><span class='line'><span class="cm">=head1 CONFIGURATION</span>
+</span><span class='line'>
+</span><span class='line'><span class="cm">None</span>
+</span><span class='line'>
+</span><span class='line'><span class="cm">=head1 AUTHOR</span>
+</span><span class='line'>
+</span><span class='line'><span class="cm">Hyungsuk Hong</span>
+</span><span class='line'>
+</span><span class='line'><span class="cm">=cut</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<figure class='code'><figcaption><span>tweet.coffee</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+</pre></td><td class='code'><pre><code class='coffee-script'><span class='line'><span class="c1"># Description:</span>
+</span><span class='line'><span class="c1">#   Detect tweet URL and send tweet content</span>
+</span><span class='line'><span class="c1">#</span>
+</span><span class='line'><span class="c1"># Dependencies:</span>
+</span><span class='line'><span class="c1">#   None</span>
+</span><span class='line'><span class="c1">#</span>
+</span><span class='line'><span class="c1"># Configuration:</span>
+</span><span class='line'><span class="c1">#   None</span>
+</span><span class='line'><span class="c1">#</span>
+</span><span class='line'><span class="c1"># Commands:</span>
+</span><span class='line'><span class="c1">#</span>
+</span><span class='line'><span class="c1"># Author:</span>
+</span><span class='line'><span class="c1">#   Vrtak-CZ</span>
+</span><span class='line'>
+</span><span class='line'><span class="nv">module.exports = </span><span class="nf">(robot) -&gt;</span>
+</span><span class='line'>  <span class="nx">robot</span><span class="p">.</span><span class="nx">hear</span> <span class="sr">/https?:\/\/(mobile\.)?twitter\.com\/.*?\/status\/([0-9]+)/i</span><span class="p">,</span> <span class="nf">(msg) -&gt;</span>
+</span><span class='line'>      <span class="nx">msg</span><span class="p">.</span><span class="nx">http</span><span class="p">(</span><span class="s">&quot;https://api.twitter.com/1/statuses/show/</span><span class="si">#{</span><span class="nx">msg</span><span class="p">.</span><span class="nx">match</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="si">}</span><span class="s">.json&quot;</span><span class="p">).</span><span class="nx">get</span><span class="p">()</span> <span class="nf">(err, res, body) -&gt;</span>
+</span><span class='line'>          <span class="k">return</span> <span class="k">if</span> <span class="nx">err</span> <span class="o">or</span> <span class="p">(</span><span class="nx">res</span><span class="p">.</span><span class="nx">statusCode</span> <span class="o">!=</span> <span class="mi">200</span><span class="p">)</span>
+</span><span class='line'>
+</span><span class='line'>          <span class="nv">tweet = </span><span class="nx">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">body</span><span class="p">)</span>
+</span><span class='line'>
+</span><span class='line'>          <span class="nx">msg</span><span class="p">.</span><span class="nx">send</span> <span class="s">&quot;@</span><span class="si">#{</span><span class="nx">tweet</span><span class="p">.</span><span class="nx">user</span><span class="p">.</span><span class="nx">screen_name</span><span class="si">}</span><span class="s">: </span><span class="si">#{</span><span class="nx">tweet</span><span class="p">.</span><span class="nx">text</span><span class="si">}</span><span class="s">&quot;</span>
+</span><span class='line'>        <span class="nx">msg</span><span class="p">.</span><span class="nx">message</span><span class="p">.</span><span class="nx">finish</span><span class="p">()</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li><code>robot.hear /foo/</code>: <code>foo</code> 가 들리면 반응합니다.</li>
+<li><code>robot.respond /foo/</code>: <code>hubot: foo</code> 에 반응합니다.</li>
+<li><code>robot.send 'hi'</code>: 로봇이 <code>hi</code> 라고 합니다.</li>
+<li><code>robot.reply 'hi'</code>: 로봇이 말건사람한테 <code>&lt;user&gt;: hi</code> 라고 합니다.</li>
+</ul>
+
+
+<p>요거 4개의 기능만 알면 스크립트를 작성하긴 쉽습니다.</p>
+
+<p>저희회사에서는 이걸 이용해서
+<a href="https://github.com/miyagawa/hubot-standup">standup-meeting</a> 도 하고
+그럽니다.</p>
+
+<p>우선 아이디어가 있으면 남겨주세요.</p>
+
+<p>테스트환경구축이랑 의존성문제는 해결해서 다시 포스팅하겠습니다.</p>
+
+<h3>SEE ALSO</h3>
+
+<ul>
+<li><a href="http://silexkr.github.com/blog/2012/02/21/irc-bot/">irc-bot</a></li>
+<li><a href="http://theprogrammingbutler.com/blog/archives/2011/10/28/hubot-scripts-explained/">hubot Scripts Explained</a></li>
+</ul>
+
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Hyungsuk Hong</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-10-04T15:30:00+09:00" pubdate data-updated="true">Oct 4<span>th</span>, 2012</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/hubot/'>hubot</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://aanoaa.github.com/blog/2012/10/04/p5-hubot/" data-via="aanoaa" data-counturl="http://aanoaa.github.com/blog/2012/10/04/p5-hubot/" >Tweet</a>
+  
+  
+  
+    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2012/09/12/tidyall/" title="Previous Post: tidyall">&laquo; tidyall</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2013/06/10/p5-hubot-onto-heroku/" title="Next Post: p5-hubot onto heroku">p5-hubot onto heroku &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/12/20/coffeescript-compile-args/">coffeescript-compile-args</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/06/10/p5-hubot-onto-heroku/">p5-hubot onto heroku</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/10/04/p5-hubot/">p5-hubot</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/09/12/tidyall/">tidyall</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/09/11/git-push-force/">git push --force</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/aanoaa">@aanoaa</a> on GitHub
+  
+  <script type="text/javascript">
+    $.domReady(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'aanoaa',
+            count: 5,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+<section>
+  <h1>Latest Tweets</h1>
+  <ul id="tweets">
+    <li class="loading">Status updating...</li>
+  </ul>
+  <script type="text/javascript">
+    $.domReady(function(){
+      getTwitterFeed("aanoaa", 4, false);
+    });
+  </script>
+  <script src="/javascripts/twitter.js" type="text/javascript"> </script>
+  
+    <a href="http://twitter.com/aanoaa" class="twitter-follow-button" data-show-count="false">Follow @aanoaa</a>
+  
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2013 - Hyungsuk Hong -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'aanoaa-mustache';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://aanoaa.github.com/blog/2012/10/04/p5-hubot/';
+        var disqus_url = 'http://aanoaa.github.com/blog/2012/10/04/p5-hubot/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>
