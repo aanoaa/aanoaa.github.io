@@ -4,7 +4,7 @@
   <title><![CDATA[Mustache :{]]></title>
   <link href="http://aanoaa.github.io/atom.xml" rel="self"/>
   <link href="http://aanoaa.github.io/"/>
-  <updated>2013-12-20T10:23:08+09:00</updated>
+  <updated>2013-12-23T18:30:40+09:00</updated>
   <id>http://aanoaa.github.io/</id>
   <author>
     <name><![CDATA[Hyungsuk Hong]]></name>
@@ -12,6 +12,69 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Private Git Repo With Dropbox]]></title>
+    <link href="http://aanoaa.github.io/blog/2013/12/23/private-git-repo-with-dropbox/"/>
+    <updated>2013-12-23T18:18:35+09:00</updated>
+    <id>http://aanoaa.github.io/blog/2013/12/23/private-git-repo-with-dropbox</id>
+    <content type="html"><![CDATA[<p>개인적인 private repo 는 bitbucket 을 사용하고 있었는데, 아래 링크를
+보고 Dropbox 를 사용하고 있습니다.</p>
+
+<p><a href="http://mrdanadams.com/2011/github-free-private-git-repositories-dropbox/">Forget github limits: Free private git repositories with Dropbox</a></p>
+
+<p>근데 아쉬운거는 github repo 에는 issue board 도 있어서 프로젝트별로
+할일을 관리할 수 있어서 참 좋은데 그런 기능이 필요했습니다.</p>
+
+<p>해서 둘러보던 차에 <a href="http://todotxt.com/">Todo.txt</a> CLI 를 사용해보고
+있습니다.</p>
+
+<pre><code># todo.cfg
+export TODO_DIR=$HOME/Dropbox/todo/`basename $PWD`
+alias t=todo.sh
+</code></pre>
+
+<p>요래해서 사용중입니다.</p>
+
+<p>프로젝트 root 에서 밖에 사용못하고 이름 중복에 대응할 순 없지만 아주
+만족합니다.</p>
+
+<p><code>Dropbox</code>++, <code>Todo.txt</code>++</p>
+
+<pre><code>$ cd ~/Desktop/t
+$ t add '요래 조래'
+1 요래 조래
+TODO: 1 added.
+~/Desktop/t $ t add '이러쿵 저러쿵'
+2 이러쿵 저러쿵
+TODO: 2 added.
+~/Desktop/t $ t add '어쩌고 저쩌고'
+3 어쩌고 저쩌고
+TODO: 3 added.
+~/Desktop/t $ t ls
+3 어쩌고 저쩌고
+1 요래 조래
+2 이러쿵 저러쿵
+--
+TODO: 3 of 3 tasks shown
+~/Desktop/t $ t do 3
+3 x 2013-12-23 어쩌고 저쩌고
+TODO: 3 marked as done.
+x 2013-12-23 어쩌고 저쩌고
+TODO: /home/hshong/Dropbox/todo/t/todo.txt archived.
+~/Desktop/t $ t ls
+1 요래 조래
+2 이러쿵 저러쿵
+--
+TODO: 2 of 2 tasks shown
+</code></pre>
+
+<p>뭐 대략 이런느낌</p>
+
+<p>Dropbox 에서 동기화 되기 땜시 다른 PC 로 옮겨서도 같은 프로젝트에서
+같은 TODO list 를 관리할 수 있다는게 좋은 것 같습니다.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Coffeescript-compile-args]]></title>
