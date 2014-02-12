@@ -4,7 +4,7 @@
   <title><![CDATA[Mustache :{]]></title>
   <link href="http://aanoaa.github.io/atom.xml" rel="self"/>
   <link href="http://aanoaa.github.io/"/>
-  <updated>2013-12-23T18:30:40+09:00</updated>
+  <updated>2014-02-12T17:38:37+09:00</updated>
   <id>http://aanoaa.github.io/</id>
   <author>
     <name><![CDATA[Hyungsuk Hong]]></name>
@@ -12,6 +12,120 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Keep Simple dist.ini]]></title>
+    <link href="http://aanoaa.github.io/blog/2014/02/12/keep-simple-dist-dot-ini/"/>
+    <updated>2014-02-12T17:20:06+09:00</updated>
+    <id>http://aanoaa.github.io/blog/2014/02/12/keep-simple-dist-dot-ini</id>
+    <content type="html"><![CDATA[<p><a href="http://search.cpan.org/~rjbs/Dist-Zilla/lib/Dist/Zilla.pm">Dist::Zilla</a>
+는 매우 편리한 배포도구 입니다.</p>
+
+<p>기능이 넘 많아서 잘 모르고 써왔는데, 이게 뭔지도 모르는걸 쓰다보니
+헛갈려서 요새는 레알 간단하게만 쓰고 있습니다.</p>
+
+<p>갠적으로 딱 필요한 메타파일은 이거 3개 입니다.</p>
+
+<ul>
+<li>dist.ini</li>
+<li>MANIFEST.SKIP</li>
+<li>cpanfile</li>
+</ul>
+
+
+<p><code>cpanfile</code> 이 없을적에는 <code>Makefile.PL</code> 로 부터 의존성문제를 해결했기
+때문에 복잡했는데 이제는 <code>cpanm --installdeps .</code> 덕분에 몹.시.편.리.</p>
+
+<p>배포할때 빼고 싶은 파일은 <code>MANIFEST.SKIP</code> 에 적어주고, <code>dist.ini</code> 로
+build 하고 배포</p>
+
+<p>좋은 플러그인이 많은데 나중되면 어케 쓰는지도 몰겟고 의존성문제로 인해
+불편하기도 해서 그냥 자잘구레한 작업은 직접 손으로 하는걸로..</p>
+
+<p><code>dist.ini</code></p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class='ini'><span class='line'><span class="na">name</span> <span class="o">=</span> <span class="s">mymodule</span>
+</span><span class='line'><span class="na">abstract</span> <span class="o">=</span> <span class="s">wat</span>
+</span><span class='line'><span class="na">author</span> <span class="o">=</span> <span class="s">aanoaa &lt;wat@wat.wat&gt;</span>
+</span><span class='line'><span class="na">license</span> <span class="o">=</span> <span class="s">Perl_5</span>
+</span><span class='line'><span class="na">copyright_holder</span> <span class="o">=</span> <span class="s">aanoaa</span>
+</span><span class='line'><span class="na">copyright_year</span> <span class="o">=</span> <span class="s">2014</span>
+</span><span class='line'><span class="na">version</span> <span class="o">=</span> <span class="s">v0.0.1</span>
+</span><span class='line'><span class="k">[@Basic]</span>
+</span><span class='line'><span class="k">[PkgVersion]</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p><code>MANIFEST.SKIP</code></p>
+
+<pre><code># Makemaker generated files and dirs.
+^MANIFEST\.
+^Makefile$
+^blib/
+
+# version-control
+^.git/
+^.gitignore
+
+^dist.ini
+^README.md
+</code></pre>
+
+<p>이렇게 쓰고 있습니다.
+제일 간단한 설정이라고 생각합니다.</p>
+
+<p>전에는 dzil profile 같은 것도 만들고 그랬는데 이제는 그냥 예전거
+복사해다 쓰고 그럽니다.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Shut the Fuck Up and Perltidy]]></title>
+    <link href="http://aanoaa.github.io/blog/2014/02/12/shut-the-fuck-up-and-perltidy/"/>
+    <updated>2014-02-12T17:07:08+09:00</updated>
+    <id>http://aanoaa.github.io/blog/2014/02/12/shut-the-fuck-up-and-perltidy</id>
+    <content type="html"><![CDATA[<p><code>$HOME/.perltidyrc</code></p>
+
+<pre><code># https://github.com/kraih/mojo/blob/master/.perltidyrc
+-pbp # Start with Perl Best Practices
+-w # Show all warnings
+-iob # Ignore old breakpoints
+-l=79 # 79 characters per line
+-mbl=2 # No more than 2 blank lines
+-i=4 # Indentation is 4 columns
+-ci=2 # Continuation indentation is 2 columns
+-vt=0 # Less vertical tightness
+-pt=2 # High parenthesis tightness
+-bt=2 # High brace tightness
+-sbt=2 # High square bracket tightness
+-isbc # Don't indent comments without leading space
+</code></pre>
+
+<p>여기에 emacs 에다가
+<a href="http://search.cpan.org/~jjore/perltidy-mode/">perltidy-mode.el</a> load
+하고</p>
+
+<pre><code>(eval-after-load "cperl-mode"
+  '(add-hook 'cperl-mode-hook 'perltidy-mode))
+</code></pre>
+
+<p>하고 저장하면 저장할때마다 알아서 <code>perltidy</code> 되기 땜시 굳입니다
+팀에서 통일해서 쓰면 좋겟습니다.</p>
+
+<h3>SEE ALSO</h3>
+
+<p><a href="http://aanoaa.github.io/blog/2012/09/12/tidyall/">tidyall</a></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Private Git Repo With Dropbox]]></title>
