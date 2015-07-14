@@ -4,7 +4,7 @@
   <title><![CDATA[Mustache :{]]></title>
   <link href="http://aanoaa.github.io/atom.xml" rel="self"/>
   <link href="http://aanoaa.github.io/"/>
-  <updated>2015-07-14T15:40:24+09:00</updated>
+  <updated>2015-07-14T15:53:43+09:00</updated>
   <id>http://aanoaa.github.io/</id>
   <author>
     <name><![CDATA[Hyungsuk Hong]]></name>
@@ -12,6 +12,20 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Octopress 3.0]]></title>
+    <link href="http://aanoaa.github.io/blog/2015/07/14/octopress-3-dot-0/"/>
+    <updated>2015-07-14T15:51:02+09:00</updated>
+    <id>http://aanoaa.github.io/blog/2015/07/14/octopress-3-dot-0</id>
+    <content type="html"><![CDATA[<p>블로그에 글을 1년 넘게 안썻더니 어케 쓰는줄 모르겠음.
+하는김에 octopress 도 업그레이드</p>
+
+<p>이제 <code>gh-pages</code> 브랜치 아니어도 되는건가..</p>
+
+<p>아 몰랑</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Keep Simple dist.ini]]></title>
@@ -2066,24 +2080,6 @@ git push origin source
 </span><span class='line'>    git add .                       # 여기부턴 optional, 하는게 좋겟지
 </span><span class='line'>    git cm -am "what the commit"
 </span><span class='line'>    git push origin source</span></code></pre></td></tr></table></div></figure>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Hello World]]></title>
-    <link href="http://aanoaa.github.io/blog/2011/10/27/hello-world/"/>
-    <updated>2011-10-27T04:16:00+09:00</updated>
-    <id>http://aanoaa.github.io/blog/2011/10/27/hello-world</id>
-    <content type="html"><![CDATA[<h1>hello world</h1>
-
-<blockquote><p>hello world</p></blockquote>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class='perl'><span class='line'><span class="c1">#!/usr/bin/env perl</span>
-</span><span class='line'><span class="k">print</span> <span class="s">&quot;hello world\n&quot;</span><span class="p">;</span>
-</span></code></pre></td></tr></table></div></figure>
 
 ]]></content>
   </entry>
