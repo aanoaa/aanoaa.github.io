@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Hubot | Mustache :{]]></title>
+  <link href="http://aanoaa.github.io/blog/categories/hubot/atom.xml" rel="self"/>
+  <link href="http://aanoaa.github.io/"/>
+  <updated>2015-07-14T15:40:24+09:00</updated>
+  <id>http://aanoaa.github.io/</id>
+  <author>
+    <name><![CDATA[Hyungsuk Hong]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[P5-hubot Onto Heroku]]></title>
+    <link href="http://aanoaa.github.io/blog/2013/06/10/p5-hubot-onto-heroku/"/>
+    <updated>2013-06-10T17:31:00+09:00</updated>
+    <id>http://aanoaa.github.io/blog/2013/06/10/p5-hubot-onto-heroku</id>
+    <content type="html"><![CDATA[<p>오리지날 <a href="https://github.com/github/hubot">hubot</a> 에는
+<a href="https://www.heroku.com/">heroku</a> 어쩌고 저쩌고 하는 기능이 있습니다.</p>
+
+<p>이제 <a href="https://github.com/aanoaa/p5-hubot">p5-hubot</a> 에서도 됩니다.</p>
+
+<h3>OVERVIEW</h3>
+
+<pre><code class="bash">$ cpanm Hubot                      # requires Hubot &gt;= 0.2.0
+$ hubot --create /path/to/hubot    # 배치가능한 형태의 패키지 저장소를 생성합니다
+$ cd /path/to/hubot
+$ git init ; git add . ; git commit -m "init commit"
+
+$ heroku create --stack cedar --buildpack https://github.com/aanoaa/heroku-buildpack-perl.git
+
+$ heroku config:add HEROKU_URL=http://your-herokuapp.herokuapp.com
+$ heroku config:add HUBOT_IRC_ROOMS='#channel'
+$ heroku config:add HUBOT_IRC_SERVER='irc.freenode.net'
+
+$ git push heroku master
+</code></pre>
+
+<p>가장 기본은 이렇습니다만, 확장 스크립트를 추가하시려면
+<code>hubot-scripts.json</code> 파일에 적어주시고 그에 따른 모듈 의존성은
+<code>cpanfile</code> 에 적어서 해결해야 합니다.</p>
+
+<h3>CREATE A DEPLOYABLE HUBOT</h3>
+
+<p><a href="http://search.cpan.org/">CPAN</a> 을 이용한다면,</p>
+
+<pre><code>$ cpanm Hubot
+$ hubot -c ~/Desktop/hubot
+</code></pre>
+
+<p>명령어로 deploy 저장소를 만들 수 있습니다.</p>
+
+<pre><code>$ cd ~/Desktop/hubot/
+~/Desktop/hubot $ find
+.
+./.gitignore
+./cpanfile
+./hubot-scripts.json
+./bin
+./bin/hubot
+./README.md
+./lib
+./lib/Hubot
+./lib/Hubot/EventEmitter.pm
+./lib/Hubot/Scripts
+./lib/Hubot/Scripts/help.pm
+./lib/Hubot/Scripts/ascii.pm
+./lib/Hubot/Scripts/shorten.pm
+./lib/Hubot/Scripts/tweet.pm
+./lib/Hubot/Scripts/roles.pm
+./lib/Hubot/Response.pm
+./lib/Hubot/Robot.pm
+./lib/Hubot/User.pm
+./lib/Hubot/Adapter.pm
+./lib/Hubot/TextListener.pm
+./lib/Hubot/Listener.pm
+./lib/Hubot/Adapter
+./lib/Hubot/Adapter/Irc.pm
+./lib/Hubot/Adapter/Shell.pm
+./lib/Hubot/Adapter/Campfire.pm
+./lib/Hubot/Message.pm
+./lib/Hubot/Brain.pm
+./lib/Hubot/Creator.pm
+./lib/Hubot.pm
+./Procfile
+</code></pre>
+
+<p>이 디렉토리를 git 저장소로 만들고요, <code>heroku</code> tool 을 사용해서 heroku
+에서 돌아갈 서비스 저장소로 만듭니다.</p>
+
+<p><code>Procfile</code> 은 heroku 에서 사용하는 process 타입별로 실행 명령어를
+담고 있는 어쩌고 저쩌고;;
+<a href="https://devcenter.heroku.com/articles/procfile">Process Types and the Procfile</a></p>
+
+<p><code>cpanfile</code> 은 모듈의존성을 해결하기 위해 꼭 필요합니다. 그렇지 않으면
+아래와 비슷한 오류가 발생되면서 프로그램이 실행되지 않습니다.</p>
+
+<pre><code>Can't locate xxx.pm in @INC (@INC contains: ~~~) at line 1.
+</code></pre>
+
+<p>나머지는 p5-hubot core 모듈입니다.(서비스엔 필요없는것도 잇지만..)</p>
+
+<h3>CREATE A HEROKU INSTANCE?</h3>
+
+<pre><code>$ heroku create --stack cedar --buildpack https://github.com/aanoaa/heroku-buildpack-perl.git
+</code></pre>
+
+<p><code>heroku</code> 라는 <code>remote</code> 를 등록하고 <code>BUILDPACK_URL</code> 설정변수를 추가하는
+것 정도가 아닐까 추측 합니다.</p>
+
+<p>BUILDPACK_URL 은 git 저장소인데,</p>
+
+<ul>
+<li><code>bin/detect</code></li>
+<li><code>bin/compile</code></li>
+<li><code>bin/release</code></li>
+</ul>
+
+
+<p>를 가지고 있습니다. 자세한 내용은
+<a href="https://devcenter.heroku.com/articles/buildpacks#creating-a-buildpack">Creating a Buildpack</a>
+을 참고하시고, 이부분의 매직은 <code>bin/compile</code> 이 수행될때 <code>cpanm</code> 을
+이용해서 <code>./local</code> 에 의존모듈을 설치합니다. 그리고 실행할때에
+<code>-Ilocal/perl5/lib</code> <code>PERL5LIB</code> 에 추가합니다. 풀어쓰면 아래와
+같습니다.</p>
+
+<pre><code>$ cpanm --quiet --notest -l $BUILD_DIR/local --installdeps .
+</code></pre>
+
+<p><a href="https://twitter.com/miyagawa">@miyagawa</a>++ 입니다.</p>
+
+<p>그리고 heroku 에 push 하면 알아서 돌아갑니다(별일 없으면..)</p>
+
+<h3>SEE ALSO</h3>
+
+<ul>
+<li><a href="https://github.com/github/hubot/wiki/Deploying-Hubot-onto-Heroku">Deploying Hubot onto Heroku</a></li>
+<li><a href="https://github.com/aanoaa/heroku-buildpack-perl">heroku-buildpack-perl for Perl/hubot</a></li>
+<li><a href="https://devcenter.heroku.com/articles/procfile">Process Types and the Procfile</a></li>
+</ul>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[P5-hubot]]></title>
+    <link href="http://aanoaa.github.io/blog/2012/10/04/p5-hubot/"/>
+    <updated>2012-10-04T15:30:00+09:00</updated>
+    <id>http://aanoaa.github.io/blog/2012/10/04/p5-hubot</id>
+    <content type="html"><![CDATA[<h3>p5-hubot scipts explained</h3>
+
+<p>필요해서 <a href="https://github.com/github/hubot">hubot</a> 을 <code>perl</code> 로 옮기고
+있습니다. - <a href="https://github.com/aanoaa/p5-hubot">p5-hubot</a></p>
+
+<p>아직 해야할 일이 많지만 테스트 + 문서화를 해서
+<a href="http://search.cpan.org/">CPAN</a> 에 올릴 생각입니다.</p>
+
+<p><a href="https://github.com/github/hubot-scripts/graphs/contributors">hubot-scripts contributors</a>
+는 100명이 넘습니다.</p>
+
+<p><code>p5-hubot</code> 도 도움을 받아서 멋진 기능을 장착하고 싶습니다.</p>
+
+<p><a href="http://search.cpan.org/">CPAN</a> 에 <code>Hubot::Scripts::*</code> 모듈이
+많아지면 좋겠습니다.</p>
+
+<p>robot 에게 <code>http://twitter.com/&lt;username&gt;/status/&lt;tweetid&gt;</code> 의 패턴이
+들리면 그 내용을 파싱해서 말하는 스크립트 입니다.</p>
+
+<pre><code class="perl Hubot::Scripts::tweet">package Hubot::Scripts::tweet;
+use strict;
+use warnings;
+use JSON::XS;
+
+sub load {
+    my ( $class, $robot ) = @_;
+    $robot-&gt;hear(
+        qr/https?:\/\/(mobile\.)?twitter\.com\/.*?\/status\/([0-9]+)/i,
+        sub {
+            my $msg = shift;    # Hubot::Response
+            $msg-&gt;http( 'https://api.twitter.com/1/statuses/show/'
+                  . $msg-&gt;match-&gt;[1]
+                  . '.json' )-&gt;get(
+                sub {
+                    my ( $body, $hdr ) = @_;
+                    return if ( !$body || !$hdr-&gt;{Status} =~ /^2/ );
+                    my $tweet = decode_json($body);
+                    $msg-&gt;send("$tweet-&gt;{user}{screen_name}: $tweet-&gt;{text}");
+                }
+                  );
+            $msg-&gt;message-&gt;finish;
+        }
+    );
+}
+
+1;
+
+=head1 SYNOPSIS
+
+http://twitter.com/&lt;username&gt;/status/&lt;tweetid&gt;
+
+=head1 DEPENDENCIES
+
+None
+
+=head1 CONFIGURATION
+
+None
+
+=head1 AUTHOR
+
+Hyungsuk Hong
+
+=cut
+</code></pre>
+
+<pre><code class="coffee-script tweet.coffee"># Description:
+#   Detect tweet URL and send tweet content
+#
+# Dependencies:
+#   None
+#
+# Configuration:
+#   None
+#
+# Commands:
+#
+# Author:
+#   Vrtak-CZ
+
+module.exports = (robot) -&gt;
+    robot.hear /https?:\/\/(mobile\.)?twitter\.com\/.*?\/status\/([0-9]+)/i, (msg) -&gt;
+        msg.http("https://api.twitter.com/1/statuses/show/#{msg.match[2]}.json").get() (err, res, body) -&gt;
+            return if err or (res.statusCode != 200)
+
+            tweet = JSON.parse(body)
+
+            msg.send "@#{tweet.user.screen_name}: #{tweet.text}"
+        msg.message.finish()
+</code></pre>
+
+<ul>
+<li><code>robot.hear /foo/</code>: <code>foo</code> 가 들리면 반응합니다.</li>
+<li><code>robot.respond /foo/</code>: <code>hubot: foo</code> 에 반응합니다.</li>
+<li><code>robot.send 'hi'</code>: 로봇이 <code>hi</code> 라고 합니다.</li>
+<li><code>robot.reply 'hi'</code>: 로봇이 말건사람한테 <code>&lt;user&gt;: hi</code> 라고 합니다.</li>
+</ul>
+
+
+<p>요거 4개의 기능만 알면 스크립트를 작성하긴 쉽습니다.</p>
+
+<p>저희회사에서는 이걸 이용해서
+<a href="https://github.com/miyagawa/hubot-standup">standup-meeting</a> 도 하고
+그럽니다.</p>
+
+<p>우선 아이디어가 있으면 남겨주세요.</p>
+
+<p>테스트환경구축이랑 의존성문제는 해결해서 다시 포스팅하겠습니다.</p>
+
+<h3>SEE ALSO</h3>
+
+<ul>
+<li><a href="http://silexkr.github.com/blog/2012/02/21/irc-bot/">irc-bot</a></li>
+<li><a href="http://theprogrammingbutler.com/blog/archives/2011/10/28/hubot-scripts-explained/">hubot Scripts Explained</a></li>
+</ul>
+
+]]></content>
+  </entry>
+  
+</feed>

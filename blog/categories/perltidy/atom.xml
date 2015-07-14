@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Perltidy | Mustache :{]]></title>
+  <link href="http://aanoaa.github.io/blog/categories/perltidy/atom.xml" rel="self"/>
+  <link href="http://aanoaa.github.io/"/>
+  <updated>2015-07-14T15:40:24+09:00</updated>
+  <id>http://aanoaa.github.io/</id>
+  <author>
+    <name><![CDATA[Hyungsuk Hong]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Shut the Fuck Up and Perltidy]]></title>
+    <link href="http://aanoaa.github.io/blog/2014/02/12/shut-the-fuck-up-and-perltidy/"/>
+    <updated>2014-02-12T17:07:08+09:00</updated>
+    <id>http://aanoaa.github.io/blog/2014/02/12/shut-the-fuck-up-and-perltidy</id>
+    <content type="html"><![CDATA[<p><code>$HOME/.perltidyrc</code></p>
+
+<pre><code># https://github.com/kraih/mojo/blob/master/.perltidyrc
+-pbp # Start with Perl Best Practices
+-w # Show all warnings
+-iob # Ignore old breakpoints
+-l=79 # 79 characters per line
+-mbl=2 # No more than 2 blank lines
+-i=4 # Indentation is 4 columns
+-ci=2 # Continuation indentation is 2 columns
+-vt=0 # Less vertical tightness
+-pt=2 # High parenthesis tightness
+-bt=2 # High brace tightness
+-sbt=2 # High square bracket tightness
+-isbc # Don't indent comments without leading space
+</code></pre>
+
+<p>여기에 emacs 에다가
+<a href="http://search.cpan.org/~jjore/perltidy-mode/">perltidy-mode.el</a> load
+하고</p>
+
+<pre><code>(eval-after-load "cperl-mode"
+  '(add-hook 'cperl-mode-hook 'perltidy-mode))
+</code></pre>
+
+<p>하고 저장하면 저장할때마다 알아서 <code>perltidy</code> 되기 땜시 굳입니다
+팀에서 통일해서 쓰면 좋겟습니다.</p>
+
+<h3>SEE ALSO</h3>
+
+<p><a href="http://aanoaa.github.io/blog/2012/09/12/tidyall/">tidyall</a></p>
+]]></content>
+  </entry>
+  
+</feed>
