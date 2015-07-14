@@ -1,0 +1,471 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Sass &amp; Scss - Mustache :{</title>
+  <meta name="author" content="Hyungsuk Hong">
+
+  
+  <meta name="description" content="oops.scss 파일을 아래처럼 맨들고, oops.scss1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+@import &quot;compass/css3&quot;;
+#header,#footer { margin: 0 auto;
+}
+.error { @include &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://aanoaa.github.io/blog/2011/12/17/sass-and-scss">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Mustache :{" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Mustache :{</a></h1>
+  
+    <h2>use perl</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:aanoaa.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Sass &amp; Scss</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-12-17T00:08:00+09:00" pubdate data-updated="true">Dec 17<span>th</span>, 2011</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p><code>oops.scss</code> 파일을 아래처럼 맨들고,</p>
+
+<figure class='code'><figcaption><span>oops.scss</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+</pre></td><td class='code'><pre><code class='scss'><span class='line'><span class="k">@import</span> <span class="s2">&quot;compass/css3&quot;</span><span class="p">;</span>
+</span><span class='line'><span class="nn">#header</span><span class="o">,</span><span class="nn">#footer</span> <span class="p">{</span>
+</span><span class='line'>    <span class="na">margin</span><span class="o">:</span> <span class="mi">0</span> <span class="no">auto</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'><span class="nc">.error</span> <span class="p">{</span>
+</span><span class='line'>    <span class="k">@include</span><span class="nd"> border-radius</span><span class="p">(</span><span class="mi">5</span><span class="kt">px</span><span class="p">);</span>
+</span><span class='line'>    <span class="na">background-color</span><span class="o">:</span> <span class="mh">#DD0000</span><span class="p">;</span>
+</span><span class='line'>    <span class="nc">.important</span> <span class="p">{</span>
+</span><span class='line'>        <span class="na">border-width</span><span class="o">:</span> <span class="mi">3</span><span class="kt">px</span><span class="p">;</span>
+</span><span class='line'>    <span class="p">}</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>콤퓨타로 뭔가를 하면,</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>sass --watch oops.scss:oops.css
+</span><span class='line'>
+</span><span class='line'>or
+</span><span class='line'>
+</span><span class='line'><span class="nv">$ </span>compass watch /path/to/     <span class="c"># 끝판왕임 저는 이렇게 씀</span>
+</span><span class='line'>
+</span><span class='line'>or
+</span><span class='line'>
+</span><span class='line'><span class="c"># emacs scss-mode 쓰면 그냥 저장함과 동시에 변환할 수 있는데 compass</span>
+</span><span class='line'><span class="c"># 의 기능은 사용할 수 없음</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p><code>oops.css</code> 파일을 맨들어 줍니다.</p>
+
+<figure class='code'><figcaption><span>oops.css</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+</pre></td><td class='code'><pre><code class='css'><span class='line'><span class="c">/* line 2, ../sass/oops.scss */</span>
+</span><span class='line'><span class="nf">#header</span><span class="o">,</span> <span class="nf">#footer</span> <span class="p">{</span>
+</span><span class='line'>  <span class="k">margin</span><span class="o">:</span> <span class="m">0</span> <span class="k">auto</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="c">/* line 5, ../sass/oops.scss */</span>
+</span><span class='line'><span class="nc">.error</span> <span class="p">{</span>
+</span><span class='line'>  <span class="o">-</span><span class="n">moz</span><span class="o">-</span><span class="k">border</span><span class="o">-</span><span class="n">radius</span><span class="o">:</span> <span class="m">5px</span><span class="p">;</span>
+</span><span class='line'>  <span class="o">-</span><span class="n">webkit</span><span class="o">-</span><span class="k">border</span><span class="o">-</span><span class="n">radius</span><span class="o">:</span> <span class="m">5px</span><span class="p">;</span>
+</span><span class='line'>  <span class="o">-</span><span class="n">o</span><span class="o">-</span><span class="k">border</span><span class="o">-</span><span class="n">radius</span><span class="o">:</span> <span class="m">5px</span><span class="p">;</span>
+</span><span class='line'>  <span class="o">-</span><span class="n">ms</span><span class="o">-</span><span class="k">border</span><span class="o">-</span><span class="n">radius</span><span class="o">:</span> <span class="m">5px</span><span class="p">;</span>
+</span><span class='line'>  <span class="o">-</span><span class="n">khtml</span><span class="o">-</span><span class="k">border</span><span class="o">-</span><span class="n">radius</span><span class="o">:</span> <span class="m">5px</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">border</span><span class="o">-</span><span class="n">radius</span><span class="o">:</span> <span class="m">5px</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">background-color</span><span class="o">:</span> <span class="m">#DD0000</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'><span class="c">/* line 8, ../sass/oops.scss */</span>
+</span><span class='line'><span class="nc">.error</span> <span class="nc">.important</span> <span class="p">{</span>
+</span><span class='line'>  <span class="k">border-width</span><span class="o">:</span> <span class="m">3px</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>이처럼 <a href="http://sass-lang.com/">sass</a>는 <code>.sass</code> 또는 <code>.scss</code>를 <code>.css</code>로 맨들어 줍니다.</p>
+
+<p>장점으로는 <code>oops.scss</code>에서 <code>@include border-radius(5px);</code> 를 보듯이
+함수와 변수를 사용할 수 있다는 것입니다. 코드의 중복을 막아주고(Don&#8217;t
+Repeat Yourself), 셀렉터들의 계층을 두어서 쉽게 작성할 수 있습니다.
+<code>compass</code>를 함께 사용하면 이미 흔하게 사용되고 있는 선조들의 <code>best
+practice</code>를 <code>import</code> 해서 쓸 수 있습니다.</p>
+
+<h1>설치 및 사용</h1>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>gem install sass compass    <span class="c"># 저는 compass도 씀</span>
+</span><span class='line'><span class="nv">$ </span>compass create /path/to/Your-Awesome-Project/
+</span><span class='line'><span class="c"># config.rb 를 수정하고, stylesheets, sass, images 등의 경로를</span>
+</span><span class='line'><span class="c"># 프로젝트 환경에 맞게 바꿔줍니다. rails 라면 필요없어 보입니다.</span>
+</span><span class='line'><span class="nv">$ </span>compass watch .    <span class="c"># config.rb 있는 곳을 지정해 줘야 합니다.</span>
+</span><span class='line'><span class="c"># scss 파일을 수정하면 css 파일에도 반영됩니다.</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>저는 <code>config.rb</code> 를 다음과 같이 변경해서 사용중입니다.</p>
+
+<figure class='code'><figcaption><span>config.rb</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='rb'><span class='line'><span class="n">http_path</span> <span class="o">=</span> <span class="s2">&quot;/&quot;</span>
+</span><span class='line'><span class="n">css_dir</span> <span class="o">=</span> <span class="s2">&quot;static/css&quot;</span>
+</span><span class='line'><span class="n">sass_dir</span> <span class="o">=</span> <span class="s2">&quot;static/sass&quot;</span>
+</span><span class='line'><span class="n">images_dir</span> <span class="o">=</span> <span class="s2">&quot;static/images&quot;</span>
+</span><span class='line'><span class="n">javascripts_dir</span> <span class="o">=</span> <span class="s2">&quot;static/scripts&quot;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h1>그밖에..</h1>
+
+<p>emacs <a href="http://www.emacswiki.org/emacs/ScssMode">scss-mode</a>를 사용하면 watcher 를 띄우지 않고도
+저장과 동시에 <code>css</code>파일을 맨들 수 있습니다.</p>
+
+<figure class='code'><figcaption><span>config.rb</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='rb'><span class='line'><span class="p">(</span><span class="n">add</span><span class="o">-</span><span class="n">to</span><span class="o">-</span><span class="n">list</span> <span class="s1">&#39;load-path &quot;~/.emacs.d/vendor/scss-mode&quot;)</span>
+</span><span class='line'><span class="s1">(require &#39;</span><span class="n">scss</span><span class="o">-</span><span class="n">mode</span><span class="p">)</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p><a href="http://blueprintcss.org/">blueprint</a>와 같은 grid framework 와 함께 사용할 수
+있습니다. 저는 그렇게 쓰고 있습니다.</p>
+
+<p><code>octopress</code> 도 <code>scss</code>사용합니다.</p>
+
+<h1>결론</h1>
+
+<p><code>ruby</code> 모듈이자 툴입니다. 저희 회사는 <code>perl</code>로 개발합니다만 물론
+사용할 수 있습니다. 너무나도 훌륭한 오픈소스 입니다.</p>
+
+<p>훌륭한 개발환경을 가지고 있고, 프로그래밍에는 능숙하지만, <code>css</code>만
+잡으면 한없이 약해지는 분들이라면 간단한 <code>scss</code>문법을 공부하고
+<code>compass</code>툴 사용법을 익혀서 써먹으면 좋을 것 같습니다.</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Hyungsuk Hong</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-12-17T00:08:00+09:00" pubdate data-updated="true">Dec 17<span>th</span>, 2011</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/css/'>css</a>, <a class='category' href='/blog/categories/scss/'>scss</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://aanoaa.github.io/blog/2011/12/17/sass-and-scss/" data-via="aanoaa" data-counturl="http://aanoaa.github.io/blog/2011/12/17/sass-and-scss/" >Tweet</a>
+  
+  
+  
+    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2011/12/02/emacs-mo-git-blame-mode/" title="Previous Post: emacs mo-git-blame mode">&laquo; emacs mo-git-blame mode</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2012/01/03/picasa-upload-script/" title="Next Post: picasa upload script">picasa upload script &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2014/02/12/keep-simple-dist-dot-ini/">Keep Simple dist.ini</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/02/12/shut-the-fuck-up-and-perltidy/">Shut the Fuck Up and Perltidy</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/12/23/private-git-repo-with-dropbox/">Private Git Repo With Dropbox</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/12/20/coffeescript-compile-args/">Coffeescript-compile-args</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/06/10/p5-hubot-onto-heroku/">P5-hubot Onto Heroku</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/aanoaa">@aanoaa</a> on GitHub
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'aanoaa',
+            count: 5,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+<section>
+  <h1>Latest Tweets</h1>
+  <ul id="tweets">
+    <li class="loading">Status updating...</li>
+  </ul>
+  <script type="text/javascript">
+    $.domReady(function(){
+      getTwitterFeed("aanoaa", 4, false);
+    });
+  </script>
+  <script src="/javascripts/twitter.js" type="text/javascript"> </script>
+  
+    <a href="http://twitter.com/aanoaa" class="twitter-follow-button" data-show-count="false">Follow @aanoaa</a>
+  
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2014 - Hyungsuk Hong -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'aanoaa-mustache';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://aanoaa.github.io/blog/2011/12/17/sass-and-scss/';
+        var disqus_url = 'http://aanoaa.github.io/blog/2011/12/17/sass-and-scss/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id; js.async = true;
+  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

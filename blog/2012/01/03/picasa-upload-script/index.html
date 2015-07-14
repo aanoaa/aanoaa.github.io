@@ -1,0 +1,373 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Picasa Upload Script - Mustache :{</title>
+  <meta name="author" content="Hyungsuk Hong">
+
+  
+  <meta name="description" content="username: &#39;pung96a@gmail.com&#39;
+password: &#39;&#39;
+album_id: &#39;&#39; $HOME/.google.conf 에다가 자신의 계정 정보를 슥슥하고요. 이중보안 설정한 계정은 업로드 안됩니다. 1
+$ &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://aanoaa.github.io/blog/2012/01/03/picasa-upload-script">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Mustache :{" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Mustache :{</a></h1>
+  
+    <h2>use perl</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:aanoaa.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Picasa Upload Script</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-01-03T23:18:00+09:00" pubdate data-updated="true">Jan 3<span>rd</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><div><script src='https://gist.github.com/1444684.js'></script>
+<noscript><pre><code>username: &#39;pung96a@gmail.com&#39;
+password: &#39;&#39;
+album_id: &#39;&#39;
+</code></pre></noscript></div>
+
+
+<p><code>$HOME/.google.conf</code> 에다가 자신의 계정 정보를 슥슥하고요.</p>
+
+<p><strong>이중보안 설정한 계정은 업로드 안됩니다.</strong></p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>picasa-upload.pl &lt;PHOTO.png&gt;
+</span></code></pre></td></tr></table></div></figure>
+
+
+<pre><code>https://lh4.googleusercontent.com/-mmv40wXKaM4/TwMP0BKUVhI/AAAAAAAAABA/AM3KBgCuf8Q/2011082200618_10.jpg
+</code></pre>
+
+<p>제가 샘플로 올린 이미지 퍼블릭 링크입니다.</p>
+
+<p><code>어쩌고저쩌고/s[SIZE]/파일명.jpg</code> 으로 바꾸면 파일크기가 바뀌어서
+보여집니다. 굳 :+1:</p>
+
+<pre><code>https://lh4.googleusercontent.com/-mmv40wXKaM4/TwMP0BKUVhI/AAAAAAAAABA/AM3KBgCuf8Q/s72/2011082200618_10.jpg
+https://lh4.googleusercontent.com/-mmv40wXKaM4/TwMP0BKUVhI/AAAAAAAAABA/AM3KBgCuf8Q/s144/2011082200618_10.jpg
+https://lh4.googleusercontent.com/-mmv40wXKaM4/TwMP0BKUVhI/AAAAAAAAABA/AM3KBgCuf8Q/s200/2011082200618_10.jpg
+https://lh4.googleusercontent.com/-mmv40wXKaM4/TwMP0BKUVhI/AAAAAAAAABA/AM3KBgCuf8Q/s320/2011082200618_10.jpg
+https://lh4.googleusercontent.com/-mmv40wXKaM4/TwMP0BKUVhI/AAAAAAAAABA/AM3KBgCuf8Q/s400/2011082200618_10.jpg
+https://lh4.googleusercontent.com/-mmv40wXKaM4/TwMP0BKUVhI/AAAAAAAAABA/AM3KBgCuf8Q/s512/2011082200618_10.jpg
+</code></pre>
+
+<ul>
+<li>s72</li>
+<li>s144</li>
+<li>s200</li>
+<li>s320</li>
+<li>s400</li>
+<li>s512</li>
+<li>s576</li>
+<li>s640</li>
+<li>s720</li>
+<li>s800</li>
+<li>s912</li>
+<li>s1024</li>
+<li>s1152</li>
+<li>s1280</li>
+<li>s1440</li>
+<li>s1600</li>
+</ul>
+
+
+<p>뭐 사이즈는 요로코롬 슥슥해서 쓰면 되겠죠.</p>
+
+<p><img src="https://lh4.googleusercontent.com/-mmv40wXKaM4/TwMP0BKUVhI/AAAAAAAAABA/AM3KBgCuf8Q/2011082200618_10.jpg" alt="원본" /></p>
+
+<p>원본이고요</p>
+
+<p><img src="https://lh4.googleusercontent.com/-mmv40wXKaM4/TwMP0BKUVhI/AAAAAAAAABA/AM3KBgCuf8Q/s72/2011082200618_10.jpg" alt="s72" />
+<img src="https://lh4.googleusercontent.com/-mmv40wXKaM4/TwMP0BKUVhI/AAAAAAAAABA/AM3KBgCuf8Q/s144/2011082200618_10.jpg" alt="s144" />
+<img src="https://lh4.googleusercontent.com/-mmv40wXKaM4/TwMP0BKUVhI/AAAAAAAAABA/AM3KBgCuf8Q/s200/2011082200618_10.jpg" alt="s200" />
+<img src="https://lh4.googleusercontent.com/-mmv40wXKaM4/TwMP0BKUVhI/AAAAAAAAABA/AM3KBgCuf8Q/s320/2011082200618_10.jpg" alt="s320" />
+<img src="https://lh4.googleusercontent.com/-mmv40wXKaM4/TwMP0BKUVhI/AAAAAAAAABA/AM3KBgCuf8Q/s400/2011082200618_10.jpg" alt="s400" />
+<img src="https://lh4.googleusercontent.com/-mmv40wXKaM4/TwMP0BKUVhI/AAAAAAAAABA/AM3KBgCuf8Q/s512/2011082200618_10.jpg" alt="s512" /></p>
+
+<p>72, 144, 200, 320, 400, 512 입니다.</p>
+
+<p>파일 한개를 간편하게 올려서 요로코롬 크기를 조절해가면서 사용할 수
+있습니다.
+게다가 <strong>무료</strong>! google++</p>
+
+<p>편리한 스크립트를 맨들어주시고 유용한 팁까지 알려주신
+<a href="https://twitter.com/pung96">@pung96</a>++ 님 감사합니다.</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Hyungsuk Hong</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-01-03T23:18:00+09:00" pubdate data-updated="true">Jan 3<span>rd</span>, 2012</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/perl/'>perl</a>, <a class='category' href='/blog/categories/picasa/'>picasa</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://aanoaa.github.io/blog/2012/01/03/picasa-upload-script/" data-via="aanoaa" data-counturl="http://aanoaa.github.io/blog/2012/01/03/picasa-upload-script/" >Tweet</a>
+  
+  
+  
+    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2011/12/17/sass-and-scss/" title="Previous Post: sass &amp; scss">&laquo; sass &amp; scss</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2012/01/06/org-mode/" title="Next Post: org-mode">org-mode &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2014/02/12/keep-simple-dist-dot-ini/">Keep Simple dist.ini</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/02/12/shut-the-fuck-up-and-perltidy/">Shut the Fuck Up and Perltidy</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/12/23/private-git-repo-with-dropbox/">Private Git Repo With Dropbox</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/12/20/coffeescript-compile-args/">Coffeescript-compile-args</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/06/10/p5-hubot-onto-heroku/">P5-hubot Onto Heroku</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/aanoaa">@aanoaa</a> on GitHub
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'aanoaa',
+            count: 5,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+<section>
+  <h1>Latest Tweets</h1>
+  <ul id="tweets">
+    <li class="loading">Status updating...</li>
+  </ul>
+  <script type="text/javascript">
+    $.domReady(function(){
+      getTwitterFeed("aanoaa", 4, false);
+    });
+  </script>
+  <script src="/javascripts/twitter.js" type="text/javascript"> </script>
+  
+    <a href="http://twitter.com/aanoaa" class="twitter-follow-button" data-show-count="false">Follow @aanoaa</a>
+  
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2014 - Hyungsuk Hong -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'aanoaa-mustache';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://aanoaa.github.io/blog/2012/01/03/picasa-upload-script/';
+        var disqus_url = 'http://aanoaa.github.io/blog/2012/01/03/picasa-upload-script/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id; js.async = true;
+  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

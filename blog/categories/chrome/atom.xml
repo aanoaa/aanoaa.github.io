@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Chrome | Mustache :{]]></title>
+  <link href="http://aanoaa.github.io/blog/categories/chrome/atom.xml" rel="self"/>
+  <link href="http://aanoaa.github.io/"/>
+  <updated>2014-02-12T17:38:37+09:00</updated>
+  <id>http://aanoaa.github.io/</id>
+  <author>
+    <name><![CDATA[Hyungsuk Hong]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Chrome Scrollbar Style]]></title>
+    <link href="http://aanoaa.github.io/blog/2012/07/02/chrome-scrollbar-style/"/>
+    <updated>2012-07-02T12:50:00+09:00</updated>
+    <id>http://aanoaa.github.io/blog/2012/07/02/chrome-scrollbar-style</id>
+    <content type="html"><![CDATA[<p><code>$HOME/.config/google-chrome/Default/User StyleSheets/Custom.css</code> 에다가
+아래 내용을 추가하면 scroll-bar 가 얄상하니 이쁩니다.</p>
+
+<p>근데 불편해서 안쓸라고.. 나중에 검색하기 힘들까봐 로그 남겨 둡니다.</p>
+
+<p>```css $HOME/.config/google-chrome/Default/User StyleSheets/Custom.css
+::-webkit-scrollbar-track-piece{</p>
+
+<pre><code>background-color:#fff;
+-webkit-border-radius:0;
+</code></pre>
+
+<p>}
+::-webkit-scrollbar{</p>
+
+<pre><code>width:12px;
+height:8px;
+</code></pre>
+
+<p>}
+::-webkit-scrollbar-thumb{</p>
+
+<pre><code>height:50px;
+background-color:#999;
+-webkit-border-radius:4px;
+outline:2px solid #fff;
+outline-offset:-2px;
+border: 2px solid #fff;
+</code></pre>
+
+<p>}
+::-webkit-scrollbar-thumb:hover{</p>
+
+<pre><code>height:50px;
+background-color:#9f9f9f;
+-webkit-border-radius:4px;
+</code></pre>
+
+<p>}
+```</p>
+]]></content>
+  </entry>
+  
+</feed>

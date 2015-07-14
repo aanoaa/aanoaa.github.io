@@ -1,0 +1,392 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Perl | Mustache :{]]></title>
+  <link href="http://aanoaa.github.io/blog/categories/perl/atom.xml" rel="self"/>
+  <link href="http://aanoaa.github.io/"/>
+  <updated>2014-02-12T17:38:37+09:00</updated>
+  <id>http://aanoaa.github.io/</id>
+  <author>
+    <name><![CDATA[Hyungsuk Hong]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Tidyall]]></title>
+    <link href="http://aanoaa.github.io/blog/2012/09/12/tidyall/"/>
+    <updated>2012-09-12T01:11:00+09:00</updated>
+    <id>http://aanoaa.github.io/blog/2012/09/12/tidyall</id>
+    <content type="html"><![CDATA[<p>Perl 에는 Best Practices 가 있습니다.</p>
+
+<p><img src="http://akamaicovers.oreilly.com/images/9780596001735/cat.gif"></p>
+
+<p>Damian Conway (일명 '대곤이횽') 의 <a href="http://shop.oreilly.com/product/9780596001735.do">Perl Best Practices</a> 가 그것입니다. (저는 아직 안읽어봤습니다)</p>
+
+<p><a href="http://search.cpan.org/~thaljef/Perl-Critic-1.118/lib/Perl/Critic.pm">Perl::Critic</a>은 정적 소스코드 분석기로써 <code>Perl Best Practices</code> 의 정책을 따릅니다.</p>
+
+<p><a href="http://search.cpan.org/~shancock/Perl-Tidy-20120714/bin/perltidy">perltidy</a> 도 있습니다.
+작성한 perlcode 를 깔끔하게 정돈해줍니다.</p>
+
+<p>이와 같은 도구를 사용하면 협업팀으로써 일관된 코딩스타일을 유지시켜 줄
+수 있을 거라고 생각했습니다.</p>
+
+<ul>
+<li>개인이 스스로 알아서 지킬 수 있겟고,</li>
+<li>git <code>pre-commit</code> hook 을 활용할 수 도 있겠습니다.</li>
+</ul>
+
+
+<p>1번은 잘 안되더라고요.
+그래서 2번을 시도중입니다.</p>
+
+<p>방법은 이렇습니다.</p>
+
+<pre><code>$ cpanm Code::TidyAll
+</code></pre>
+
+<p>설치하고 project repo 에 <code>pre-commit</code> hook 을 작성합니다.</p>
+
+<p>```perl .git/hooks/pre-commit</p>
+
+<h1>!/usr/bin/env perl</h1>
+
+<p>use strict;
+use warnings;
+use Code::TidyAll::Git::Precommit;</p>
+
+<p>Code::TidyAll::Git::Precommit->check();
+```</p>
+
+<p>project root 에 <code>tidyall.ini</code> 를 작성합니다.</p>
+
+<p>```ini tidyall.ini
+[PerlTidy]
+select = <em><em>/</em>.{pl,pm,t}
+ignore = lib/</em>/Schema/Result/*.pm
+argv = -noll -it=2</p>
+
+<p>[PerlCritic]
+select = lib/<em>*/</em>.pm
+argv = -severity 5
+```</p>
+
+<p>그리고 코드를 작성하고 commit 합니다.
+참 쉽죠?</p>
+
+<p>거지 같이 작성했다면 커밋에 실패하고 적절한 메세지가 나타납니다.</p>
+
+<p>커밋전에 스스로 확인해 보려면 <code>$ tidyall -a</code> 하시면 됩니다.</p>
+
+<h3>SEE ALSO</h3>
+
+<ul>
+<li><a href="http://www.openswartz.com/2012/09/05/tidying-and-checking-code-on-commit/">Tidying and checking code on commit</a></li>
+<li><a href="http://www.openswartz.com/2012/08/21/one-tidier-to-rule-them-all/">One tidier to rule them all</a></li>
+</ul>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Perl Y Operator]]></title>
+    <link href="http://aanoaa.github.io/blog/2012/06/21/perl-y-operator/"/>
+    <updated>2012-06-21T13:59:00+09:00</updated>
+    <id>http://aanoaa.github.io/blog/2012/06/21/perl-y-operator</id>
+    <content type="html"><![CDATA[<h2>사건의 발단</h2>
+
+<p>어느날 오후 @freenode #perl-kr 에서 일어난 일입니다.</p>
+
+<p><code>
+&lt;a3r0_&gt; 오랜만에 퀴즈
+&lt;a3r0_&gt; 구글 입사문제인데
+&lt;a3r0_&gt; 1에서 100000 사이에 8이 몇번 나오는지 맞춰라~
+&lt;a3r0_&gt; 답은 perl 원라이너로만 받음
+</code></p>
+
+<p>저는 손으로 세봤습니다. 100 까지 세는데, 한참 걸렸습니다.</p>
+
+<p><code>
+8,18,28,38,48,58,68,78,80,81,82,83,84,85,86,87,88,89,98
+20개 (88에서 8이 두개 입니다)
+</code></p>
+
+<p>이렇게 세어보고 다시 irc 화면을 봤는데..</p>
+
+<p><code>perl
+&lt;EnGoon&gt; eval my $count =0; for (0..100000) { /(8)/; $count += $+;} print $count;
+&lt;hongbot&gt; 799944
+&lt;a3r0_&gt; 구글 입사 불합격 하셨습니다.
+&lt;ascendo&gt; for i in $(seq 1 100000); do echo $i; done | egrep '8' | wc -l # syntax error
+</code></p>
+
+<p>떡밥이 흥하질 않자 <code>a3r0</code> 님이 정답을 공개해 주셧습니다.</p>
+
+<p><code>perl
+&lt;a3r0_&gt; $ perl -E 'for(1..100000) { $c+=@{[$_ =~ m/8/g]} }; say $c'
+&lt;a3r0_&gt; 50000
+&lt;a3r0_&gt; $ perl -E 'for(1..100000) { $c+=(tr/8//) }; say $c'
+&lt;a3r0_&gt; 50000
+</code></p>
+
+<p>이렇게 묻히나 싶었는데, 뒤늦게 보신 <code>nol2ter_work</code> 님의 bash oneliner</p>
+
+<p><code>bash
+&lt;nol2ter_work&gt; 오홍.. bash 로는.. expr `echo {1..100000} | sed -r "s/[^8]//g" | wc -m` - 1 로 되네영..
+&lt;a3r0_&gt; python으로 해보셈
+</code></p>
+
+<p><strong>여기서 python 의 대반격</strong></p>
+
+<p><code>python
+&lt;nol2ter_work&gt; 피똥으로.. str(range(100000)).count('8')
+&lt;nol2ter_work&gt; 아.. 이건 편법일라나요 캬캬캬
+&lt;a3r0_&gt; str 함수가 문자열 이어붙여주나여?
+&lt;nol2ter_work&gt; &gt;&gt;&gt; str(range(100000)).count('8')
+&lt;nol2ter_work&gt; 50000
+&lt;nol2ter_work&gt; 라고 나오긴 하네용
+&lt;a3r0_&gt; 오
+&lt;jeen___&gt; 피똥이 갑이네..
+&lt;jeen___&gt; 피똥배워야지...
+</code></p>
+
+<p>분위기가 술렁이기 시작했습니다.
+파이썬으로 저렇게 그레이스풀한 방법이 잇엇나 싶기도 했습니다.
+거기에 더해 <code>진사마</code>는 파이썬으로 갈아탈 준비를 마친 상태.</p>
+
+<p><code>perl
+&lt;a3r0_&gt; say "@{[0..100000]}"=~y/8//
+&lt;a3r0_&gt; str(range(100000)).count('8')
+&lt;a3r0_&gt; 2글자 승?
+&lt;a3r0_&gt; say 빼면 6글자 승?  [13:40]
+&lt;a3r0_&gt; $ perl -E 'say "@{[0..100000]}"=~y/8//'
+&lt;a3r0_&gt; 50000
+&lt;a3r0_&gt; 줄이기 최종버젼은 "@{[0..1E5]}"=~y/8//
+&lt;nol2ter_work&gt; 달달달
+</code></p>
+
+<p>찰나 <code>a3r0</code> 님의 신의 한수
+결국 <code>1E5</code> 까지쓰며 더 줄일 수 없도록 만들었습니다.</p>
+
+<p><code>
+&lt;jeen___&gt; 1E5 ㅋㅋㅋㅋ
+</code></p>
+
+<p>저만 여기서 터진게 아니엇습니다.
+이때, 원라이너의 귀재 <code>pung96</code>님의 등장</p>
+
+<p><code>
+*** pung96 (~pung96@46.162.162.115) has joined channel #perl-kr
+&lt;a3r0_&gt; 원라이너의 귀재 pung96님 오셨
+</code></p>
+
+<p>같은 문제를 내어 봤는데 역시나 금방 답이 나오더군요.</p>
+
+<p><code>perl
+&lt;pung96&gt; 그냥,, 초 단순하게 생각하면,,
+&lt;pung96&gt; map{$s+=()=/8/g}1..100000;say$s 이럼 되는데
+</code></p>
+
+<p>이쯤에서 짧은 답안 공개</p>
+
+<p><code>perl
+&lt;a3r0_&gt; "@{[0..1E5]}"=~y/8//
+&lt;pung96&gt; 헐,
+&lt;pung96&gt; 1E5 ...
+</code></p>
+
+<p>ㅋㅋㅋ <code>1E5</code></p>
+
+<p>계속되는 덕질</p>
+
+<p><code>perl
+&lt;a3r0_&gt; map{$s+=()=/8/g}1..100000
+&lt;a3r0_&gt; map{$s+=@{[/8/g]}}1..100000
+&lt;pung96&gt; map{$s+=y/8//} 이럼,, 좀더 짧아지는군요.
+&lt;a3r0_&gt; map{$s+=y/8//}1..1E5
+&lt;a3r0_&gt; "@{[1..1E5]}"=~y/8//
+</code></p>
+
+<p>결국 <code>pung96</code>님의 타이기록</p>
+
+<p><code>perl
+&lt;pung96&gt; map$s+=y/8//,1..1E5
+</code></p>
+
+<p><code>pung96</code>님의 신기록!</p>
+
+<p>저는 이미 예전에 gg</p>
+
+<p><code>perl
+&lt;jeen___&gt; use Alias ( map =&gt; m, print =&gt; p );
+&lt;pung96&gt; jeen___: ++
+</code></p>
+
+<p>폭풍같은 시간이었습니다.</p>
+
+<h2>분석</h2>
+
+<p><code>perl
+"@{[0..1E5]}"=~y/8//; # 50000
+</code></p>
+
+<p>아.. 아릅답습니다.</p>
+
+<p>먼저 <code>y</code> operator 를 <code>perldoc</code> 에서 찾아보면,</p>
+
+<p><code>The transliteration operator. Same as tr///. See Quote and Quote-like Operators in perlop.</code></p>
+
+<p><code>tr</code> operator 와 같다고 나옵니다.
+<code>tr</code> 의미는 Transliteration(바꿔 씀) 입니다.</p>
+
+<p><code>
+tr/SEARCHLIST/REPLACEMENTLIST/cdsr
+</code></p>
+
+<p><code>cdsr</code> modifier 는 <code>perldoc</code> 에서 못찾았습니다.
+그래서 검색했더니 아래와 같은 내용이 있어서 붙입니다.</p>
+
+<p>```
+c - is used to specify that the SEARCHLIST character set is complemented
+d - is used to delete found but not replaced characters
+s - is used to specify that the sequences of characters that were transliterated to the same character are squashed down to a single
+instance of the character</p>
+
+<p>c   Complement the SEARCHLIST.
+d   Delete found but unreplaced characters.
+s   Squash duplicate replaced characters.
+```</p>
+
+<p>예제</p>
+
+<p><code>perl
+$ARGV[1] =~ tr/A-Z/a-z/;    # canonicalize to lower case
+$cnt = tr/*/*/;             # count the stars in $_
+$cnt = $sky =~ tr/*/*/;     # count the stars in $sky
+$cnt = tr/0-9//;            # count the digits in $_
+tr/a-zA-Z//s;               # bookkeeper -&gt; bokeper
+($HOST = $host) =~ tr/a-z/A-Z/;
+tr/a-zA-Z/ /cs;             # change non-alphas to single space
+tr [\200-\377]
+   [\000-\177];             # delete 8th bit
+</code></p>
+
+<p><code>tr|y</code> operator 는 <code>SEARCHLIST</code> 가 매칭된 갯수를 반환하는 걸
+알겠습니다.</p>
+
+<p><code>perl
+"@{[0..1E5]}"=~y/8//; # 50000
+</code></p>
+
+<p><code>perl
+"@{[0..1E5]}"
+</code></p>
+
+<ul>
+<li><code>1E5</code> 는 10의 5 제곱입니다. 해서 -> 1..100000</li>
+<li><code>@{[]}</code> 는 array 를 reference 하고 다시 dereference 하는 과정입니다.
+이유는 문자열상수 안에서 perl code 를 evaluate 하고 다시 집어넣는
+보간(interpolation) 하기 위한 꼼수 입니다.</li>
+<li><code>@{[1..100000]}</code> 은 <code>(1, 2, 3, ..., 100000)</code> 을 가지고 있는 array
+입니다.</li>
+<li><code>"(1,2,3,...,100000)"</code> array 가 <code>"</code> 로 묶여 있으면 <code></code>(SPACE) 를
+구분자로 삽입한 scalar 자료형이 됩니다. 즉, '1 2 3 4 ... 100000'</li>
+<li>"@{[0..1E5]}" 는 '1 2 3 4 ... 100000' 이 됩니다.</li>
+</ul>
+
+
+<p><code>perl
+'1 2 3 ... 100000'=~y/8//;
+</code></p>
+
+<ul>
+<li>문자열 <code>1 2 3 ... 100000</code> 에 <code>8</code> 이 몇번 나오는지 돌려줍니다.</li>
+</ul>
+
+
+<p>오늘도 즐거운 하루중입니다.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Picasa Upload Script]]></title>
+    <link href="http://aanoaa.github.io/blog/2012/01/03/picasa-upload-script/"/>
+    <updated>2012-01-03T23:18:00+09:00</updated>
+    <id>http://aanoaa.github.io/blog/2012/01/03/picasa-upload-script</id>
+    <content type="html"><![CDATA[<p><div><script src='https://gist.github.com/1444684.js'></script>
+<noscript><pre><code>username: &#39;pung96a@gmail.com&#39;
+password: &#39;&#39;
+album_id: &#39;&#39;
+</code></pre></noscript></div>
+</p>
+
+<p><code>$HOME/.google.conf</code> 에다가 자신의 계정 정보를 슥슥하고요.</p>
+
+<p><strong>이중보안 설정한 계정은 업로드 안됩니다.</strong></p>
+
+<p><code>bash
+$ picasa-upload.pl &lt;PHOTO.png&gt;
+</code></p>
+
+<pre><code>https://lh4.googleusercontent.com/-mmv40wXKaM4/TwMP0BKUVhI/AAAAAAAAABA/AM3KBgCuf8Q/2011082200618_10.jpg
+</code></pre>
+
+<p>제가 샘플로 올린 이미지 퍼블릭 링크입니다.</p>
+
+<p><code>어쩌고저쩌고/s[SIZE]/파일명.jpg</code> 으로 바꾸면 파일크기가 바뀌어서
+보여집니다. 굳 :+1:</p>
+
+<pre><code>https://lh4.googleusercontent.com/-mmv40wXKaM4/TwMP0BKUVhI/AAAAAAAAABA/AM3KBgCuf8Q/s72/2011082200618_10.jpg
+https://lh4.googleusercontent.com/-mmv40wXKaM4/TwMP0BKUVhI/AAAAAAAAABA/AM3KBgCuf8Q/s144/2011082200618_10.jpg
+https://lh4.googleusercontent.com/-mmv40wXKaM4/TwMP0BKUVhI/AAAAAAAAABA/AM3KBgCuf8Q/s200/2011082200618_10.jpg
+https://lh4.googleusercontent.com/-mmv40wXKaM4/TwMP0BKUVhI/AAAAAAAAABA/AM3KBgCuf8Q/s320/2011082200618_10.jpg
+https://lh4.googleusercontent.com/-mmv40wXKaM4/TwMP0BKUVhI/AAAAAAAAABA/AM3KBgCuf8Q/s400/2011082200618_10.jpg
+https://lh4.googleusercontent.com/-mmv40wXKaM4/TwMP0BKUVhI/AAAAAAAAABA/AM3KBgCuf8Q/s512/2011082200618_10.jpg
+</code></pre>
+
+<ul>
+<li>s72</li>
+<li>s144</li>
+<li>s200</li>
+<li>s320</li>
+<li>s400</li>
+<li>s512</li>
+<li>s576</li>
+<li>s640</li>
+<li>s720</li>
+<li>s800</li>
+<li>s912</li>
+<li>s1024</li>
+<li>s1152</li>
+<li>s1280</li>
+<li>s1440</li>
+<li>s1600</li>
+</ul>
+
+
+<p>뭐 사이즈는 요로코롬 슥슥해서 쓰면 되겠죠.</p>
+
+<p><img src="https://lh4.googleusercontent.com/-mmv40wXKaM4/TwMP0BKUVhI/AAAAAAAAABA/AM3KBgCuf8Q/2011082200618_10.jpg" alt="원본" /></p>
+
+<p>원본이고요</p>
+
+<p><img src="https://lh4.googleusercontent.com/-mmv40wXKaM4/TwMP0BKUVhI/AAAAAAAAABA/AM3KBgCuf8Q/s72/2011082200618_10.jpg" alt="s72" />
+<img src="https://lh4.googleusercontent.com/-mmv40wXKaM4/TwMP0BKUVhI/AAAAAAAAABA/AM3KBgCuf8Q/s144/2011082200618_10.jpg" alt="s144" />
+<img src="https://lh4.googleusercontent.com/-mmv40wXKaM4/TwMP0BKUVhI/AAAAAAAAABA/AM3KBgCuf8Q/s200/2011082200618_10.jpg" alt="s200" />
+<img src="https://lh4.googleusercontent.com/-mmv40wXKaM4/TwMP0BKUVhI/AAAAAAAAABA/AM3KBgCuf8Q/s320/2011082200618_10.jpg" alt="s320" />
+<img src="https://lh4.googleusercontent.com/-mmv40wXKaM4/TwMP0BKUVhI/AAAAAAAAABA/AM3KBgCuf8Q/s400/2011082200618_10.jpg" alt="s400" />
+<img src="https://lh4.googleusercontent.com/-mmv40wXKaM4/TwMP0BKUVhI/AAAAAAAAABA/AM3KBgCuf8Q/s512/2011082200618_10.jpg" alt="s512" /></p>
+
+<p>72, 144, 200, 320, 400, 512 입니다.</p>
+
+<p>파일 한개를 간편하게 올려서 요로코롬 크기를 조절해가면서 사용할 수
+있습니다.
+게다가 <strong>무료</strong>! google++</p>
+
+<p>편리한 스크립트를 맨들어주시고 유용한 팁까지 알려주신
+<a href="https://twitter.com/pung96">@pung96</a>++ 님 감사합니다.</p>
+]]></content>
+  </entry>
+  
+</feed>
