@@ -5,17 +5,13 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Org-mode - Mustache :{</title>
+  <title>Redis Path and Db Number - Mustache :{</title>
   <meta name="author" content="Hyungsuk Hong">
 
   
-  <meta name="description" content="Google tasks
-remember the milk
-Tada list
-trello
-workflowy
-그냥 excel 제가 그간 거쳐왔던 훌륭한 task 관리 툴입니다.
-근데 저는 몇일 쓰다보면 못쓰겟더라고요. 그리고 얼마전에 emacs org-mode 라는 것을 &hellip;">
+  <meta name="description" content="redis://localhost:6397/1 흔한 redis-url 입니다.
+/1 의 역할은 뭘까요? 뭐냐면 Database number 입니다. $ redis-cli --help
+redis-cli 3.0.2 Usage: redis-cli [OPTIONS] [cmd &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -24,7 +20,7 @@ workflowy
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://aanoaa.github.io/blog/2012/01/06/org-mode">
+  <link rel="canonical" href="http://aanoaa.github.io/blog/2015/07/15/redis-path-and-db-number">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="Mustache :{" type="application/atom+xml">
@@ -74,7 +70,7 @@ workflowy
   
   <header>
     
-      <h1 class="entry-title">Org-mode</h1>
+      <h1 class="entry-title">Redis Path and Db Number</h1>
     
     
       <p class="meta">
@@ -90,43 +86,50 @@ workflowy
   
 
 
-<time datetime="2012-01-06T14:55:00+09:00" pubdate data-updated="true"></time>
+<time datetime="2015-07-15T18:10:25+09:00" pubdate data-updated="true"></time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><ul>
-<li><a href="https://mail.google.com/mail/help/tasks/">Google tasks</a></li>
-<li><a href="http://www.rememberthemilk.com/">remember the milk</a></li>
-<li><a href="http://tadalist.com/">Tada list</a></li>
-<li><a href="https://trello.com/">trello</a></li>
-<li><a href="https://workflowy.com/">workflowy</a></li>
-<li>그냥 <code>excel</code></li>
-</ul>
+<div class="entry-content"><p><code>redis://localhost:6397/1</code> 흔한 redis-url 입니다.
+<code>/1</code> 의 역할은 뭘까요? 뭐냐면 Database number 입니다.</p>
 
+<pre><code>$ redis-cli --help
+redis-cli 3.0.2
 
-<p>제가 그간 거쳐왔던 훌륭한 task 관리 툴입니다.
-근데 저는 몇일 쓰다보면 못쓰겟더라고요.</p>
+Usage: redis-cli [OPTIONS] [cmd [arg [arg ...]]]
+  ...
+  -n &lt;db&gt;            Database number.
+  ...
+</code></pre>
 
-<p>그리고 얼마전에 emacs <code>org-mode</code> 라는 것을 알게 되었습니다. org-mode
-참 좋습니다. pdf, excel, plain/text, html, latex, .. 으로 export 되고
-단축키로 뿅뿅 눌러서 TODO 관리도 할 수 있고 emacs 안에서, 오프라인에서
-일정관리도 되고, 태그도 되고, 해야할 일을 쉽게 내 todo 에 올릴 수도
-있고요..</p>
+<p><code>/1</code> 없이 연결하면 기본으로 <code>0</code> 번 database 를 사용합니다.</p>
 
-<p>기능도 많고 안되는게 없고 문서화도 아주 잘되어 있습니다 android,
-iphone app 도 있습니다. 근데 배우고 알아야 할게 너무 많습니다.</p>
+<p>디버그 하면서 값을 확인하려고 제아무리 <code>keys *</code> 을 찍어도 암것도
+안나와서 넘 답답했는데..</p>
 
-<p>되돌아 보면, github issue 만 사용할때 가장 업무 효율이 높았던 것
-같습니다.</p>
+<pre><code>127.0.0.1:6379&gt; keys *
+(empty list or set)
+</code></pre>
 
-<p>github 만세입니다.</p>
+<p><code>select</code> 명령으로 선택해주거나,</p>
 
-<h3>결론은 버킹검</h3>
+<pre><code>127.0.0.1:6379&gt; select 1
+OK
+127.0.0.1:6379[1]&gt; keys *
+1) "user:aanoaa"
+2) "users"
+</code></pre>
 
-<p>아아 뭔소리래..</p>
+<p><code>redis-cli</code> 에서 <code>-n</code> 옵션을 사용하거나</p>
+
+<pre><code>$ redis-cli -n 1
+127.0.0.1:6379[1]&gt; 
+</code></pre>
+
+<p>redis-url path 로 졸 검색했는데 암것도 안나옴.</p>
 </div>
 
 
@@ -149,12 +152,12 @@ iphone app 도 있습니다. 근데 배우고 알아야 할게 너무 많습니�
   
 
 
-<time datetime="2012-01-06T14:55:00+09:00" pubdate data-updated="true"></time>
+<time datetime="2015-07-15T18:10:25+09:00" pubdate data-updated="true"></time>
       
 
 <span class="categories">
   
-    <a class='category' href='/blog/categories/emacs/'>emacs</a>, <a class='category' href='/blog/categories/org-mode/'>org-mode</a>
+    <a class='category' href='/blog/categories/redis/'>redis</a>
   
 </span>
 
@@ -163,7 +166,7 @@ iphone app 도 있습니다. 근데 배우고 알아야 할게 너무 많습니�
     
       <div class="sharing">
   
-  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://aanoaa.github.io/blog/2012/01/06/org-mode/" data-via="" data-counturl="http://aanoaa.github.io/blog/2012/01/06/org-mode/" >Tweet</a>
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://aanoaa.github.io/blog/2015/07/15/redis-path-and-db-number/" data-via="" data-counturl="http://aanoaa.github.io/blog/2015/07/15/redis-path-and-db-number/" >Tweet</a>
   
   
   
@@ -174,10 +177,8 @@ iphone app 도 있습니다. 근데 배우고 알아야 할게 너무 많습니�
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2012/01/03/picasa-upload-script/" title="Previous Post: picasa upload script">&laquo; picasa upload script</a>
+        <a class="basic-alignment left" href="/blog/2015/07/15/perltidy-profile-option/" title="Previous Post: perltidy profile option">&laquo; perltidy profile option</a>
       
-      
-        <a class="basic-alignment right" href="/blog/2012/01/06/bitlbee/" title="Next Post: bitlbee">bitlbee &raquo;</a>
       
     </p>
   </footer>
@@ -273,8 +274,8 @@ iphone app 도 있습니다. 근데 배우고 알아야 할게 너무 많습니�
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://aanoaa.github.io/blog/2012/01/06/org-mode/';
-        var disqus_url = 'http://aanoaa.github.io/blog/2012/01/06/org-mode/';
+        var disqus_identifier = 'http://aanoaa.github.io/blog/2015/07/15/redis-path-and-db-number/';
+        var disqus_url = 'http://aanoaa.github.io/blog/2015/07/15/redis-path-and-db-number/';
         var disqus_script = 'embed.js';
       
     (function () {
