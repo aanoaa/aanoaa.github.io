@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Perltidy | Mustache :{]]></title>
   <link href="http://aanoaa.github.io/blog/categories/perltidy/atom.xml" rel="self"/>
   <link href="http://aanoaa.github.io/"/>
-  <updated>2015-07-14T15:53:43+09:00</updated>
+  <updated>2015-07-15T16:36:58+09:00</updated>
   <id>http://aanoaa.github.io/</id>
   <author>
     <name><![CDATA[Hyungsuk Hong]]></name>
@@ -12,6 +12,48 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Perltidy Profile Option]]></title>
+    <link href="http://aanoaa.github.io/blog/2015/07/15/perltidy-profile-option/"/>
+    <updated>2015-07-15T16:31:41+09:00</updated>
+    <id>http://aanoaa.github.io/blog/2015/07/15/perltidy-profile-option</id>
+    <content type="html"><![CDATA[<pre><code>$ perldoc perltidy
+
+...
+-pro=filename or --profile=filename
+    To simplify testing and switching .perltidyrc files, this command
+    may be used to specify a configuration file which will override the
+    default name of .perltidyrc. There must not be a space on either
+    side of the '=' sign. For example, the line
+
+       perltidy -pro=testcfg
+
+    would cause file testcfg to be used instead of the default
+    .perltidyrc.
+
+    A pathname begins with three dots, e.g. ".../.perltidyrc", indicates
+    that the file should be searched for starting in the current
+    directory and working upwards. This makes it easier to have multiple
+    projects each with their own .perltidyrc in their root directories.
+...
+</code></pre>
+
+<p>여기서 중요한것은 <code>...</code> 으로 시작하면 현재 디렉토리에서부터 위로
+올라가면서 이름으로 프로파일을 찾는다는 것</p>
+
+<p>global 설정은 <code>$HOME/.perltidyrc</code> 로 두고 각 프로젝트 root 마다
+<code>.perltidyrc</code> 파일을 두면 신경쓰지 않고 사용할 수 있다는 겁니다.</p>
+
+<p>굳</p>
+
+<p>alias 걸어두고 사용하면 편리하겠습니다.
+emacs 를 사용하는 인간이라면 <code>perltidy-mode</code> 의 <code>perltidy-bin</code> 을
+수정해주면 되겠습니다.</p>
+
+<p>선조들은 훌륭합니다.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Shut the Fuck Up and Perltidy]]></title>
