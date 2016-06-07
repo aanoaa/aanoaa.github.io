@@ -5,14 +5,14 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Keep Simple dist.ini - Mustache :{</title>
+  <title>Yongbin-mode - Mustache :{</title>
   <meta name="author" content="Hyungsuk Hong">
 
   
-  <meta name="description" content="Dist::Zilla
-는 매우 편리한 배포도구 입니다. 기능이 넘 많아서 잘 모르고 써왔는데, 이게 뭔지도 모르는걸 쓰다보니
-헛갈려서 요새는 레알 간단하게만 쓰고 있습니다. 갠적으로 딱 필요한 메타파일은 이거 3개 입니다. dist.ini
-MANIFEST.SKIP &hellip;">
+  <meta name="description" content="외래어의 한글표기 보통 외래서를 한글로 적을때, e 는 ㅔ 로, a 또는 ae 는 ㅐ 로
+적습니다. 그런데 @yongbin님은 바꿔씁니다.
+helper 를 한글로 적으면 보통은 헬퍼이지만 @yongbin 님은 핼퍼
+입니다. 오래된 이야기입니다. 디랙토리, 핼퍼, 렌덤 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -21,7 +21,7 @@ MANIFEST.SKIP &hellip;">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://aanoaa.github.io/blog/2014/02/12/keep-simple-dist-dot-ini">
+  <link rel="canonical" href="http://aanoaa.github.io/blog/2016/06/08/yongbin-mode">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="Mustache :{" type="application/atom+xml">
@@ -71,7 +71,7 @@ MANIFEST.SKIP &hellip;">
   
   <header>
     
-      <h1 class="entry-title">Keep Simple dist.ini</h1>
+      <h1 class="entry-title">Yongbin-mode</h1>
     
     
       <p class="meta">
@@ -87,80 +87,129 @@ MANIFEST.SKIP &hellip;">
   
 
 
-<time datetime="2014-02-12T17:20:06+09:00" pubdate data-updated="true"></time>
+<time datetime="2016-06-08T00:22:00+09:00" pubdate data-updated="true"></time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><p><a href="http://search.cpan.org/~rjbs/Dist-Zilla/lib/Dist/Zilla.pm">Dist::Zilla</a>
-는 매우 편리한 배포도구 입니다.</p>
+<div class="entry-content"><h2>외래어의 한글표기</h2>
 
-<p>기능이 넘 많아서 잘 모르고 써왔는데, 이게 뭔지도 모르는걸 쓰다보니
-헛갈려서 요새는 레알 간단하게만 쓰고 있습니다.</p>
+<p>보통 외래서를 한글로 적을때, <code>e</code> 는 <code>ㅔ</code> 로, <code>a</code> 또는 <code>ae</code> 는 <code>ㅐ</code> 로
+적습니다.</p>
 
-<p>갠적으로 딱 필요한 메타파일은 이거 3개 입니다.</p>
+<p>그런데 <a href="https://twitter.com/yongbin">@yongbin</a>님은 바꿔씁니다.
+<code>helper</code> 를 한글로 적으면 보통은 <code>헬퍼</code>이지만 @yongbin 님은 <code>핼퍼</code>
+입니다. 오래된 이야기입니다.</p>
+
+<p>디랙토리, 핼퍼, 렌덤 등등..</p>
+
+<p><code>생일</code>도 <code>셍일</code>로 적고, <code>요새</code>도 <code>요세</code> 적는걸 보면, 외래어만 그런 것 같진 않습니다.</p>
+
+<h2>*-mode</h2>
+
+<p>제 작은소원은 조국의 통일도 편경장의 팔모가지도 아닙니다.
+제가 필요한 emacs의 mode 를 만드는 것입니다.
+elisp 관련 책도 읽다가 포기한 적도 많습니다.</p>
+
+<p>그런데 몇일 전
+<a href="https://github.com/opencloset/monitor/issues/94#issuecomment-223536395">github-comment</a> 에서</p>
+
+<blockquote><p>핼퍼에 구현된 코드중에</p></blockquote>
+
+<p>라는 코멘트가 결정적인 계기가 되어서 <code>yongbin-mode</code> 를 만들어보자 라고
+결심하게 되었습니다.</p>
+
+<h3>yongbin-mode</h3>
+
+<p>아이디어는 이랬습니다.</p>
+
+<p>emacs 내에서 <code>ㅔ</code> 를 누르면 <code>ㅐ</code> 가 입력되고 <code>ㅐ</code>를 누르면 <code>ㅔ</code>가
+입력되도록 하자.</p>
+
+<p><code>pre-command-hook</code> 에서 스슥 하면 될 것 같았는데, multibyte 입력은
+이벤트가 발생되지 않았습니다.</p>
+
+<p>(아직도 왜 그런지 모르겠고, 어디서 무얼 찾아야 하는지도
+모르겠습니다. elisp 도사님 찾아가서 제자 하고 싶음)</p>
+
+<p>여튼 꼼수를 써서 익숙한 perl 로 프로그램을 만들고 emacs 에서는 호출만
+하자 싶었습니다.</p>
+
+<p>해서 <code>yb</code> 라는 perl 스크립트를 만들어서 <code>ㅐ</code>와 <code>ㅔ</code> 를 바꾸도록
+하였습니다.</p>
+
+<pre><code>$ echo "안녕하세요" | yb
+안녕하새요
+</code></pre>
+
+<p>그리고 <code>yongbin-mode</code> 라는 minor mode 를 만들어서 채팅할때 알아서
+변환되게 하고 싶었습니다.(저는 irc 채팅을 emacs 에서 합니다)</p>
+
+<p>아무것도 몰라서(지금도 모름) 구글링하고 문서읽고 다른 코드들을 참고하면서</p>
 
 <ul>
-<li>dist.ini</li>
-<li>MANIFEST.SKIP</li>
-<li>cpanfile</li>
+<li>yongbin-mode : 마이너 모드(yongbin-mode)를 켜고끈다</li>
+<li>yongbinize-buffer : 현재버퍼의 텍스트를 용빈화시킨다</li>
+<li>yongbinize-region(start, end) : 영역의 텍스트를 용빈화시킨다</li>
+<li>yongbinize-line : 현재 라인을 용빈화 시킨다</li>
+<li>erc-yongbinize : irc 의 입력을 용빈화 시킨다</li>
 </ul>
 
 
-<p><code>cpanfile</code> 이 없을적에는 <code>Makefile.PL</code> 로 부터 의존성문제를 해결했기
-때문에 복잡했는데 이제는 <code>cpanm --installdeps .</code> 덕분에 몹.시.편.리.</p>
+<p>기능을 맨들었습니다.</p>
 
-<p>배포할때 빼고 싶은 파일은 <code>MANIFEST.SKIP</code> 에 적어주고, <code>dist.ini</code> 로
-build 하고 배포</p>
+<p>그걸 여차저차 해서 irc 에서</p>
 
-<p>좋은 플러그인이 많은데 나중되면 어케 쓰는지도 몰겟고 의존성문제로 인해
-불편하기도 해서 그냥 자잘구레한 작업은 직접 손으로 하는걸로..</p>
-
-<p><code>dist.ini</code></p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-</pre></td><td class='code'><pre><code class='ini'><span class='line'><span class="na">name</span> <span class="o">=</span> <span class="s">mymodule</span>
-</span><span class='line'><span class="na">abstract</span> <span class="o">=</span> <span class="s">wat</span>
-</span><span class='line'><span class="na">author</span> <span class="o">=</span> <span class="s">aanoaa &lt;wat@wat.wat&gt;</span>
-</span><span class='line'><span class="na">license</span> <span class="o">=</span> <span class="s">Perl_5</span>
-</span><span class='line'><span class="na">copyright_holder</span> <span class="o">=</span> <span class="s">aanoaa</span>
-</span><span class='line'><span class="na">copyright_year</span> <span class="o">=</span> <span class="s">2014</span>
-</span><span class='line'><span class="na">version</span> <span class="o">=</span> <span class="s">v0.0.1</span>
-</span><span class='line'><span class="k">[@Basic]</span>
-</span><span class='line'><span class="k">[PkgVersion]</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p><code>MANIFEST.SKIP</code></p>
-
-<pre><code># Makemaker generated files and dirs.
-^MANIFEST\.
-^Makefile$
-^blib/
-
-# version-control
-^.git/
-^.gitignore
-
-^dist.ini
-^README.md
+<pre><code>&lt;aanoaa&gt; '-']/ 안녕하세요&lt;RET&gt;
 </code></pre>
 
-<p>이렇게 쓰고 있습니다.
-제일 간단한 설정이라고 생각합니다.</p>
+<p>하면,</p>
 
-<p>전에는 dzil profile 같은 것도 만들고 그랬는데 이제는 그냥 예전거
-복사해다 쓰고 그럽니다.</p>
+<pre><code>&lt;aanoaa&gt; '-']/ 안녕하새요
+</code></pre>
+
+<p>로 됩니다.</p>
+
+<p><a href="https://github.com/aanoaa/yongbin-mode">https://github.com/aanoaa/yongbin-mode</a></p>
+
+<h2>느낀점</h2>
+
+<p>개발환경이 넘 구립니다. 코드 변경하고 <code>M-x eval-buffer</code> 해서 다시 컴파일
+하고 어디어디 찾아가서 <code>C-x C-e</code> 해서 한줄만 실행하고 등등..</p>
+
+<p>뭘 모르는데 뭘 어떻게 해야할지가 젤 어렵고,
+또 어떻게 디버깅 해야 할지가 어렵습니다.
+괄호가 넘 많고 <code>if else</code> 문에 대한 문서를 봐도 어케 쓰는지 모르겠능;;
+한글처리에 관한 문서는??</p>
+
+<p>등등 어려움이 넘 많습니다.</p>
+
+<p>하지만 context 가 오묘하달까?</p>
+
+<pre><code>(with-current-buffer yongbinize-buffer-name
+  (goto-char (point-min))
+  (setq yongbinized-text (...)))
+</code></pre>
+
+<p>이런거?</p>
+
+<p><code>point-min</code> 이라는걸 buffer 마다 가지고 있는 모양인데, 그게 context 에 따라
+선택된다는게 참 신통방통</p>
+
+<p>perl 뉴비 시절에 perl-kr 커뮤니티에서 도움을 많이 받았던게 넘 좋았는데,
+elisp 는 한국사용자 커뮤니티가 없는 것 같습니다(?)
+한글문서도 오래되었거나 거의 없는 것 같고..
+closure 는 있는데 이건 elisp 가 아니고..</p>
+
+<p>elisp 에 관심있는 emacs 사용자들에게서 뭔가 도움을 구해보고 싶습니다.
+관련된 커뮤니티를 알고 계시면 알려주세요.</p>
+
+<h2>레알 결론</h2>
+
+<p><code>ㅔ</code> 와 <code>ㅐ</code> 가 바뀐게 보이면 너무 꼴보기 싫었습니다.
+이제 몇주동안 저도 똑같이 바꿔쓰면서 고통을 주도록 하겠습니다.</p>
 </div>
 
 
@@ -183,12 +232,12 @@ build 하고 배포</p>
   
 
 
-<time datetime="2014-02-12T17:20:06+09:00" pubdate data-updated="true"></time>
+<time datetime="2016-06-08T00:22:00+09:00" pubdate data-updated="true"></time>
       
 
 <span class="categories">
   
-    <a class='category' href='/blog/categories/dist-zilla/'>dist::zilla,</a>, <a class='category' href='/blog/categories/dzil/'>dzil</a>
+    <a class='category' href='/blog/categories/elisp/'>elisp</a>
   
 </span>
 
@@ -197,7 +246,7 @@ build 하고 배포</p>
     
       <div class="sharing">
   
-  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://aanoaa.github.io/blog/2014/02/12/keep-simple-dist-dot-ini/" data-via="" data-counturl="http://aanoaa.github.io/blog/2014/02/12/keep-simple-dist-dot-ini/" >Tweet</a>
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://aanoaa.github.io/blog/2016/06/08/yongbin-mode/" data-via="" data-counturl="http://aanoaa.github.io/blog/2016/06/08/yongbin-mode/" >Tweet</a>
   
   
   
@@ -208,10 +257,8 @@ build 하고 배포</p>
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2014/02/12/shut-the-fuck-up-and-perltidy/" title="Previous Post: shut the fuck up and perltidy">&laquo; shut the fuck up and perltidy</a>
+        <a class="basic-alignment left" href="/blog/2015/07/15/redis-path-and-db-number/" title="Previous Post: redis path and db number">&laquo; redis path and db number</a>
       
-      
-        <a class="basic-alignment right" href="/blog/2015/07/14/octopress-3-dot-0/" title="Next Post: Octopress 3.0">Octopress 3.0 &raquo;</a>
       
     </p>
   </footer>
@@ -307,8 +354,8 @@ build 하고 배포</p>
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://aanoaa.github.io/blog/2014/02/12/keep-simple-dist-dot-ini/';
-        var disqus_url = 'http://aanoaa.github.io/blog/2014/02/12/keep-simple-dist-dot-ini/';
+        var disqus_identifier = 'http://aanoaa.github.io/blog/2016/06/08/yongbin-mode/';
+        var disqus_url = 'http://aanoaa.github.io/blog/2016/06/08/yongbin-mode/';
         var disqus_script = 'embed.js';
       
     (function () {
