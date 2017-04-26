@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: 조광사진관블로그 | Mustache :{]]></title>
+  <link href="http://aanoaa.github.io/blog/categories/jogwangsajingwanbeulrogeu/atom.xml" rel="self"/>
+  <link href="http://aanoaa.github.io/"/>
+  <updated>2017-04-26T23:22:08+09:00</updated>
+  <id>http://aanoaa.github.io/</id>
+  <author>
+    <name><![CDATA[Hyungsuk Hong]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[인상적인 블로그]]></title>
+    <link href="http://aanoaa.github.io/blog/2017/04/26/insangjeogin-beulrogeu/"/>
+    <updated>2017-04-26T23:17:44+09:00</updated>
+    <id>http://aanoaa.github.io/blog/2017/04/26/insangjeogin-beulrogeu</id>
+    <content type="html"><![CDATA[<p>요즘 재미있게 보는 블로그가 있습니다.</p>
+
+<p><a href="http://blog.naver.com/ccgoodjob">조광사진관 일기장</a></p>
+
+<p>별거 없는 얘기인데 좋습니다.
+저도 비슷한 컨셉으로 적당적당 있었던 일들이나 생각을 올려볼까 합니다.
+귀찮아져서 금방 안하게 되겠지만..</p>
+]]></content>
+  </entry>
+  
+</feed>

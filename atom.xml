@@ -4,7 +4,7 @@
   <title><![CDATA[Mustache :{]]></title>
   <link href="http://aanoaa.github.io/atom.xml" rel="self"/>
   <link href="http://aanoaa.github.io/"/>
-  <updated>2017-04-26T23:07:26+09:00</updated>
+  <updated>2017-04-26T23:22:08+09:00</updated>
   <id>http://aanoaa.github.io/</id>
   <author>
     <name><![CDATA[Hyungsuk Hong]]></name>
@@ -12,6 +12,21 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[인상적인 블로그]]></title>
+    <link href="http://aanoaa.github.io/blog/2017/04/26/insangjeogin-beulrogeu/"/>
+    <updated>2017-04-26T23:17:44+09:00</updated>
+    <id>http://aanoaa.github.io/blog/2017/04/26/insangjeogin-beulrogeu</id>
+    <content type="html"><![CDATA[<p>요즘 재미있게 보는 블로그가 있습니다.</p>
+
+<p><a href="http://blog.naver.com/ccgoodjob">조광사진관 일기장</a></p>
+
+<p>별거 없는 얘기인데 좋습니다.
+저도 비슷한 컨셉으로 적당적당 있었던 일들이나 생각을 올려볼까 합니다.
+귀찮아져서 금방 안하게 되겠지만..</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[한글이 되는가]]></title>
@@ -1765,87 +1780,6 @@ iphone app 도 있습니다. 근데 배우고 알아야 할게 너무 많습니�
 <h3>결론은 버킹검</h3>
 
 <p>아아 뭔소리래..</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Picasa Upload Script]]></title>
-    <link href="http://aanoaa.github.io/blog/2012/01/03/picasa-upload-script/"/>
-    <updated>2012-01-03T23:18:00+09:00</updated>
-    <id>http://aanoaa.github.io/blog/2012/01/03/picasa-upload-script</id>
-    <content type="html"><![CDATA[<div><script src='https://gist.github.com/1444684.js'></script>
-<noscript><pre><code>username: &#39;pung96a@gmail.com&#39;
-password: &#39;&#39;
-album_id: &#39;&#39;
-</code></pre></noscript></div>
-
-
-<p><code>$HOME/.google.conf</code> 에다가 자신의 계정 정보를 슥슥하고요.</p>
-
-<p><strong>이중보안 설정한 계정은 업로드 안됩니다.</strong></p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>picasa-upload.pl &lt;PHOTO.png&gt;
-</span></code></pre></td></tr></table></div></figure>
-
-
-<pre><code>https://lh4.googleusercontent.com/-mmv40wXKaM4/TwMP0BKUVhI/AAAAAAAAABA/AM3KBgCuf8Q/2011082200618_10.jpg
-</code></pre>
-
-<p>제가 샘플로 올린 이미지 퍼블릭 링크입니다.</p>
-
-<p><code>어쩌고저쩌고/s[SIZE]/파일명.jpg</code> 으로 바꾸면 파일크기가 바뀌어서
-보여집니다. 굳 :+1:</p>
-
-<pre><code>https://lh4.googleusercontent.com/-mmv40wXKaM4/TwMP0BKUVhI/AAAAAAAAABA/AM3KBgCuf8Q/s72/2011082200618_10.jpg
-https://lh4.googleusercontent.com/-mmv40wXKaM4/TwMP0BKUVhI/AAAAAAAAABA/AM3KBgCuf8Q/s144/2011082200618_10.jpg
-https://lh4.googleusercontent.com/-mmv40wXKaM4/TwMP0BKUVhI/AAAAAAAAABA/AM3KBgCuf8Q/s200/2011082200618_10.jpg
-https://lh4.googleusercontent.com/-mmv40wXKaM4/TwMP0BKUVhI/AAAAAAAAABA/AM3KBgCuf8Q/s320/2011082200618_10.jpg
-https://lh4.googleusercontent.com/-mmv40wXKaM4/TwMP0BKUVhI/AAAAAAAAABA/AM3KBgCuf8Q/s400/2011082200618_10.jpg
-https://lh4.googleusercontent.com/-mmv40wXKaM4/TwMP0BKUVhI/AAAAAAAAABA/AM3KBgCuf8Q/s512/2011082200618_10.jpg
-</code></pre>
-
-<ul>
-<li>s72</li>
-<li>s144</li>
-<li>s200</li>
-<li>s320</li>
-<li>s400</li>
-<li>s512</li>
-<li>s576</li>
-<li>s640</li>
-<li>s720</li>
-<li>s800</li>
-<li>s912</li>
-<li>s1024</li>
-<li>s1152</li>
-<li>s1280</li>
-<li>s1440</li>
-<li>s1600</li>
-</ul>
-
-
-<p>뭐 사이즈는 요로코롬 슥슥해서 쓰면 되겠죠.</p>
-
-<p><img src="https://lh4.googleusercontent.com/-mmv40wXKaM4/TwMP0BKUVhI/AAAAAAAAABA/AM3KBgCuf8Q/2011082200618_10.jpg" alt="원본" /></p>
-
-<p>원본이고요</p>
-
-<p><img src="https://lh4.googleusercontent.com/-mmv40wXKaM4/TwMP0BKUVhI/AAAAAAAAABA/AM3KBgCuf8Q/s72/2011082200618_10.jpg" alt="s72" />
-<img src="https://lh4.googleusercontent.com/-mmv40wXKaM4/TwMP0BKUVhI/AAAAAAAAABA/AM3KBgCuf8Q/s144/2011082200618_10.jpg" alt="s144" />
-<img src="https://lh4.googleusercontent.com/-mmv40wXKaM4/TwMP0BKUVhI/AAAAAAAAABA/AM3KBgCuf8Q/s200/2011082200618_10.jpg" alt="s200" />
-<img src="https://lh4.googleusercontent.com/-mmv40wXKaM4/TwMP0BKUVhI/AAAAAAAAABA/AM3KBgCuf8Q/s320/2011082200618_10.jpg" alt="s320" />
-<img src="https://lh4.googleusercontent.com/-mmv40wXKaM4/TwMP0BKUVhI/AAAAAAAAABA/AM3KBgCuf8Q/s400/2011082200618_10.jpg" alt="s400" />
-<img src="https://lh4.googleusercontent.com/-mmv40wXKaM4/TwMP0BKUVhI/AAAAAAAAABA/AM3KBgCuf8Q/s512/2011082200618_10.jpg" alt="s512" /></p>
-
-<p>72, 144, 200, 320, 400, 512 입니다.</p>
-
-<p>파일 한개를 간편하게 올려서 요로코롬 크기를 조절해가면서 사용할 수
-있습니다.
-게다가 <strong>무료</strong>! google++</p>
-
-<p>편리한 스크립트를 맨들어주시고 유용한 팁까지 알려주신
-<a href="https://twitter.com/pung96">@pung96</a>++ 님 감사합니다.</p>
 ]]></content>
   </entry>
   
