@@ -9,10 +9,14 @@
   <meta name="author" content="Hyungsuk Hong">
 
   
-  <meta name="description" content="요즘 재미있게 보는 블로그가 있습니다. 조광사진관 일기장 별거 없는 얘기인데 좋습니다.
-저도 비슷한 컨셉으로 적당적당 있었던 일들이나 생각을 올려볼까 합니다.
-귀찮아져서 금방 안하게 되겠지만..
-">
+  <meta name="description" content="요즘이랄까 제작년부터 거의 열린옷장의 서비스를 만들고
+있습니다. 어떤거냐면, 방문예약 서비스
+재고관리 서비스
+의류 기증 신청 및 관리 서비스
+봉사활동 신청 및 관리 서비스
+대기자 현황 서비스
+온라인 대여 서비스 등을 만들고 있습니다. 제가 하는 작업의
+이력은 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -68,6 +72,78 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2017/04/26/yojeum-haneun-il/">요즘 하는 일</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2017-04-26T23:37:35+09:00" pubdate data-updated="true"></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>요즘이랄까 제작년부터 거의 <a href="https://www.theopencloset.net/">열린옷장</a>의 서비스를 만들고
+있습니다.</p>
+
+<p>어떤거냐면,</p>
+
+<ul>
+<li><a href="https://visit.theopencloset.net/visit">방문예약 서비스</a></li>
+<li><a href="https://staff.theopencloset.net/">재고관리 서비스</a></li>
+<li><a href="https://donation.theopencloset.net/">의류 기증 신청 및 관리 서비스</a></li>
+<li><a href="https://volunteer.theopencloset.net/">봉사활동 신청 및 관리 서비스</a></li>
+<li><a href="https://monitor.theopencloset.net/">대기자 현황 서비스</a></li>
+<li><a href="https://share.theopencloset.net/">온라인 대여 서비스</a></li>
+</ul>
+
+
+<p>등을 만들고 있습니다.</p>
+
+<p>제가 하는 작업의
+이력은
+<a href="https://github.com/opencloset/opencloset/issues?q=assignee%3Aaanoaa+is%3Aopen">opencloset/opencloset assignee:aanoaa is:open</a> 에서
+볼 수 있습니다.</p>
+
+<p><img src="/images/posts/assignee-aanoaa.png"></p>
+
+<p>열린옷장 직원은 아닙니다. 열린옷장 옆사무실에 SILEX 라는 소프트웨어 회사 댕기고
+있는데(이번에 건물에서 쫓겨나서 옆사무실 아님) 초창기에 열린옷장 재고관리 라는 작은
+프로젝트를 계기로 일하게 되었는데 어쩌다보니 이것만 하고 있습니다.</p>
+
+<hr />
+
+<p>SILEX 에는 yongbin, keedi, aanoaa(나) 세명인데, 얼마전 건물에서 쫓겨나서 망한느낌이 물씬
+납니다. 한명은 집에서 애보고 한명은 알바하고 저는 그냥 하던거 계속 하고 있습니다. 저는
+열린옷장에 책상 한자리 부탁해서 얹혀 살고 있습니다.</p>
+
+<p>모두들 고생하고 있는데 잘되면 좋겠습니다.</p>
+
+<p>끗</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -748,196 +824,6 @@ TODO: 2 of 2 tasks shown
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/12/20/coffeescript-compile-args/">Coffeescript-compile-args</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-12-20T00:34:00+09:00" pubdate data-updated="true"></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>$ coffee -h
-</span><span class='line'>
-</span><span class='line'>Usage: coffee [options] path/to/script.coffee -- [args]
-</span><span class='line'>
-</span><span class='line'>If called without options, `coffee` will run your script.
-</span><span class='line'>
-</span><span class='line'>  -b, --bare         compile without a top-level function wrapper
-</span><span class='line'>  -c, --compile      compile to JavaScript and save as .js files
-</span><span class='line'>  -e, --eval         pass a string from the command line as input
-</span><span class='line'>  -h, --help         display this help message
-</span><span class='line'>  -i, --interactive  run an interactive CoffeeScript REPL
-</span><span class='line'>  -j, --join         concatenate the source CoffeeScript before compiling
-</span><span class='line'>  -m, --map          generate source map and save as .map files
-</span><span class='line'>  -n, --nodes        print out the parse tree that the parser produces
-</span><span class='line'>      --nodejs       pass options directly to the "node" binary
-</span><span class='line'>  -o, --output       set the output directory for compiled JavaScript
-</span><span class='line'>  -p, --print        print out the compiled JavaScript
-</span><span class='line'>  -s, --stdio        listen for and compile scripts over stdio
-</span><span class='line'>  -l, --literate     treat stdio as literate style coffee-script
-</span><span class='line'>  -t, --tokens       print out the tokens that the lexer/rewriter produce
-</span><span class='line'>  -v, --version      display the version number
-</span><span class='line'>  -w, --watch        watch scripts for changes and rerun commands</span></code></pre></td></tr></table></div></figure>
-
-
-<p>javascript 는 html 의 script 로써만 사용하고 있습니다.
-직접 사용하진 않고 <a href="http://coffeescript.org/">CoffeeScript</a> 를 쓰고
-있습니다.</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-</pre></td><td class='code'><pre><code class='coffeescript'><span class='line'><span class="nx">$</span> <span class="nx">coffee</span> <span class="o">-</span><span class="nx">cps</span>
-</span><span class='line'><span class="nx">$</span> <span class="nf">-&gt;</span>
-</span><span class='line'>  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span> <span class="s">&#39;oops&#39;</span>
-</span><span class='line'><span class="o">&lt;</span><span class="nx">Ctrl</span><span class="o">+</span><span class="nx">d</span><span class="o">&gt;</span>
-</span><span class='line'><span class="o">//</span> <span class="nx">Generated</span> <span class="k">by</span> <span class="nx">CoffeeScript</span> <span class="mf">1.6</span><span class="p">.</span><span class="mi">3</span>
-</span><span class='line'><span class="p">(</span><span class="nx">function</span><span class="p">()</span> <span class="p">{</span>
-</span><span class='line'>  <span class="nx">$</span><span class="p">(</span><span class="nx">function</span><span class="p">()</span> <span class="p">{</span>
-</span><span class='line'>    <span class="k">return</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s">&#39;oops&#39;</span><span class="p">);</span>
-</span><span class='line'>  <span class="p">});</span>
-</span><span class='line'>
-</span><span class='line'><span class="p">}).</span><span class="nx">call</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>위 결과처럼 별 옵션없이 <code>--compile</code> 하면</p>
-
-<pre><code>(function() { ... }).call(this)
-</code></pre>
-
-<p>무명함수로 감싼뒤에 실행합니다. lexical scope 이 자동으로 적용되어서
-훌륭합니다만, 여러개의 파일을 하나의 html 에서 사용하고자 할때는 다른
-파일에서 선언한 함수에 접근을 못하는 상황이 발생할 수 있습니다.</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;jquery.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
-</span><span class='line'><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;a.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
-</span><span class='line'><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;b.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p><code>a.js</code> 에 <code>foo</code> 라는 함수를 만들어 놓고 <code>b.js</code> 에서 사용하고자 하면
-못찾습니다.</p>
-
-<pre><code>ReferenceError: foo is not defined
-</code></pre>
-
-<p>이를 해결하는 방법은 3가지가 있습니다. (더 있을 수도..)</p>
-
-<ol>
-<li><p>requirejs 같은거 쓴다.</p>
-
-<p><code>define</code>, <code>require</code> 으로 스슥</p></li>
-<li><p>Window 이름공간을 더럽힌다.</p>
-
-<p>브라우저의 전역적 이름공간인 <code>Window</code> 의 프로토타입에 함수를
-추가해서 사용</p></li>
-<li><p>무명함수를 벗긴다.</p>
-
-<p><code>coffee</code> 명령어의 <code>--bare</code> 옵션인데, <code>compile without a top-level
-function wrapper</code></p></li>
-</ol>
-
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-</pre></td><td class='code'><pre><code class='coffeescript'><span class='line'><span class="nx">$</span> <span class="nx">coffee</span> <span class="o">-</span><span class="nx">bcps</span>
-</span><span class='line'><span class="nx">$</span> <span class="nf">-&gt;</span>
-</span><span class='line'>  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span> <span class="s">&#39;oops&#39;</span>
-</span><span class='line'><span class="o">&lt;</span><span class="nx">Ctrl</span><span class="o">+</span><span class="nx">d</span><span class="o">&gt;</span>
-</span><span class='line'><span class="o">//</span> <span class="nx">Generated</span> <span class="k">by</span> <span class="nx">CoffeeScript</span> <span class="mf">1.6</span><span class="p">.</span><span class="mi">3</span>
-</span><span class='line'><span class="nx">$</span><span class="p">(</span><span class="nx">function</span><span class="p">()</span> <span class="p">{</span>
-</span><span class='line'>  <span class="k">return</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s">&#39;oops&#39;</span><span class="p">);</span>
-</span><span class='line'><span class="p">});</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>  요래 하는 것입니다.</p>
-
-<hr />
-
-<p>emacs 사용자라면 어찌 매번 컴파일하는 번거로운 작업을 한단 말입니까.
-<code>coffee-cos-mode</code>(coffee compile-on-save mode) 에 컴파일 옵션을
-수정해둬야 하겠습니다.</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-</pre></td><td class='code'><pre><code class='coffeescript'><span class='line'><span class="p">(</span><span class="nx">defun</span> <span class="nx">coffee</span><span class="o">-</span><span class="nx">custom</span> <span class="p">()</span>
-</span><span class='line'>  <span class="s">&quot;coffee-mode-hook&quot;</span>
-</span><span class='line'>  <span class="p">(</span><span class="nx">set</span> <span class="p">(</span><span class="nx">make</span><span class="o">-</span><span class="nx">local</span><span class="o">-</span><span class="nx">variable</span> <span class="s">&#39;tab-width) 2)</span>
-</span><span class='line'><span class="s">  (setq coffee-args-compile &#39;</span><span class="p">(</span><span class="s">&quot;-bc&quot;</span><span class="p">))</span>
-</span><span class='line'><span class="p">)</span>
-</span></code></pre></td></tr></table></div></figure>
-
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="2">&larr; Older</a>
@@ -953,6 +839,10 @@ function wrapper</code></p></li>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2017/04/26/yojeum-haneun-il/">요즘 하는 일</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2017/04/26/insangjeogin-beulrogeu/">인상적인 블로그</a>
       </li>
     
@@ -966,10 +856,6 @@ function wrapper</code></p></li>
     
       <li class="post">
         <a href="/blog/2015/07/15/redis-path-and-db-number/">Redis Path and Db Number</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2015/07/15/perltidy-profile-option/">Perltidy Profile Option</a>
       </li>
     
   </ul>

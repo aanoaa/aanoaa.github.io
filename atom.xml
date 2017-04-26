@@ -4,7 +4,7 @@
   <title><![CDATA[Mustache :{]]></title>
   <link href="http://aanoaa.github.io/atom.xml" rel="self"/>
   <link href="http://aanoaa.github.io/"/>
-  <updated>2017-04-26T23:22:08+09:00</updated>
+  <updated>2017-04-27T02:13:42+09:00</updated>
   <id>http://aanoaa.github.io/</id>
   <author>
     <name><![CDATA[Hyungsuk Hong]]></name>
@@ -12,6 +12,51 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[요즘 하는 일]]></title>
+    <link href="http://aanoaa.github.io/blog/2017/04/26/yojeum-haneun-il/"/>
+    <updated>2017-04-26T23:37:35+09:00</updated>
+    <id>http://aanoaa.github.io/blog/2017/04/26/yojeum-haneun-il</id>
+    <content type="html"><![CDATA[<p>요즘이랄까 제작년부터 거의 <a href="https://www.theopencloset.net/">열린옷장</a>의 서비스를 만들고
+있습니다.</p>
+
+<p>어떤거냐면,</p>
+
+<ul>
+<li><a href="https://visit.theopencloset.net/visit">방문예약 서비스</a></li>
+<li><a href="https://staff.theopencloset.net/">재고관리 서비스</a></li>
+<li><a href="https://donation.theopencloset.net/">의류 기증 신청 및 관리 서비스</a></li>
+<li><a href="https://volunteer.theopencloset.net/">봉사활동 신청 및 관리 서비스</a></li>
+<li><a href="https://monitor.theopencloset.net/">대기자 현황 서비스</a></li>
+<li><a href="https://share.theopencloset.net/">온라인 대여 서비스</a></li>
+</ul>
+
+
+<p>등을 만들고 있습니다.</p>
+
+<p>제가 하는 작업의
+이력은
+<a href="https://github.com/opencloset/opencloset/issues?q=assignee%3Aaanoaa+is%3Aopen">opencloset/opencloset assignee:aanoaa is:open</a> 에서
+볼 수 있습니다.</p>
+
+<p><img src="http://aanoaa.github.io/images/posts/assignee-aanoaa.png"></p>
+
+<p>열린옷장 직원은 아닙니다. 열린옷장 옆사무실에 SILEX 라는 소프트웨어 회사 댕기고
+있는데(이번에 건물에서 쫓겨나서 옆사무실 아님) 초창기에 열린옷장 재고관리 라는 작은
+프로젝트를 계기로 일하게 되었는데 어쩌다보니 이것만 하고 있습니다.</p>
+
+<hr />
+
+<p>SILEX 에는 yongbin, keedi, aanoaa(나) 세명인데, 얼마전 건물에서 쫓겨나서 망한느낌이 물씬
+납니다. 한명은 집에서 애보고 한명은 알바하고 저는 그냥 하던거 계속 하고 있습니다. 저는
+열린옷장에 책상 한자리 부탁해서 얹혀 살고 있습니다.</p>
+
+<p>모두들 고생하고 있는데 잘되면 좋겠습니다.</p>
+
+<p>끗</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[인상적인 블로그]]></title>
@@ -1742,44 +1787,6 @@ don&rsquo;t want to run an additional MSN/AIM/whatever client.</p></blockquote>
 <p>누가 말시키면 그냥 버퍼 나뉘어져서 바로 보여요</p>
 
 <p><img src="http://www.bitlbee.org/img/comic_3.0.png" alt="comic" /></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Org-mode]]></title>
-    <link href="http://aanoaa.github.io/blog/2012/01/06/org-mode/"/>
-    <updated>2012-01-06T14:55:00+09:00</updated>
-    <id>http://aanoaa.github.io/blog/2012/01/06/org-mode</id>
-    <content type="html"><![CDATA[<ul>
-<li><a href="https://mail.google.com/mail/help/tasks/">Google tasks</a></li>
-<li><a href="http://www.rememberthemilk.com/">remember the milk</a></li>
-<li><a href="http://tadalist.com/">Tada list</a></li>
-<li><a href="https://trello.com/">trello</a></li>
-<li><a href="https://workflowy.com/">workflowy</a></li>
-<li>그냥 <code>excel</code></li>
-</ul>
-
-
-<p>제가 그간 거쳐왔던 훌륭한 task 관리 툴입니다.
-근데 저는 몇일 쓰다보면 못쓰겟더라고요.</p>
-
-<p>그리고 얼마전에 emacs <code>org-mode</code> 라는 것을 알게 되었습니다. org-mode
-참 좋습니다. pdf, excel, plain/text, html, latex, .. 으로 export 되고
-단축키로 뿅뿅 눌러서 TODO 관리도 할 수 있고 emacs 안에서, 오프라인에서
-일정관리도 되고, 태그도 되고, 해야할 일을 쉽게 내 todo 에 올릴 수도
-있고요..</p>
-
-<p>기능도 많고 안되는게 없고 문서화도 아주 잘되어 있습니다 android,
-iphone app 도 있습니다. 근데 배우고 알아야 할게 너무 많습니다.</p>
-
-<p>되돌아 보면, github issue 만 사용할때 가장 업무 효율이 높았던 것
-같습니다.</p>
-
-<p>github 만세입니다.</p>
-
-<h3>결론은 버킹검</h3>
-
-<p>아아 뭔소리래..</p>
 ]]></content>
   </entry>
   
