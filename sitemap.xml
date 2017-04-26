@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://aanoaa.github.io/blog/2017/04/26/hangeuli-doeneunga/</loc>
+    <lastmod>2017-04-26T22:46:10+09:00</lastmod>
+  </url>
+  <url>
     <loc>http://aanoaa.github.io/blog/2016/06/08/yongbin-mode/</loc>
     <lastmod>2016-06-08T00:22:00+09:00</lastmod>
   </url>
@@ -191,6 +195,9 @@
   </url>
   <url>
     <loc>http://aanoaa.github.io/blog/categories/elisp/</loc>
+  </url>
+  <url>
+    <loc>http://aanoaa.github.io/blog/categories/hangeul/</loc>
   </url>
   <url>
     <loc>http://aanoaa.github.io/posts/2/</loc>

@@ -4,7 +4,7 @@
   <title><![CDATA[Mustache :{]]></title>
   <link href="http://aanoaa.github.io/atom.xml" rel="self"/>
   <link href="http://aanoaa.github.io/"/>
-  <updated>2016-06-08T01:36:22+09:00</updated>
+  <updated>2017-04-26T23:07:26+09:00</updated>
   <id>http://aanoaa.github.io/</id>
   <author>
     <name><![CDATA[Hyungsuk Hong]]></name>
@@ -12,6 +12,25 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[한글이 되는가]]></title>
+    <link href="http://aanoaa.github.io/blog/2017/04/26/hangeuli-doeneunga/"/>
+    <updated>2017-04-26T22:46:10+09:00</updated>
+    <id>http://aanoaa.github.io/blog/2017/04/26/hangeuli-doeneunga</id>
+    <content type="html"><![CDATA[<p>octopress 에서는 한글 tags 와 한글제목을 지원하는가 궁금했습니다.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ bundle exec rake new_post['한글이 되는가']
+</span><span class='line'>mkdir -p source/_posts
+</span><span class='line'>Creating new post: source/_posts/2017-04-26-hangeuli-doeneunga.markdown</span></code></pre></td></tr></table></div></figure>
+
+
+<p>이렇게 됩니다.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Yongbin-mode]]></title>
@@ -1827,174 +1846,6 @@ https://lh4.googleusercontent.com/-mmv40wXKaM4/TwMP0BKUVhI/AAAAAAAAABA/AM3KBgCuf
 
 <p>편리한 스크립트를 맨들어주시고 유용한 팁까지 알려주신
 <a href="https://twitter.com/pung96">@pung96</a>++ 님 감사합니다.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Sass &amp; Scss]]></title>
-    <link href="http://aanoaa.github.io/blog/2011/12/17/sass-and-scss/"/>
-    <updated>2011-12-17T00:08:00+09:00</updated>
-    <id>http://aanoaa.github.io/blog/2011/12/17/sass-and-scss</id>
-    <content type="html"><![CDATA[<p><code>oops.scss</code> 파일을 아래처럼 맨들고,</p>
-
-<figure class='code'><figcaption><span>oops.scss</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-</pre></td><td class='code'><pre><code class='scss'><span class='line'><span class="k">@import</span> <span class="s2">&quot;compass/css3&quot;</span><span class="p">;</span>
-</span><span class='line'><span class="nn">#header</span><span class="o">,</span><span class="nn">#footer</span> <span class="p">{</span>
-</span><span class='line'>    <span class="na">margin</span><span class="o">:</span> <span class="mi">0</span> <span class="no">auto</span><span class="p">;</span>
-</span><span class='line'><span class="p">}</span>
-</span><span class='line'><span class="nc">.error</span> <span class="p">{</span>
-</span><span class='line'>    <span class="k">@include</span><span class="nd"> border-radius</span><span class="p">(</span><span class="mi">5</span><span class="kt">px</span><span class="p">);</span>
-</span><span class='line'>    <span class="na">background-color</span><span class="o">:</span> <span class="mh">#DD0000</span><span class="p">;</span>
-</span><span class='line'>    <span class="nc">.important</span> <span class="p">{</span>
-</span><span class='line'>        <span class="na">border-width</span><span class="o">:</span> <span class="mi">3</span><span class="kt">px</span><span class="p">;</span>
-</span><span class='line'>    <span class="p">}</span>
-</span><span class='line'><span class="p">}</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>콤퓨타로 뭔가를 하면,</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>sass --watch oops.scss:oops.css
-</span><span class='line'>
-</span><span class='line'>or
-</span><span class='line'>
-</span><span class='line'><span class="nv">$ </span>compass watch /path/to/     <span class="c"># 끝판왕임 저는 이렇게 씀</span>
-</span><span class='line'>
-</span><span class='line'>or
-</span><span class='line'>
-</span><span class='line'><span class="c"># emacs scss-mode 쓰면 그냥 저장함과 동시에 변환할 수 있는데 compass</span>
-</span><span class='line'><span class="c"># 의 기능은 사용할 수 없음</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p><code>oops.css</code> 파일을 맨들어 줍니다.</p>
-
-<figure class='code'><figcaption><span>oops.css</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-</pre></td><td class='code'><pre><code class='css'><span class='line'><span class="c">/* line 2, ../sass/oops.scss */</span>
-</span><span class='line'><span class="nf">#header</span><span class="o">,</span> <span class="nf">#footer</span> <span class="p">{</span>
-</span><span class='line'>  <span class="k">margin</span><span class="o">:</span> <span class="m">0</span> <span class="k">auto</span><span class="p">;</span>
-</span><span class='line'><span class="p">}</span>
-</span><span class='line'>
-</span><span class='line'><span class="c">/* line 5, ../sass/oops.scss */</span>
-</span><span class='line'><span class="nc">.error</span> <span class="p">{</span>
-</span><span class='line'>  <span class="o">-</span><span class="n">moz</span><span class="o">-</span><span class="k">border</span><span class="o">-</span><span class="n">radius</span><span class="o">:</span> <span class="m">5px</span><span class="p">;</span>
-</span><span class='line'>  <span class="o">-</span><span class="n">webkit</span><span class="o">-</span><span class="k">border</span><span class="o">-</span><span class="n">radius</span><span class="o">:</span> <span class="m">5px</span><span class="p">;</span>
-</span><span class='line'>  <span class="o">-</span><span class="n">o</span><span class="o">-</span><span class="k">border</span><span class="o">-</span><span class="n">radius</span><span class="o">:</span> <span class="m">5px</span><span class="p">;</span>
-</span><span class='line'>  <span class="o">-</span><span class="n">ms</span><span class="o">-</span><span class="k">border</span><span class="o">-</span><span class="n">radius</span><span class="o">:</span> <span class="m">5px</span><span class="p">;</span>
-</span><span class='line'>  <span class="o">-</span><span class="n">khtml</span><span class="o">-</span><span class="k">border</span><span class="o">-</span><span class="n">radius</span><span class="o">:</span> <span class="m">5px</span><span class="p">;</span>
-</span><span class='line'>  <span class="k">border</span><span class="o">-</span><span class="n">radius</span><span class="o">:</span> <span class="m">5px</span><span class="p">;</span>
-</span><span class='line'>  <span class="k">background-color</span><span class="o">:</span> <span class="m">#DD0000</span><span class="p">;</span>
-</span><span class='line'><span class="p">}</span>
-</span><span class='line'><span class="c">/* line 8, ../sass/oops.scss */</span>
-</span><span class='line'><span class="nc">.error</span> <span class="nc">.important</span> <span class="p">{</span>
-</span><span class='line'>  <span class="k">border-width</span><span class="o">:</span> <span class="m">3px</span><span class="p">;</span>
-</span><span class='line'><span class="p">}</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>이처럼 <a href="http://sass-lang.com/">sass</a>는 <code>.sass</code> 또는 <code>.scss</code>를 <code>.css</code>로 맨들어 줍니다.</p>
-
-<p>장점으로는 <code>oops.scss</code>에서 <code>@include border-radius(5px);</code> 를 보듯이
-함수와 변수를 사용할 수 있다는 것입니다. 코드의 중복을 막아주고(Don&rsquo;t
-Repeat Yourself), 셀렉터들의 계층을 두어서 쉽게 작성할 수 있습니다.
-<code>compass</code>를 함께 사용하면 이미 흔하게 사용되고 있는 선조들의 <code>best
-practice</code>를 <code>import</code> 해서 쓸 수 있습니다.</p>
-
-<h1>설치 및 사용</h1>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>gem install sass compass    <span class="c"># 저는 compass도 씀</span>
-</span><span class='line'><span class="nv">$ </span>compass create /path/to/Your-Awesome-Project/
-</span><span class='line'><span class="c"># config.rb 를 수정하고, stylesheets, sass, images 등의 경로를</span>
-</span><span class='line'><span class="c"># 프로젝트 환경에 맞게 바꿔줍니다. rails 라면 필요없어 보입니다.</span>
-</span><span class='line'><span class="nv">$ </span>compass watch .    <span class="c"># config.rb 있는 곳을 지정해 줘야 합니다.</span>
-</span><span class='line'><span class="c"># scss 파일을 수정하면 css 파일에도 반영됩니다.</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>저는 <code>config.rb</code> 를 다음과 같이 변경해서 사용중입니다.</p>
-
-<figure class='code'><figcaption><span>config.rb</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-</pre></td><td class='code'><pre><code class='rb'><span class='line'><span class="n">http_path</span> <span class="o">=</span> <span class="s2">&quot;/&quot;</span>
-</span><span class='line'><span class="n">css_dir</span> <span class="o">=</span> <span class="s2">&quot;static/css&quot;</span>
-</span><span class='line'><span class="n">sass_dir</span> <span class="o">=</span> <span class="s2">&quot;static/sass&quot;</span>
-</span><span class='line'><span class="n">images_dir</span> <span class="o">=</span> <span class="s2">&quot;static/images&quot;</span>
-</span><span class='line'><span class="n">javascripts_dir</span> <span class="o">=</span> <span class="s2">&quot;static/scripts&quot;</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h1>그밖에..</h1>
-
-<p>emacs <a href="http://www.emacswiki.org/emacs/ScssMode">scss-mode</a>를 사용하면 watcher 를 띄우지 않고도
-저장과 동시에 <code>css</code>파일을 맨들 수 있습니다.</p>
-
-<figure class='code'><figcaption><span>config.rb</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class='rb'><span class='line'><span class="p">(</span><span class="n">add</span><span class="o">-</span><span class="n">to</span><span class="o">-</span><span class="n">list</span> <span class="s1">&#39;load-path &quot;~/.emacs.d/vendor/scss-mode&quot;)</span>
-</span><span class='line'><span class="s1">(require &#39;</span><span class="n">scss</span><span class="o">-</span><span class="n">mode</span><span class="p">)</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p><a href="http://blueprintcss.org/">blueprint</a>와 같은 grid framework 와 함께 사용할 수
-있습니다. 저는 그렇게 쓰고 있습니다.</p>
-
-<p><code>octopress</code> 도 <code>scss</code>사용합니다.</p>
-
-<h1>결론</h1>
-
-<p><code>ruby</code> 모듈이자 툴입니다. 저희 회사는 <code>perl</code>로 개발합니다만 물론
-사용할 수 있습니다. 너무나도 훌륭한 오픈소스 입니다.</p>
-
-<p>훌륭한 개발환경을 가지고 있고, 프로그래밍에는 능숙하지만, <code>css</code>만
-잡으면 한없이 약해지는 분들이라면 간단한 <code>scss</code>문법을 공부하고
-<code>compass</code>툴 사용법을 익혀서 써먹으면 좋을 것 같습니다.</p>
 ]]></content>
   </entry>
   

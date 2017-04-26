@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: 한글 | Mustache :{]]></title>
+  <link href="http://aanoaa.github.io/blog/categories/hangeul/atom.xml" rel="self"/>
+  <link href="http://aanoaa.github.io/"/>
+  <updated>2017-04-26T23:07:26+09:00</updated>
+  <id>http://aanoaa.github.io/</id>
+  <author>
+    <name><![CDATA[Hyungsuk Hong]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[한글이 되는가]]></title>
+    <link href="http://aanoaa.github.io/blog/2017/04/26/hangeuli-doeneunga/"/>
+    <updated>2017-04-26T22:46:10+09:00</updated>
+    <id>http://aanoaa.github.io/blog/2017/04/26/hangeuli-doeneunga</id>
+    <content type="html"><![CDATA[<p>octopress 에서는 한글 tags 와 한글제목을 지원하는가 궁금했습니다.</p>
+
+<pre><code>$ bundle exec rake new_post['한글이 되는가']
+mkdir -p source/_posts
+Creating new post: source/_posts/2017-04-26-hangeuli-doeneunga.markdown
+</code></pre>
+
+<p>이렇게 됩니다.</p>
+]]></content>
+  </entry>
+  
+</feed>
