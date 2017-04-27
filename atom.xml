@@ -4,7 +4,7 @@
   <title><![CDATA[Mustache :{]]></title>
   <link href="http://aanoaa.github.io/atom.xml" rel="self"/>
   <link href="http://aanoaa.github.io/"/>
-  <updated>2017-04-27T02:13:42+09:00</updated>
+  <updated>2017-04-28T00:30:41+09:00</updated>
   <id>http://aanoaa.github.io/</id>
   <author>
     <name><![CDATA[Hyungsuk Hong]]></name>
@@ -12,6 +12,49 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[수영 2km]]></title>
+    <link href="http://aanoaa.github.io/blog/2017/04/27/suyeong-2km/"/>
+    <updated>2017-04-27T23:57:48+09:00</updated>
+    <id>http://aanoaa.github.io/blog/2017/04/27/suyeong-2km</id>
+    <content type="html"><![CDATA[<p>간만에 블로그 쓴다고 늦게 자서 늦게 인나고 늦게 출근했습니다.
+도착하니 점심시간이었습니다.</p>
+
+<p>보통은 민들레에서 백반 먹는데, 어제 중길씨가 국밥 좋아한다고 해서 둘이 고흥순대국 다녀왔습니다.</p>
+
+<p><img src="http://aanoaa.github.io/images/posts/민들레쿠폰.jpg" width="300"></p>
+
+<p>민들레는 제가 가장 좋아하는 식당입니다.</p>
+
+<p>밥먹고 일했습니다. 요새는 딴짓도 잘 안하고 일만하는 것 같습니다.
+하루종일 컴피터 앞에 앉아 있는데 하루종일 바쁜 것 같습니다. 담배도 안피니까 화장실 가는거
+말고는 계속 컴피터 합니다.</p>
+
+<p>집중을 오래하다보면 무기력해지곤 합니다. 딴짓을 섞어줘야 하는데 얹혀지내기 시작한 이후로는
+벽을 바라보고 앉기 때문에 남들이 제 모니터를 볼까봐 딴짓을 못합니다.</p>
+
+<p><img src="http://aanoaa.github.io/images/posts/github액자.jpg" width="300"></p>
+
+<p>열린옷장의 대여비를 %로 할인해주는 쿠폰시스템을 만드는 중 입니다.
+한벌대여쿠폰, 10,000원 쿠폰 이런게 있었는데 이번에 요구가 있어서 합니다.
+점점 복잡해져서 걱정입니다. &ldquo;%할인 못한다&rdquo; 라고 하고 시스템을 되도록 단순하게 유지하고
+싶은데 결정은 제가 하는게 아닙니다.</p>
+
+<p>하다가 피곤해져서 농땡이 좀 부리다가 수영장 갔습니다. 화장실에 휴지가 없었는데 모르는
+사람의 도움으로 위기를 벗어났습니다.</p>
+
+<p>4월의 마지막주 목요일이라서 자유수영하는 날 입니다.
+이런 날은 아름사마(에이스)가 프로그램을 계획해서 옵니다.</p>
+
+<p>요새 몸이 안좋은지 탕에서 나오거나 체조할때 어질어질합니다.
+쉬엄쉬엄 하고 싶은데 같이 수영하시는 분들이 그렇게 못하게 합니다.(앞에 서라고 부추김)</p>
+
+<p>오늘은 2km 수영했습니다.</p>
+
+<p>끝</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[요즘 하는 일]]></title>
@@ -1734,59 +1777,6 @@ query_parameter 를 추가해줍니다.</p>
 </pre></td><td class='code'><pre><code class='coffeescript'><span class='line'><span class="nx">jqueryblablablabla_timestamp</span><span class="p">(</span><span class="o">&lt;</span><span class="nx">stringifiedJSON</span><span class="o">&gt;</span><span class="p">)</span>
 </span></code></pre></td></tr></table></div></figure>
 
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Bitlbee]]></title>
-    <link href="http://aanoaa.github.io/blog/2012/01/06/bitlbee/"/>
-    <updated>2012-01-06T18:49:00+09:00</updated>
-    <id>http://aanoaa.github.io/blog/2012/01/06/bitlbee</id>
-    <content type="html"><![CDATA[<p>근데 제가 <a href="http://www.bitlbee.org/main.php/news.r.html">BitlBee</a> 를
-사용하는 이유는 바로 이겁니다.</p>
-
-<blockquote><p>BitlBee brings IM (instant messaging) to IRC clients. It&rsquo;s a great
-solution for people who have an IRC client running all the time and
-don&rsquo;t want to run an additional MSN/AIM/whatever client.</p></blockquote>
-
-<p>irc client 로는 emacs <a href="http://www.emacswiki.org/emacs/ERC">erc</a> 를
-사용합니다.</p>
-
-<p>메신져는 <a href="http://www.google.com/talk/">gtalk</a> 을 씁니다.</p>
-
-<p>꼭 erc 를 사용하지 않더라도 bitlbee 를 통해, 선호하는 irc client
-안에서 IM 서비스를 이용할 수 있습니다.</p>
-
-<h2>설치</h2>
-
-<p>우분투에서..</p>
-
-<pre><code>$ sudo apt-get install bitlbee
-</code></pre>
-
-<h2>사용</h2>
-
-<ul>
-<li>irc client 설정파일에 localhost:6667 에 연결하도록 추가합니다.</li>
-<li>접속합니다.</li>
-<li><p>&amp;bitlbee 버퍼에 다음과 같이 설정합니다.</p>
-
-<pre><code>  ERC&gt; account add jabber username@gmail.com mypasswd talk.google.com:5223:ssl
-  ERC&gt; save
-</code></pre></li>
-</ul>
-
-
-<p>안될수도 있습니다.
-저도 예전에 한번 설정하고 까먹엇거든요.
-검색해서 잘 해보세요</p>
-
-<p>아무튼 접속되었으면 <code>ERC&gt; /query ID</code> 해서 슥슥
-대화합니다. 편리합니다. 좋습니다.</p>
-
-<p>누가 말시키면 그냥 버퍼 나뉘어져서 바로 보여요</p>
-
-<p><img src="http://www.bitlbee.org/img/comic_3.0.png" alt="comic" /></p>
 ]]></content>
   </entry>
   
