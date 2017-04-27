@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://aanoaa.github.io/blog/2017/04/28/tekken-premier-league-2017/</loc>
+    <lastmod>2017-04-28T00:42:49+09:00</lastmod>
+  </url>
+  <url>
     <loc>http://aanoaa.github.io/blog/2017/04/27/suyeong-2km/</loc>
     <lastmod>2017-04-27T23:57:48+09:00</lastmod>
   </url>
@@ -222,6 +226,12 @@
   </url>
   <url>
     <loc>http://aanoaa.github.io/blog/categories/halinkupon/</loc>
+  </url>
+  <url>
+    <loc>http://aanoaa.github.io/blog/categories/tekken/</loc>
+  </url>
+  <url>
+    <loc>http://aanoaa.github.io/blog/categories/ceolgweon/</loc>
   </url>
   <url>
     <loc>http://aanoaa.github.io/posts/2/</loc>

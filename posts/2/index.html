@@ -9,8 +9,10 @@
   <meta name="author" content="Hyungsuk Hong">
 
   
-  <meta name="description" content="개인적인 private repo 는 bitbucket 을 사용하고 있었는데, 아래 링크를
-보고 Dropbox 를 사용하고 있습니다. Forget github limits: Free private git repositories with Dropbox 근데 아쉬운거는 &hellip;">
+  <meta name="description" content="$HOME/.perltidyrc # https://github.com/kraih/mojo/blob/master/.perltidyrc
+-pbp # Start with Perl Best Practices
+-w # Show all warnings
+-iob # Ignore &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -66,6 +68,72 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/02/12/shut-the-fuck-up-and-perltidy/">Shut the Fuck Up and Perltidy</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-02-12T17:07:08+09:00" pubdate data-updated="true"></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><code>$HOME/.perltidyrc</code></p>
+
+<pre><code># https://github.com/kraih/mojo/blob/master/.perltidyrc
+-pbp # Start with Perl Best Practices
+-w # Show all warnings
+-iob # Ignore old breakpoints
+-l=79 # 79 characters per line
+-mbl=2 # No more than 2 blank lines
+-i=4 # Indentation is 4 columns
+-ci=2 # Continuation indentation is 2 columns
+-vt=0 # Less vertical tightness
+-pt=2 # High parenthesis tightness
+-bt=2 # High brace tightness
+-sbt=2 # High square bracket tightness
+-isbc # Don't indent comments without leading space
+</code></pre>
+
+<p>여기에 emacs 에다가
+<a href="http://search.cpan.org/~jjore/perltidy-mode/">perltidy-mode.el</a> load
+하고</p>
+
+<pre><code>(eval-after-load "cperl-mode"
+  '(add-hook 'cperl-mode-hook 'perltidy-mode))
+</code></pre>
+
+<p>하고 저장하면 저장할때마다 알아서 <code>perltidy</code> 되기 땜시 굳입니다
+팀에서 통일해서 쓰면 좋겟습니다.</p>
+
+<h3>SEE ALSO</h3>
+
+<p><a href="http://aanoaa.github.io/blog/2012/09/12/tidyall/">tidyall</a></p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -1566,83 +1634,6 @@ $ hubot -c ~/Desktop/hubot
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/02/27/backbon-dot-js-jsonp-collection-sync/">backbon.js Jsonp Collection Sync</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-02-27T05:07:00+09:00" pubdate data-updated="true"></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>외부 도메인을 사용하고자 할때 <code>jsonp</code> 를 이용해야 하는데,
-이때, <code>Backbone.sync</code> 메소드를 override 해서 쓸 수 있습니다.</p>
-
-<p>jquery <code>$.ajax</code> 메소드의 옵션을 보면 <code>dataType</code>을 <code>jsonp</code>로 설정하면
-<code>url</code> 꽁지에 자동으로 <code>?callback=jqueryblablablabla_timestamp</code>
-query_parameter 를 추가해줍니다.</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-</pre></td><td class='code'><pre><code class='coffeescript'><span class='line'><span class="k">class</span> <span class="nx">MyCollection</span> <span class="k">extends</span> <span class="nx">Backbone</span><span class="p">.</span><span class="nx">Collection</span>
-</span><span class='line'>  <span class="nv">model: </span><span class="nx">Log</span>
-</span><span class='line'>  <span class="nv">sync: </span><span class="nf">(method, model, options) -&gt;</span>
-</span><span class='line'>    <span class="nv">options.dataType = </span><span class="s">&#39;jsonp&#39;</span>
-</span><span class='line'>    <span class="nx">Backbone</span><span class="p">.</span><span class="nx">sync</span><span class="p">(</span><span class="nx">method</span><span class="p">,</span> <span class="nx">model</span><span class="p">,</span> <span class="nx">options</span><span class="p">)</span>
-</span><span class='line'>
-</span><span class='line'><span class="nv">collection = </span><span class="k">new</span> <span class="nx">MyCollection</span>
-</span><span class='line'><span class="nv">collection.url = </span><span class="s">&#39;http://otherdomain.com&#39;</span>
-</span><span class='line'><span class="nx">collection</span><span class="p">.</span><span class="nx">fetch</span> <span class="c1"># 요래하면 GET/ http://otherdomain.com?callback=jqueryblablablabla_timestamp</span>
-</span><span class='line'>  <span class="nv">success: </span><span class="nf">(collection, response) -&gt;</span>
-</span><span class='line'>    <span class="c1"># do something</span>
-</span><span class='line'>  <span class="nv">error: </span><span class="nf">(collection, response) -&gt;</span>
-</span><span class='line'>    <span class="c1"># error handling</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>서버로부터 응답은 요래 와야..</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='coffeescript'><span class='line'><span class="nx">jqueryblablablabla_timestamp</span><span class="p">(</span><span class="o">&lt;</span><span class="nx">stringifiedJSON</span><span class="o">&gt;</span><span class="p">)</span>
-</span></code></pre></td></tr></table></div></figure>
-
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="3">&larr; Older</a>
@@ -1660,6 +1651,10 @@ query_parameter 를 추가해줍니다.</p>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2017/04/28/tekken-premier-league-2017/">Tekken Premier League 2017</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2017/04/27/suyeong-2km/">수영 2km</a>
       </li>
     
@@ -1673,10 +1668,6 @@ query_parameter 를 추가해줍니다.</p>
     
       <li class="post">
         <a href="/blog/2017/04/26/hangeuli-doeneunga/">한글이 되는가</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2016/06/08/yongbin-mode/">Yongbin-mode</a>
       </li>
     
   </ul>

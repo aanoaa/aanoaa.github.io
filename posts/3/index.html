@@ -9,9 +9,9 @@
   <meta name="author" content="Hyungsuk Hong">
 
   
-  <meta name="description" content="근데 제가 BitlBee 를
-사용하는 이유는 바로 이겁니다. BitlBee brings IM (instant messaging) to IRC clients. It&rsquo;s a great
-solution for people who have an IRC client &hellip;">
+  <meta name="description" content="외부 도메인을 사용하고자 할때 jsonp 를 이용해야 하는데,
+이때, Backbone.sync 메소드를 override 해서 쓸 수 있습니다. jquery $.ajax 메소드의 옵션을 보면 dataType을 jsonp로 설정하면
+url 꽁지에 자동으로 ? &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -67,6 +67,83 @@ solution for people who have an IRC client &hellip;">
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/02/27/backbon-dot-js-jsonp-collection-sync/">backbon.js Jsonp Collection Sync</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-02-27T05:07:00+09:00" pubdate data-updated="true"></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>외부 도메인을 사용하고자 할때 <code>jsonp</code> 를 이용해야 하는데,
+이때, <code>Backbone.sync</code> 메소드를 override 해서 쓸 수 있습니다.</p>
+
+<p>jquery <code>$.ajax</code> 메소드의 옵션을 보면 <code>dataType</code>을 <code>jsonp</code>로 설정하면
+<code>url</code> 꽁지에 자동으로 <code>?callback=jqueryblablablabla_timestamp</code>
+query_parameter 를 추가해줍니다.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+</pre></td><td class='code'><pre><code class='coffeescript'><span class='line'><span class="k">class</span> <span class="nx">MyCollection</span> <span class="k">extends</span> <span class="nx">Backbone</span><span class="p">.</span><span class="nx">Collection</span>
+</span><span class='line'>  <span class="nv">model: </span><span class="nx">Log</span>
+</span><span class='line'>  <span class="nv">sync: </span><span class="nf">(method, model, options) -&gt;</span>
+</span><span class='line'>    <span class="nv">options.dataType = </span><span class="s">&#39;jsonp&#39;</span>
+</span><span class='line'>    <span class="nx">Backbone</span><span class="p">.</span><span class="nx">sync</span><span class="p">(</span><span class="nx">method</span><span class="p">,</span> <span class="nx">model</span><span class="p">,</span> <span class="nx">options</span><span class="p">)</span>
+</span><span class='line'>
+</span><span class='line'><span class="nv">collection = </span><span class="k">new</span> <span class="nx">MyCollection</span>
+</span><span class='line'><span class="nv">collection.url = </span><span class="s">&#39;http://otherdomain.com&#39;</span>
+</span><span class='line'><span class="nx">collection</span><span class="p">.</span><span class="nx">fetch</span> <span class="c1"># 요래하면 GET/ http://otherdomain.com?callback=jqueryblablablabla_timestamp</span>
+</span><span class='line'>  <span class="nv">success: </span><span class="nf">(collection, response) -&gt;</span>
+</span><span class='line'>    <span class="c1"># do something</span>
+</span><span class='line'>  <span class="nv">error: </span><span class="nf">(collection, response) -&gt;</span>
+</span><span class='line'>    <span class="c1"># error handling</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>서버로부터 응답은 요래 와야..</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='coffeescript'><span class='line'><span class="nx">jqueryblablablabla_timestamp</span><span class="p">(</span><span class="o">&lt;</span><span class="nx">stringifiedJSON</span><span class="o">&gt;</span><span class="p">)</span>
+</span></code></pre></td></tr></table></div></figure>
+
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -954,6 +1031,10 @@ git push origin source
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2017/04/28/tekken-premier-league-2017/">Tekken Premier League 2017</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2017/04/27/suyeong-2km/">수영 2km</a>
       </li>
     
@@ -967,10 +1048,6 @@ git push origin source
     
       <li class="post">
         <a href="/blog/2017/04/26/hangeuli-doeneunga/">한글이 되는가</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2016/06/08/yongbin-mode/">Yongbin-mode</a>
       </li>
     
   </ul>
