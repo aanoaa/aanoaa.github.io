@@ -9,7 +9,9 @@
   <meta name="author" content="Hyungsuk Hong">
 
   
-  <meta name="description" content="철권은 조빱이지만 철권 방송은 재밌게 보고 있습니다. 오랜만에 철권대회 입니다. 1등 상금이 60만원? 입니다. 나중에 1,000만원으로 오른다고 하는데 비인기 종목은 e스포츠에서도 서러운 것 같습니다. 오랜만의 철권대회라서 반갑긴한데 해설이 hols(나겜사장) &hellip;">
+  <meta name="description" content="제가 쓰는 브라우저는 firefox 이고
+주업무의 이슈트래킹은 github 에서 하고 있습니다.
+거의 모든 편집은 emacs 에서 하고요.(지금도 emacs 에서 편집하고 있습니다.) 셋중 하나만 안되도 뭘 못합니다. 작년인가부터 Debian 에서 iceweasel &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -71,6 +73,69 @@
       
   <header>
     
+      <h1 class="entry-title"><a href="/blog/2017/05/09/firefox-csp-problem-at-github/">Firefox CSP Problem at Github</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2017-05-09T11:20:30+09:00" pubdate data-updated="true"></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>제가 쓰는 브라우저는 <a href="https://www.mozilla.org/ko/firefox/new/">firefox</a> 이고
+주업무의 이슈트래킹은 <a href="https://github.com">github</a> 에서 하고 있습니다.
+거의 모든 편집은 emacs 에서 하고요.(지금도 emacs 에서 편집하고 있습니다.)</p>
+
+<p>셋중 하나만 안되도 뭘 못합니다.</p>
+
+<p>작년인가부터 Debian 에서 iceweasel 대신에 firefox 를 지원해주기 시작해서 데비안 패키지
+firefox 를 사용하고 있습니다.(<code>firefox ESR 45.9.0</code>)</p>
+
+<p>그런데 오늘(2017-05-09 투표날) github project 도 안보이고 assignee 도 지정할 수 없고
+comment 에 사진도 업로드가 아니되는 것 입니다.</p>
+
+<p><img src="/images/posts/firefox-csp-at-github.png"></p>
+
+<p>크롬이나 다른 브라우저 쓰면 되긴 하지만, 여러 플러그인 설정과</p>
+
+<ul>
+<li><a href="https://addons.mozilla.org/en-US/firefox/addon/vimfx/">vimfx</a></li>
+<li><a href="https://addons.mozilla.org/en-US/firefox/addon/markdown-here/">markdown-here</a></li>
+<li>send to kindle</li>
+<li>uBlock</li>
+<li>awesome screenshot</li>
+</ul>
+
+
+<p>북마크등을 옮기려고 생각하면 아찔합니다.</p>
+
+<p>괴롭다..</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
       <h1 class="entry-title"><a href="/blog/2017/04/28/tekken-premier-league-2017/">Tekken Premier League 2017</a></h1>
     
     
@@ -94,7 +159,7 @@
   </header>
 
 
-  <div class="entry-content"><iframe width="" height="" src="http://www.youtube.com/embed/MIPBW8BbknI " frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+  <div class="entry-content"><div class="embed-video-container"><iframe src="//www.youtube.com/embed/MIPBW8BbknI" allowfullscreen></iframe></div>
 
 
 <p>철권은 조빱이지만 철권 방송은 재밌게 보고 있습니다.</p>
@@ -680,108 +745,6 @@ emacs 를 사용하는 인간이라면 <code>perltidy-mode</code> 의 <code>perl
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2014/02/12/keep-simple-dist-dot-ini/">Keep Simple dist.ini</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-02-12T17:20:06+09:00" pubdate data-updated="true"></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><a href="http://search.cpan.org/~rjbs/Dist-Zilla/lib/Dist/Zilla.pm">Dist::Zilla</a>
-는 매우 편리한 배포도구 입니다.</p>
-
-<p>기능이 넘 많아서 잘 모르고 써왔는데, 이게 뭔지도 모르는걸 쓰다보니
-헛갈려서 요새는 레알 간단하게만 쓰고 있습니다.</p>
-
-<p>갠적으로 딱 필요한 메타파일은 이거 3개 입니다.</p>
-
-<ul>
-<li>dist.ini</li>
-<li>MANIFEST.SKIP</li>
-<li>cpanfile</li>
-</ul>
-
-
-<p><code>cpanfile</code> 이 없을적에는 <code>Makefile.PL</code> 로 부터 의존성문제를 해결했기
-때문에 복잡했는데 이제는 <code>cpanm --installdeps .</code> 덕분에 몹.시.편.리.</p>
-
-<p>배포할때 빼고 싶은 파일은 <code>MANIFEST.SKIP</code> 에 적어주고, <code>dist.ini</code> 로
-build 하고 배포</p>
-
-<p>좋은 플러그인이 많은데 나중되면 어케 쓰는지도 몰겟고 의존성문제로 인해
-불편하기도 해서 그냥 자잘구레한 작업은 직접 손으로 하는걸로..</p>
-
-<p><code>dist.ini</code></p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-</pre></td><td class='code'><pre><code class='ini'><span class='line'><span class="na">name</span> <span class="o">=</span> <span class="s">mymodule</span>
-</span><span class='line'><span class="na">abstract</span> <span class="o">=</span> <span class="s">wat</span>
-</span><span class='line'><span class="na">author</span> <span class="o">=</span> <span class="s">aanoaa &lt;wat@wat.wat&gt;</span>
-</span><span class='line'><span class="na">license</span> <span class="o">=</span> <span class="s">Perl_5</span>
-</span><span class='line'><span class="na">copyright_holder</span> <span class="o">=</span> <span class="s">aanoaa</span>
-</span><span class='line'><span class="na">copyright_year</span> <span class="o">=</span> <span class="s">2014</span>
-</span><span class='line'><span class="na">version</span> <span class="o">=</span> <span class="s">v0.0.1</span>
-</span><span class='line'><span class="k">[@Basic]</span>
-</span><span class='line'><span class="k">[PkgVersion]</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p><code>MANIFEST.SKIP</code></p>
-
-<pre><code># Makemaker generated files and dirs.
-^MANIFEST\.
-^Makefile$
-^blib/
-
-# version-control
-^.git/
-^.gitignore
-
-^dist.ini
-^README.md
-</code></pre>
-
-<p>이렇게 쓰고 있습니다.
-제일 간단한 설정이라고 생각합니다.</p>
-
-<p>전에는 dzil profile 같은 것도 만들고 그랬는데 이제는 그냥 예전거
-복사해다 쓰고 그럽니다.</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="2">&larr; Older</a>
@@ -797,6 +760,10 @@ build 하고 배포</p>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2017/05/09/firefox-csp-problem-at-github/">Firefox CSP Problem at Github</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2017/04/28/tekken-premier-league-2017/">Tekken Premier League 2017</a>
       </li>
     
@@ -810,10 +777,6 @@ build 하고 배포</p>
     
       <li class="post">
         <a href="/blog/2017/04/26/insangjeogin-beulrogeu/">인상적인 블로그</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2017/04/26/hangeuli-doeneunga/">한글이 되는가</a>
       </li>
     
   </ul>

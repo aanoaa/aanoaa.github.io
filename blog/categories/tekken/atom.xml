@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Tekken | Mustache :{]]></title>
   <link href="http://aanoaa.github.io/blog/categories/tekken/atom.xml" rel="self"/>
   <link href="http://aanoaa.github.io/"/>
-  <updated>2017-04-28T00:51:38+09:00</updated>
+  <updated>2017-05-09T11:34:05+09:00</updated>
   <id>http://aanoaa.github.io/</id>
   <author>
     <name><![CDATA[Hyungsuk Hong]]></name>
@@ -18,7 +18,7 @@
     <link href="http://aanoaa.github.io/blog/2017/04/28/tekken-premier-league-2017/"/>
     <updated>2017-04-28T00:42:49+09:00</updated>
     <id>http://aanoaa.github.io/blog/2017/04/28/tekken-premier-league-2017</id>
-    <content type="html"><![CDATA[<p><iframe width="" height="" src="http://www.youtube.com/embed/MIPBW8BbknI " frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></p>
+    <content type="html"><![CDATA[<p><div class="embed-video-container"><iframe src="//www.youtube.com/embed/MIPBW8BbknI" allowfullscreen></iframe></div></p>
 
 <p>철권은 조빱이지만 철권 방송은 재밌게 보고 있습니다.</p>
 

@@ -1,0 +1,309 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Firefox CSP Problem at Github - Mustache :{</title>
+  <meta name="author" content="Hyungsuk Hong">
+
+  
+  <meta name="description" content="제가 쓰는 브라우저는 firefox 이고
+주업무의 이슈트래킹은 github 에서 하고 있습니다.
+거의 모든 편집은 emacs 에서 하고요.(지금도 emacs 에서 편집하고 있습니다.) 셋중 하나만 안되도 뭘 못합니다. 작년인가부터 Debian 에서 iceweasel &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://aanoaa.github.io/blog/2017/05/09/firefox-csp-problem-at-github">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Mustache :{" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Mustache :{</a></h1>
+  
+    <h2>use perl</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="https://www.google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:aanoaa.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Firefox CSP Problem at Github</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2017-05-09T11:20:30+09:00" pubdate data-updated="true"></time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>제가 쓰는 브라우저는 <a href="https://www.mozilla.org/ko/firefox/new/">firefox</a> 이고
+주업무의 이슈트래킹은 <a href="https://github.com">github</a> 에서 하고 있습니다.
+거의 모든 편집은 emacs 에서 하고요.(지금도 emacs 에서 편집하고 있습니다.)</p>
+
+<p>셋중 하나만 안되도 뭘 못합니다.</p>
+
+<p>작년인가부터 Debian 에서 iceweasel 대신에 firefox 를 지원해주기 시작해서 데비안 패키지
+firefox 를 사용하고 있습니다.(<code>firefox ESR 45.9.0</code>)</p>
+
+<p>그런데 오늘(2017-05-09 투표날) github project 도 안보이고 assignee 도 지정할 수 없고
+comment 에 사진도 업로드가 아니되는 것 입니다.</p>
+
+<p><img src="/images/posts/firefox-csp-at-github.png"></p>
+
+<p>크롬이나 다른 브라우저 쓰면 되긴 하지만, 여러 플러그인 설정과</p>
+
+<ul>
+<li><a href="https://addons.mozilla.org/en-US/firefox/addon/vimfx/">vimfx</a></li>
+<li><a href="https://addons.mozilla.org/en-US/firefox/addon/markdown-here/">markdown-here</a></li>
+<li>send to kindle</li>
+<li>uBlock</li>
+<li>awesome screenshot</li>
+</ul>
+
+
+<p>북마크등을 옮기려고 생각하면 아찔합니다.</p>
+
+<p>괴롭다..</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Hyungsuk Hong</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2017-05-09T11:20:30+09:00" pubdate data-updated="true"></time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/firefox/'>firefox</a>, <a class='category' href='/blog/categories/github/'>github</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://aanoaa.github.io/blog/2017/05/09/firefox-csp-problem-at-github/" data-via="" data-counturl="http://aanoaa.github.io/blog/2017/05/09/firefox-csp-problem-at-github/" >Tweet</a>
+  
+  
+  
+    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2017/04/28/tekken-premier-league-2017/" title="Previous Post: Tekken premier league 2017">&laquo; Tekken premier league 2017</a>
+      
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2017/05/09/firefox-csp-problem-at-github/">Firefox CSP Problem at Github</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2017/04/28/tekken-premier-league-2017/">Tekken Premier League 2017</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2017/04/27/suyeong-2km/">수영 2km</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2017/04/26/yojeum-haneun-il/">요즘 하는 일</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2017/04/26/insangjeogin-beulrogeu/">인상적인 블로그</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/aanoaa">@aanoaa</a> on GitHub
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'aanoaa',
+            count: 5,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2017 - Hyungsuk Hong -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'aanoaa-mustache';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://aanoaa.github.io/blog/2017/05/09/firefox-csp-problem-at-github/';
+        var disqus_url = 'http://aanoaa.github.io/blog/2017/05/09/firefox-csp-problem-at-github/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id; js.async = true;
+  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>
