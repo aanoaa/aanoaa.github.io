@@ -9,10 +9,9 @@
   <meta name="author" content="Hyungsuk Hong">
 
   
-  <meta name="description" content="Dist::Zilla
-는 매우 편리한 배포도구 입니다. 기능이 넘 많아서 잘 모르고 써왔는데, 이게 뭔지도 모르는걸 쓰다보니
-헛갈려서 요새는 레알 간단하게만 쓰고 있습니다. 갠적으로 딱 필요한 메타파일은 이거 3개 입니다. dist.ini
-MANIFEST.SKIP &hellip;">
+  <meta name="description" content="블로그에 글을 1년 넘게 안썻더니 어케 쓰는줄 모르겠음.
+하는김에 octopress 도 업그레이드 이제 gh-pages 브랜치 아니어도 되는건가.. 아 몰랑
+">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -68,6 +67,47 @@ MANIFEST.SKIP &hellip;">
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2015/07/14/octopress-3-dot-0/">Octopress 3.0</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2015-07-14T15:51:02+09:00" pubdate data-updated="true"></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>블로그에 글을 1년 넘게 안썻더니 어케 쓰는줄 모르겠음.
+하는김에 octopress 도 업그레이드</p>
+
+<p>이제 <code>gh-pages</code> 브랜치 아니어도 되는건가..</p>
+
+<p>아 몰랑</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -1324,324 +1364,6 @@ $ hubot -c ~/Desktop/hubot
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/06/21/perl-y-operator/">Perl Y Operator</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-06-21T13:59:00+09:00" pubdate data-updated="true"></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><h2>사건의 발단</h2>
-
-<p>어느날 오후 @freenode #perl-kr 에서 일어난 일입니다.</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;a3r0_&gt; 오랜만에 퀴즈
-</span><span class='line'>&lt;a3r0_&gt; 구글 입사문제인데
-</span><span class='line'>&lt;a3r0_&gt; 1에서 100000 사이에 8이 몇번 나오는지 맞춰라~
-</span><span class='line'>&lt;a3r0_&gt; 답은 perl 원라이너로만 받음</span></code></pre></td></tr></table></div></figure>
-
-
-<p>저는 손으로 세봤습니다. 100 까지 세는데, 한참 걸렸습니다.</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>8,18,28,38,48,58,68,78,80,81,82,83,84,85,86,87,88,89,98 
-</span><span class='line'>20개 (88에서 8이 두개 입니다)</span></code></pre></td></tr></table></div></figure>
-
-
-<p>이렇게 세어보고 다시 irc 화면을 봤는데..</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class='perl'><span class='line'><span class="sr">&lt;EnGoon&gt;</span> <span class="nb">eval</span> <span class="k">my</span> <span class="nv">$count</span> <span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="k">for</span> <span class="p">(</span><span class="mi">0</span><span class="o">..</span><span class="mi">100000</span><span class="p">)</span> <span class="p">{</span> <span class="sr">/(8)/</span><span class="p">;</span> <span class="nv">$count</span> <span class="o">+=</span> <span class="vg">$+</span><span class="p">;}</span> <span class="k">print</span> <span class="nv">$count</span><span class="p">;</span>
-</span><span class='line'><span class="sr">&lt;hongbot&gt;</span> <span class="mi">799944</span>
-</span><span class='line'><span class="sr">&lt;a3r0_&gt;</span> <span class="err">구글</span> <span class="err">입사</span> <span class="err">불합격</span> <span class="err">하셨습니다</span><span class="o">.</span>
-</span><span class='line'><span class="sr">&lt;ascendo&gt;</span> <span class="k">for</span> <span class="n">i</span> <span class="n">in</span> <span class="nv">$</span><span class="err">(</span><span class="nv">seq</span> <span class="mi">1</span> <span class="mi">100000</span><span class="p">);</span> <span class="k">do</span> <span class="n">echo</span> <span class="nv">$i</span><span class="p">;</span> <span class="n">done</span> <span class="o">|</span> <span class="n">egrep</span> <span class="s">&#39;8&#39;</span> <span class="o">|</span> <span class="n">wc</span> <span class="o">-</span><span class="n">l</span> <span class="c1"># syntax error</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>떡밥이 흥하질 않자 <code>a3r0</code> 님이 정답을 공개해 주셧습니다.</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class='perl'><span class='line'><span class="sr">&lt;a3r0_&gt;</span> <span class="nv">$</span> <span class="nv">perl</span> <span class="o">-</span><span class="n">E</span> <span class="s">&#39;for(1..100000) { $c+=@{[$_ =~ m/8/g]} }; say $c&#39;</span>
-</span><span class='line'><span class="sr">&lt;a3r0_&gt;</span> <span class="mi">50000</span>
-</span><span class='line'><span class="sr">&lt;a3r0_&gt;</span> <span class="nv">$</span> <span class="nv">perl</span> <span class="o">-</span><span class="n">E</span> <span class="s">&#39;for(1..100000) { $c+=(tr/8//) }; say $c&#39;</span>
-</span><span class='line'><span class="sr">&lt;a3r0_&gt;</span> <span class="mi">50000</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>이렇게 묻히나 싶었는데, 뒤늦게 보신 <code>nol2ter_work</code> 님의 bash oneliner</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>&lt;nol2ter_work&gt; 오홍.. bash 로는.. expr <span class="sb">`</span><span class="nb">echo</span> <span class="o">{</span>1..100000<span class="o">}</span> <span class="p">|</span> sed -r <span class="s2">&quot;s/[^8]//g&quot;</span> <span class="p">|</span> wc -m<span class="sb">`</span> - <span class="m">1</span> 로 되네영..
-</span><span class='line'>&lt;a3r0_&gt; python으로 해보셈
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p><strong>여기서 python 의 대반격</strong></p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="o">&lt;</span><span class="n">nol2ter_work</span><span class="o">&gt;</span> <span class="err">피똥으로</span><span class="o">..</span> <span class="nb">str</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">100000</span><span class="p">))</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s">&#39;8&#39;</span><span class="p">)</span>
-</span><span class='line'><span class="o">&lt;</span><span class="n">nol2ter_work</span><span class="o">&gt;</span> <span class="err">아</span><span class="o">..</span> <span class="err">이건</span> <span class="err">편법일라나요</span> <span class="err">캬캬캬</span>
-</span><span class='line'><span class="o">&lt;</span><span class="n">a3r0_</span><span class="o">&gt;</span> <span class="nb">str</span> <span class="err">함수가</span> <span class="err">문자열</span> <span class="err">이어붙여주나여?</span>
-</span><span class='line'><span class="o">&lt;</span><span class="n">nol2ter_work</span><span class="o">&gt;</span> <span class="o">&gt;&gt;&gt;</span> <span class="nb">str</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">100000</span><span class="p">))</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s">&#39;8&#39;</span><span class="p">)</span>
-</span><span class='line'><span class="o">&lt;</span><span class="n">nol2ter_work</span><span class="o">&gt;</span> <span class="mi">50000</span>
-</span><span class='line'><span class="o">&lt;</span><span class="n">nol2ter_work</span><span class="o">&gt;</span> <span class="err">라고</span> <span class="err">나오긴</span> <span class="err">하네용</span>
-</span><span class='line'><span class="o">&lt;</span><span class="n">a3r0_</span><span class="o">&gt;</span> <span class="err">오</span>
-</span><span class='line'><span class="o">&lt;</span><span class="n">jeen___</span><span class="o">&gt;</span> <span class="err">피똥이</span> <span class="err">갑이네</span><span class="o">..</span>
-</span><span class='line'><span class="o">&lt;</span><span class="n">jeen___</span><span class="o">&gt;</span> <span class="err">피똥배워야지</span><span class="o">...</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>분위기가 술렁이기 시작했습니다.
-파이썬으로 저렇게 그레이스풀한 방법이 잇엇나 싶기도 했습니다.
-거기에 더해 <code>진사마</code>는 파이썬으로 갈아탈 준비를 마친 상태.</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-</pre></td><td class='code'><pre><code class='perl'><span class='line'><span class="sr">&lt;a3r0_&gt;</span> <span class="n">say</span> <span class="s">&quot;@{[0..100000]}&quot;</span><span class="o">=~</span><span class="n">y</span><span class="sr">/8/</span><span class="o">/</span>
-</span><span class='line'><span class="sr">&lt;a3r0_&gt;</span> <span class="n">str</span><span class="p">(</span><span class="n">range</span><span class="p">(</span><span class="mi">100000</span><span class="p">))</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s">&#39;8&#39;</span><span class="p">)</span>
-</span><span class='line'><span class="sr">&lt;a3r0_&gt;</span> <span class="mi">2</span><span class="err">글자</span> <span class="err">승</span><span class="p">?</span>
-</span><span class='line'><span class="sr">&lt;a3r0_&gt;</span> <span class="n">say</span> <span class="err">빼면</span> <span class="mi">6</span><span class="err">글자</span> <span class="err">승</span><span class="p">?</span>  <span class="p">[</span><span class="mi">13</span><span class="p">:</span><span class="mi">40</span><span class="p">]</span>
-</span><span class='line'><span class="sr">&lt;a3r0_&gt;</span> <span class="nv">$</span> <span class="nv">perl</span> <span class="o">-</span><span class="n">E</span> <span class="s">&#39;say &quot;@{[0..100000]}&quot;=~y/8//&#39;</span>
-</span><span class='line'><span class="sr">&lt;a3r0_&gt;</span> <span class="mi">50000</span>
-</span><span class='line'><span class="sr">&lt;a3r0_&gt;</span> <span class="err">줄이기</span> <span class="err">최종버젼은</span> <span class="s">&quot;@{[0..1E5]}&quot;</span><span class="o">=~</span><span class="n">y</span><span class="sr">/8/</span><span class="o">/</span>
-</span><span class='line'><span class="sr">&lt;nol2ter_work&gt;</span> <span class="err">달달달</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>찰나 <code>a3r0</code> 님의 신의 한수
-결국 <code>1E5</code> 까지쓰며 더 줄일 수 없도록 만들었습니다.</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='perl'><span class='line'><span class="sr">&lt;jeen___&gt;</span> <span class="mf">1E5</span> <span class="err">ㅋㅋㅋㅋ</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>저만 여기서 터진게 아니엇습니다.
-이때, 원라이너의 귀재 <code>pung96</code>님의 등장</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class='perl'><span class='line'><span class="o">***</span> <span class="n">pung96</span> <span class="p">(</span><span class="o">~</span><span class="n">pung96</span><span class="nv">@46</span><span class="mf">.162.162.115</span><span class="p">)</span> <span class="n">has</span> <span class="n">joined</span> <span class="n">channel</span> <span class="c1">#perl-kr</span>
-</span><span class='line'><span class="sr">&lt;a3r0_&gt;</span> <span class="err">원라이너의</span> <span class="err">귀재</span> <span class="n">pung96</span><span class="err">님</span> <span class="err">오셨</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>같은 문제를 내어 봤는데 역시나 금방 답이 나오더군요.</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class='perl'><span class='line'><span class="sr">&lt;pung96&gt;</span> <span class="err">그냥</span><span class="p">,,</span> <span class="err">초</span> <span class="err">단순하게</span> <span class="err">생각하면</span><span class="p">,,</span>
-</span><span class='line'><span class="sr">&lt;pung96&gt;</span> <span class="nb">map</span><span class="p">{</span><span class="nv">$s</span><span class="o">+=</span><span class="p">()</span><span class="o">=</span><span class="sr">/8/g</span><span class="p">}</span><span class="mi">1</span><span class="o">..</span><span class="mi">100000</span><span class="p">;</span><span class="n">say</span><span class="nv">$s</span> <span class="err">이럼</span> <span class="err">되는데</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>이쯤에서 짧은 답안 공개</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class='perl'><span class='line'><span class="sr">&lt;a3r0_&gt;</span> <span class="s">&quot;@{[0..1E5]}&quot;</span><span class="o">=~</span><span class="n">y</span><span class="sr">/8/</span><span class="o">/</span>
-</span><span class='line'><span class="sr">&lt;pung96&gt;</span> <span class="err">헐</span><span class="p">,</span>
-</span><span class='line'><span class="sr">&lt;pung96&gt;</span> <span class="mf">1E5</span> <span class="o">...</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>ㅋㅋㅋ <code>1E5</code></p>
-
-<p>계속되는 덕질</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-</pre></td><td class='code'><pre><code class='perl'><span class='line'><span class="sr">&lt;a3r0_&gt;</span> <span class="nb">map</span><span class="p">{</span><span class="nv">$s</span><span class="o">+=</span><span class="p">()</span><span class="o">=</span><span class="sr">/8/g</span><span class="p">}</span><span class="mi">1</span><span class="o">..</span><span class="mi">100000</span>
-</span><span class='line'><span class="sr">&lt;a3r0_&gt;</span> <span class="nb">map</span><span class="p">{</span><span class="nv">$s</span><span class="o">+=</span><span class="nv">@</span><span class="p">{[</span><span class="sr">/8/g</span><span class="p">]}}</span><span class="mi">1</span><span class="o">..</span><span class="mi">100000</span>
-</span><span class='line'><span class="sr">&lt;pung96&gt;</span> <span class="nb">map</span><span class="p">{</span><span class="nv">$s</span><span class="o">+=</span><span class="n">y</span><span class="sr">/8/</span><span class="o">/</span><span class="p">}</span> <span class="err">이럼</span><span class="p">,,</span> <span class="err">좀더</span> <span class="err">짧아지는군요</span><span class="o">.</span>
-</span><span class='line'><span class="sr">&lt;a3r0_&gt;</span> <span class="nb">map</span><span class="p">{</span><span class="nv">$s</span><span class="o">+=</span><span class="n">y</span><span class="sr">/8/</span><span class="o">/</span><span class="p">}</span><span class="mi">1</span><span class="o">..</span><span class="mf">1E5</span>
-</span><span class='line'><span class="sr">&lt;a3r0_&gt;</span> <span class="s">&quot;@{[1..1E5]}&quot;</span><span class="o">=~</span><span class="n">y</span><span class="sr">/8/</span><span class="o">/</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>결국 <code>pung96</code>님의 타이기록</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='perl'><span class='line'><span class="sr">&lt;pung96&gt;</span> <span class="nb">map</span><span class="nv">$s</span><span class="o">+=</span><span class="n">y</span><span class="sr">/8/</span><span class="o">/</span><span class="p">,</span><span class="mi">1</span><span class="o">..</span><span class="mf">1E5</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p><code>pung96</code>님의 신기록!</p>
-
-<p>저는 이미 예전에 gg</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class='perl'><span class='line'><span class="sr">&lt;jeen___&gt;</span> <span class="k">use</span> <span class="n">Alias</span> <span class="p">(</span> <span class="nb">map</span> <span class="o">=&gt;</span> <span class="n">m</span><span class="p">,</span> <span class="k">print</span> <span class="o">=&gt;</span> <span class="n">p</span> <span class="p">);</span>
-</span><span class='line'><span class="sr">&lt;pung96&gt;</span> <span class="n">jeen___:</span> <span class="o">++</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>폭풍같은 시간이었습니다.</p>
-
-<h2>분석</h2>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='perl'><span class='line'><span class="s">&quot;@{[0..1E5]}&quot;</span><span class="o">=~</span><span class="n">y</span><span class="sr">/8/</span><span class="o">/</span><span class="p">;</span> <span class="c1"># 50000</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>아.. 아릅답습니다.</p>
-
-<p>먼저 <code>y</code> operator 를 <code>perldoc</code> 에서 찾아보면,</p>
-
-<p><code>The transliteration operator. Same as tr///. See Quote and Quote-like Operators in perlop.</code></p>
-
-<p><code>tr</code> operator 와 같다고 나옵니다.
-<code>tr</code> 의미는 Transliteration(바꿔 씀) 입니다.</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='perl'><span class='line'><span class="nb">tr</span><span class="sr">/SEARCHLIST/</span><span class="n">REPLACEMENTLIST</span><span class="o">/</span><span class="n">cdsr</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p><code>cdsr</code> modifier 는 <code>perldoc</code> 에서 못찾았습니다.
-그래서 검색했더니 아래와 같은 내용이 있어서 붙입니다.</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-</pre></td><td class='code'><pre><code class='perl'><span class='line'><span class="n">c</span> <span class="o">-</span> <span class="n">is</span> <span class="n">used</span> <span class="n">to</span> <span class="n">specify</span> <span class="n">that</span> <span class="n">the</span> <span class="n">SEARCHLIST</span> <span class="n">character</span> <span class="n">set</span> <span class="n">is</span> <span class="n">complemented</span>
-</span><span class='line'><span class="n">d</span> <span class="o">-</span> <span class="n">is</span> <span class="n">used</span> <span class="n">to</span> <span class="nb">delete</span> <span class="n">found</span> <span class="n">but</span> <span class="ow">not</span> <span class="n">replaced</span> <span class="n">characters</span>
-</span><span class='line'><span class="n">s</span> <span class="o">-</span> <span class="n">is</span> <span class="n">used</span> <span class="n">to</span> <span class="n">specify</span> <span class="n">that</span> <span class="n">the</span> <span class="n">sequences</span> <span class="n">of</span> <span class="n">characters</span> <span class="n">that</span> <span class="n">were</span> <span class="n">transliterated</span> <span class="n">to</span> <span class="n">the</span> <span class="n">same</span> <span class="n">character</span> <span class="n">are</span> <span class="n">squashed</span> <span class="n">down</span> <span class="n">to</span> <span class="n">a</span> <span class="n">single</span>
-</span><span class='line'><span class="n">instance</span> <span class="n">of</span> <span class="n">the</span> <span class="n">character</span>
-</span><span class='line'>
-</span><span class='line'><span class="n">c</span>  <span class="n">Complement</span> <span class="n">the</span> <span class="n">SEARCHLIST</span><span class="o">.</span>
-</span><span class='line'><span class="n">d</span>  <span class="n">Delete</span> <span class="n">found</span> <span class="n">but</span> <span class="n">unreplaced</span> <span class="n">characters</span><span class="o">.</span>
-</span><span class='line'><span class="n">s</span>  <span class="n">Squash</span> <span class="n">duplicate</span> <span class="n">replaced</span> <span class="n">characters</span><span class="o">.</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>예제</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-</pre></td><td class='code'><pre><code class='perl'><span class='line'><span class="nv">$ARGV</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=~</span> <span class="nb">tr</span><span class="sr">/A-Z/</span><span class="n">a</span><span class="o">-</span><span class="n">z</span><span class="o">/</span><span class="p">;</span>    <span class="c1"># canonicalize to lower case </span>
-</span><span class='line'><span class="nv">$cnt</span> <span class="o">=</span> <span class="nb">tr</span><span class="sr">/*/</span><span class="o">*/</span><span class="p">;</span>             <span class="c1"># count the stars in $_ </span>
-</span><span class='line'><span class="nv">$cnt</span> <span class="o">=</span> <span class="nv">$sky</span> <span class="o">=~</span> <span class="nb">tr</span><span class="sr">/*/</span><span class="o">*/</span><span class="p">;</span>     <span class="c1"># count the stars in $sky </span>
-</span><span class='line'><span class="nv">$cnt</span> <span class="o">=</span> <span class="nb">tr</span><span class="sr">/0-9/</span><span class="o">/</span><span class="p">;</span>            <span class="c1"># count the digits in $_ </span>
-</span><span class='line'><span class="nb">tr</span><span class="sr">/a-zA-Z/</span><span class="o">/</span><span class="n">s</span><span class="p">;</span>               <span class="c1"># bookkeeper -&gt; bokeper </span>
-</span><span class='line'><span class="p">(</span><span class="nv">$HOST</span> <span class="o">=</span> <span class="nv">$host</span><span class="p">)</span> <span class="o">=~</span> <span class="nb">tr</span><span class="sr">/a-z/</span><span class="n">A</span><span class="o">-</span><span class="n">Z</span><span class="o">/</span><span class="p">;</span>
-</span><span class='line'><span class="nb">tr</span><span class="sr">/a-zA-Z/</span> <span class="o">/</span><span class="n">cs</span><span class="p">;</span>             <span class="c1"># change non-alphas to single space </span>
-</span><span class='line'><span class="nb">tr</span> <span class="p">[</span><span class="o">\</span><span class="mi">200</span><span class="o">-\</span><span class="mi">377</span><span class="p">]</span>
-</span><span class='line'>   <span class="p">[</span><span class="o">\</span><span class="mo">000</span><span class="o">-\</span><span class="mi">177</span><span class="p">];</span>             <span class="c1"># delete 8th bit</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p><code>tr|y</code> operator 는 <code>SEARCHLIST</code> 가 매칭된 갯수를 반환하는 걸
-알겠습니다.</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='perl'><span class='line'><span class="s">&quot;@{[0..1E5]}&quot;</span><span class="o">=~</span><span class="n">y</span><span class="sr">/8/</span><span class="o">/</span><span class="p">;</span> <span class="c1"># 50000</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='perl'><span class='line'><span class="s">&quot;@{[0..1E5]}&quot;</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<ul>
-<li><code>1E5</code> 는 10의 5 제곱입니다. 해서 -> 1..100000</li>
-<li><code>@{[]}</code> 는 array 를 reference 하고 다시 dereference 하는 과정입니다.
-이유는 문자열상수 안에서 perl code 를 evaluate 하고 다시 집어넣는
-보간(interpolation) 하기 위한 꼼수 입니다.</li>
-<li><code>@{[1..100000]}</code> 은 <code>(1, 2, 3, ..., 100000)</code> 을 가지고 있는 array
-입니다.</li>
-<li><code>"(1,2,3,...,100000)"</code> array 가 <code>"</code> 로 묶여 있으면 <code></code>(SPACE) 를
-구분자로 삽입한 scalar 자료형이 됩니다. 즉, &lsquo;1 2 3 4 &hellip; 100000&rsquo;</li>
-<li>&ldquo;@{[0..1E5]}&rdquo; 는 &lsquo;1 2 3 4 &hellip; 100000&rsquo; 이 됩니다.</li>
-</ul>
-
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='perl'><span class='line'><span class="s">&#39;1 2 3 ... 100000&#39;</span><span class="o">=~</span><span class="n">y</span><span class="sr">/8/</span><span class="o">/</span><span class="p">;</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<ul>
-<li>문자열 <code>1 2 3 ... 100000</code> 에 <code>8</code> 이 몇번 나오는지 돌려줍니다.</li>
-</ul>
-
-
-<p>오늘도 즐거운 하루중입니다.</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="3">&larr; Older</a>
@@ -1659,6 +1381,10 @@ $ hubot -c ~/Desktop/hubot
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2017/05/12/git-deiteo-boggu/">Git 데이터 복구</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2017/05/09/firefox-csp-problem-at-github/">Firefox CSP Problem at Github</a>
       </li>
     
@@ -1672,10 +1398,6 @@ $ hubot -c ~/Desktop/hubot
     
       <li class="post">
         <a href="/blog/2017/04/26/yojeum-haneun-il/">요즘 하는 일</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2017/04/26/insangjeogin-beulrogeu/">인상적인 블로그</a>
       </li>
     
   </ul>

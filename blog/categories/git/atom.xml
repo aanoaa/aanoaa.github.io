@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Git | Mustache :{]]></title>
   <link href="http://aanoaa.github.io/blog/categories/git/atom.xml" rel="self"/>
   <link href="http://aanoaa.github.io/"/>
-  <updated>2017-05-09T11:34:05+09:00</updated>
+  <updated>2017-05-12T19:30:22+09:00</updated>
   <id>http://aanoaa.github.io/</id>
   <author>
     <name><![CDATA[Hyungsuk Hong]]></name>
@@ -12,6 +12,77 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Git 데이터 복구]]></title>
+    <link href="http://aanoaa.github.io/blog/2017/05/12/git-deiteo-boggu/"/>
+    <updated>2017-05-12T19:12:13+09:00</updated>
+    <id>http://aanoaa.github.io/blog/2017/05/12/git-deiteo-boggu</id>
+    <content type="html"><![CDATA[<p>오늘 실수로 고객의 한달간의 데이터를 잃어버렸습니다.</p>
+
+<p>고객의 데이터를 git 으로 관리하는 프로젝트가 있는데,
+지난 한달간의 unstaging 되어 있는 고객의 데이터를</p>
+
+<pre><code>$ git add .
+$ git commit -m 'sync'
+$ git push
+</code></pre>
+
+<p>이런식으로 저장했습니다.
+이후에 우리 말썽꾸러기가 이상하게 작업해놓은 이력을 발견하고 업무 쓰로잉 욕구가 생겨서,</p>
+
+<pre><code># 아 짱나넴 걍 원래대로 해놓고 알아서 하라고 해야겠다.
+$ git reset --hard HEAD^
+$ git push
+$ git push -f origin &lt;current-branch&gt;
+</code></pre>
+
+<p>를 했습니다.
+이때에 방금 커밋한 이력을 날렸습니다.</p>
+
+<p>순간, <strong>아아아아 받은 돈 토해내고 마포대교 가야겠다</strong> 라는 생각이 들었습니다.</p>
+
+<p>하지만 곧 pointer 만 잃고 objects 는 그대로 있을 것 같아서 검색했습니다.</p>
+
+<p><a href="http://stackoverflow.com/questions/5788037/recover-from-git-reset-hard">http://stackoverflow.com/questions/5788037/recover-from-git-reset-hard</a></p>
+
+<pre><code>$ git reflog show
+d5d92ec HEAD@{0}: reset: moving to HEAD^
+3adf160 HEAD@{1}: commit: sync
+...
+</code></pre>
+
+<p>이런 이력이 있어서,</p>
+
+<pre><code>$ git show 3adf160
+</code></pre>
+
+<p>으로 커밋내용이랑 시간을 확인하고,</p>
+
+<pre><code>git reset --hard 3adf160
+</code></pre>
+
+<p>해서 복구 했습니다.
+뒤지는 줄 알았습니다.</p>
+
+<p>웃겼던 것은 저 위에 스택오버플로 코멘트였습니다.</p>
+
+<blockquote><p>This trick saved my life a couple of times.</p>
+
+<p>saved me just now! :D</p>
+
+<p>You saved me. Thanks a ton.</p>
+
+<p>saved me too - perfect</p></blockquote>
+
+<h2>See also</h2>
+
+<ul>
+<li><a href="https://git-scm.com/book/ko/v1/Git%EC%9D%98-%EB%82%B4%EB%B6%80-%EC%9A%B4%EC%98%81-%EB%B0%8F-%EB%8D%B0%EC%9D%B4%ED%84%B0-%EB%B3%B5%EA%B5%AC">Git의 내부 - 운영 및 데이터 복구</a></li>
+</ul>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Private Git Repo With Dropbox]]></title>

@@ -9,9 +9,10 @@
   <meta name="author" content="Hyungsuk Hong">
 
   
-  <meta name="description" content="제가 쓰는 브라우저는 firefox 이고
-주업무의 이슈트래킹은 github 에서 하고 있습니다.
-거의 모든 편집은 emacs 에서 하고요.(지금도 emacs 에서 편집하고 있습니다.) 셋중 하나만 안되도 뭘 못합니다. 작년인가부터 Debian 에서 iceweasel &hellip;">
+  <meta name="description" content="오늘 실수로 고객의 한달간의 데이터를 잃어버렸습니다. 고객의 데이터를 git 으로 관리하는 프로젝트가 있는데,
+지난 한달간의 unstaging 되어 있는 고객의 데이터를 $ git add .
+$ git commit -m 'sync'
+$ git push 이런식으로 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -67,6 +68,104 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2017/05/12/git-deiteo-boggu/">Git 데이터 복구</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2017-05-12T19:12:13+09:00" pubdate data-updated="true"></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>오늘 실수로 고객의 한달간의 데이터를 잃어버렸습니다.</p>
+
+<p>고객의 데이터를 git 으로 관리하는 프로젝트가 있는데,
+지난 한달간의 unstaging 되어 있는 고객의 데이터를</p>
+
+<pre><code>$ git add .
+$ git commit -m 'sync'
+$ git push
+</code></pre>
+
+<p>이런식으로 저장했습니다.
+이후에 우리 말썽꾸러기가 이상하게 작업해놓은 이력을 발견하고 업무 쓰로잉 욕구가 생겨서,</p>
+
+<pre><code># 아 짱나넴 걍 원래대로 해놓고 알아서 하라고 해야겠다.
+$ git reset --hard HEAD^
+$ git push
+$ git push -f origin &lt;current-branch&gt;
+</code></pre>
+
+<p>를 했습니다.
+이때에 방금 커밋한 이력을 날렸습니다.</p>
+
+<p>순간, <strong>아아아아 받은 돈 토해내고 마포대교 가야겠다</strong> 라는 생각이 들었습니다.</p>
+
+<p>하지만 곧 pointer 만 잃고 objects 는 그대로 있을 것 같아서 검색했습니다.</p>
+
+<p><a href="http://stackoverflow.com/questions/5788037/recover-from-git-reset-hard">http://stackoverflow.com/questions/5788037/recover-from-git-reset-hard</a></p>
+
+<pre><code>$ git reflog show
+d5d92ec HEAD@{0}: reset: moving to HEAD^
+3adf160 HEAD@{1}: commit: sync
+...
+</code></pre>
+
+<p>이런 이력이 있어서,</p>
+
+<pre><code>$ git show 3adf160
+</code></pre>
+
+<p>으로 커밋내용이랑 시간을 확인하고,</p>
+
+<pre><code>git reset --hard 3adf160
+</code></pre>
+
+<p>해서 복구 했습니다.
+뒤지는 줄 알았습니다.</p>
+
+<p>웃겼던 것은 저 위에 스택오버플로 코멘트였습니다.</p>
+
+<blockquote><p>This trick saved my life a couple of times.</p>
+
+<p>saved me just now! :D</p>
+
+<p>You saved me. Thanks a ton.</p>
+
+<p>saved me too - perfect</p></blockquote>
+
+<h2>See also</h2>
+
+<ul>
+<li><a href="https://git-scm.com/book/ko/v1/Git%EC%9D%98-%EB%82%B4%EB%B6%80-%EC%9A%B4%EC%98%81-%EB%B0%8F-%EB%8D%B0%EC%9D%B4%ED%84%B0-%EB%B3%B5%EA%B5%AC">Git의 내부 - 운영 및 데이터 복구</a></li>
+</ul>
+
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -704,47 +803,6 @@ emacs 를 사용하는 인간이라면 <code>perltidy-mode</code> 의 <code>perl
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2015/07/14/octopress-3-dot-0/">Octopress 3.0</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2015-07-14T15:51:02+09:00" pubdate data-updated="true"></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>블로그에 글을 1년 넘게 안썻더니 어케 쓰는줄 모르겠음.
-하는김에 octopress 도 업그레이드</p>
-
-<p>이제 <code>gh-pages</code> 브랜치 아니어도 되는건가..</p>
-
-<p>아 몰랑</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="2">&larr; Older</a>
@@ -760,6 +818,10 @@ emacs 를 사용하는 인간이라면 <code>perltidy-mode</code> 의 <code>perl
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2017/05/12/git-deiteo-boggu/">Git 데이터 복구</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2017/05/09/firefox-csp-problem-at-github/">Firefox CSP Problem at Github</a>
       </li>
     
@@ -773,10 +835,6 @@ emacs 를 사용하는 인간이라면 <code>perltidy-mode</code> 의 <code>perl
     
       <li class="post">
         <a href="/blog/2017/04/26/yojeum-haneun-il/">요즘 하는 일</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2017/04/26/insangjeogin-beulrogeu/">인상적인 블로그</a>
       </li>
     
   </ul>
