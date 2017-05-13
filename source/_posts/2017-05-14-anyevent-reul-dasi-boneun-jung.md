@@ -94,4 +94,4 @@ print "done\n";
 
 ## See also ##
 
-- [https://metacpan.org/pod/AnyEvent](AnyEvent)
+- [AnyEvent](https://metacpan.org/pod/AnyEvent)
