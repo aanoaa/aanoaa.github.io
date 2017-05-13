@@ -9,10 +9,9 @@
   <meta name="author" content="Hyungsuk Hong">
 
   
-  <meta name="description" content="오늘 실수로 고객의 한달간의 데이터를 잃어버렸습니다. 고객의 데이터를 git 으로 관리하는 프로젝트가 있는데,
-지난 한달간의 unstaging 되어 있는 고객의 데이터를 $ git add .
-$ git commit -m 'sync'
-$ git push 이런식으로 &hellip;">
+  <meta name="description" content="꽤 오래전부터 #perl-kr@freenode 채널에 hongbot(제가 운영하는 irc 봇)이 들어오지
+않았습니다. heroku 에서 Deprecated 된 Cedar-10 Stack? 을 사용했던게 문제였던 것 같습니다.
+여차저차 문서보고 Cedar-16? 으로 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -68,6 +67,184 @@ $ git push 이런식으로 &hellip;">
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2017/05/14/anyevent-reul-dasi-boneun-jung/">AnyEvent 를 다시 보는 중</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2017-05-14T04:57:19+09:00" pubdate data-updated="true"></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>꽤 오래전부터 <code>#perl-kr@freenode</code> 채널에 hongbot(제가 운영하는 irc 봇)이 들어오지
+않았습니다.</p>
+
+<p>heroku 에서 Deprecated 된 Cedar-10 Stack? 을 사용했던게 문제였던 것 같습니다.
+여차저차 문서보고 Cedar-16? 으로 마이그레이숀 했습니다.</p>
+
+<p>아무튼 맨날 열린옷장 웹서비스만 하다가 오래간만에 irc bot 을 디버깅 하니까 재미가
+있었습니다.</p>
+
+<p>헌데, 모듈 의존성이 너무 많고 테스트가 어려운게 거슬려서</p>
+
+<ul>
+<li>의존성도 확 줄이고</li>
+<li>테스트코드를 추가(강화?)</li>
+</ul>
+
+
+<p>해서 lightweight hongbot 으로 운영하고 싶어졌습니다.
+요즘 들여다보면서 고치고 있습니다.</p>
+
+<p>머릿속에서 AnyEvent 가 싹 잊혀져서, 문서를 다시 처음부터 보고 있습니다.(조따 괴로운
+일입니다.)</p>
+
+<hr />
+
+<p>아무튼 오늘은 4시간 동안 삽질했습니다.</p>
+
+<p>뭐냐면, heroku 에서 idle 상태에 빠지지 않기 위해서 스스로 ping/pong 하는 기능의 테스트
+코드를 작성하던 중에 제대로 동작하지 않아서 괴로웠습니다.</p>
+
+<p>AnyEvent::HTTPD 에 등록된 콜백을 AnyEvent main loop 안에서 Blocking 연결로 요청하면
+동작하지 아니합니다.</p>
+
+<p>아래는 1초 뒤에 <code>GET http://localhost:5000/ping</code> 을 요청하는 간단한 코드입니다.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+<span class='line-number'>45</span>
+</pre></td><td class='code'><pre><code class='perl'><span class='line'><span class="k">use</span> <span class="n">utf8</span><span class="p">;</span>
+</span><span class='line'><span class="k">use</span> <span class="n">strict</span><span class="p">;</span>
+</span><span class='line'><span class="k">use</span> <span class="n">warnings</span><span class="p">;</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">use</span> <span class="n">AnyEvent</span><span class="p">;</span>
+</span><span class='line'><span class="k">use</span> <span class="nn">AnyEvent::</span><span class="n">HTTPD</span><span class="p">;</span>
+</span><span class='line'><span class="k">use</span> <span class="nn">HTTP::</span><span class="n">Tiny</span><span class="p">;</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">my</span> <span class="nv">$httpd</span> <span class="o">=</span> <span class="nn">AnyEvent::</span><span class="n">HTTPD</span><span class="o">-&gt;</span><span class="k">new</span><span class="p">(</span> <span class="n">host</span> <span class="o">=&gt;</span> <span class="s">&#39;0.0.0.0&#39;</span><span class="p">,</span> <span class="n">port</span> <span class="o">=&gt;</span> <span class="mi">5000</span> <span class="p">);</span>
+</span><span class='line'><span class="nv">$httpd</span><span class="o">-&gt;</span><span class="n">reg_cb</span><span class="p">(</span>
+</span><span class='line'>    <span class="s">&#39;/ping&#39;</span> <span class="o">=&gt;</span> <span class="k">sub </span><span class="p">{</span>
+</span><span class='line'>        <span class="k">my</span> <span class="p">(</span> <span class="nv">$httpd</span><span class="p">,</span> <span class="nv">$req</span> <span class="p">)</span> <span class="o">=</span> <span class="nv">@_</span><span class="p">;</span>
+</span><span class='line'>        <span class="nv">$req</span><span class="o">-&gt;</span><span class="n">respond</span><span class="p">(</span> <span class="p">{</span> <span class="n">content</span> <span class="o">=&gt;</span> <span class="p">[</span> <span class="s">&#39;text/plain&#39;</span><span class="p">,</span> <span class="s">&quot;pong&quot;</span> <span class="p">]</span> <span class="p">}</span> <span class="p">);</span>
+</span><span class='line'>    <span class="p">}</span>
+</span><span class='line'><span class="p">);</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">my</span> <span class="nv">$wait</span> <span class="o">=</span> <span class="n">AnyEvent</span><span class="o">-&gt;</span><span class="n">condvar</span><span class="p">;</span>
+</span><span class='line'><span class="k">my</span> <span class="nv">$t</span>    <span class="o">=</span> <span class="n">AnyEvent</span><span class="o">-&gt;</span><span class="n">timer</span><span class="p">(</span>
+</span><span class='line'>    <span class="n">after</span> <span class="o">=&gt;</span> <span class="mi">1</span><span class="p">,</span>   <span class="c1"># 1sec</span>
+</span><span class='line'>    <span class="n">cb</span>    <span class="o">=&gt;</span> <span class="k">sub </span><span class="p">{</span>
+</span><span class='line'>        <span class="k">my</span> <span class="nv">$http</span> <span class="o">=</span> <span class="nn">HTTP::</span><span class="n">Tiny</span><span class="o">-&gt;</span><span class="k">new</span><span class="p">(</span> <span class="n">timeout</span> <span class="o">=&gt;</span> <span class="mi">1</span> <span class="p">);</span>
+</span><span class='line'>        <span class="k">my</span> <span class="nv">$url</span> <span class="o">=</span> <span class="s">&#39;http://localhost:5000/ping&#39;</span><span class="p">;</span>
+</span><span class='line'>        <span class="k">print</span> <span class="s">&quot;GET $url\n&quot;</span><span class="p">;</span>
+</span><span class='line'>
+</span><span class='line'>        <span class="k">my</span> <span class="nv">$res</span> <span class="o">=</span> <span class="nv">$http</span><span class="o">-&gt;</span><span class="n">get</span><span class="p">(</span><span class="nv">$url</span><span class="p">);</span> <span class="c1"># &lt;- 여기서 멈춤</span>
+</span><span class='line'>        <span class="k">print</span> <span class="s">&quot;$res-&gt;{status}: $res-&gt;{reason}\n&quot;</span><span class="p">;</span>
+</span><span class='line'>
+</span><span class='line'>        <span class="c1">## my $res = $http-&gt;get(&#39;https://www.google.com&#39;); # 이거는 됨</span>
+</span><span class='line'>        <span class="c1">##</span>
+</span><span class='line'>        <span class="c1">## or</span>
+</span><span class='line'>        <span class="c1">##</span>
+</span><span class='line'>        <span class="c1">## AnyEvent::HTTP::ScopedClient-&gt;new($url)-&gt;get(</span>
+</span><span class='line'>        <span class="c1">##     sub {</span>
+</span><span class='line'>        <span class="c1">##         my ( $body, $hdr ) = @_;</span>
+</span><span class='line'>        <span class="c1">##         print &quot;$body\n&quot;; # pong</span>
+</span><span class='line'>        <span class="c1">##         $wait-&gt;send;</span>
+</span><span class='line'>        <span class="c1">##     }</span>
+</span><span class='line'>        <span class="c1">## );</span>
+</span><span class='line'>
+</span><span class='line'>        <span class="nv">$wait</span><span class="o">-&gt;</span><span class="nb">send</span><span class="p">;</span>
+</span><span class='line'>    <span class="p">}</span>
+</span><span class='line'><span class="p">);</span>
+</span><span class='line'>
+</span><span class='line'><span class="nv">$wait</span><span class="o">-&gt;</span><span class="nb">recv</span><span class="p">;</span>
+</span><span class='line'><span class="k">print</span> <span class="s">&quot;done\n&quot;</span><span class="p">;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<ol>
+<li>비동기 요청을 하도록 바꾸거나,</li>
+<li>AnyEvent::HTTPD 의 문제를 해결해야겠지요.</li>
+</ol>
+
+
+<p>뭐가 문제인지 들여다보고 싶은 맘은 없습니다.
+쉬운 1번 으로 해결할 것 같습니다.</p>
+
+<h2>See also</h2>
+
+<ul>
+<li><a href="AnyEvent">https://metacpan.org/pod/AnyEvent</a></li>
+</ul>
+
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -734,75 +911,6 @@ OK
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2015/07/15/perltidy-profile-option/">Perltidy Profile Option</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2015-07-15T16:31:41+09:00" pubdate data-updated="true"></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><pre><code>$ perldoc perltidy
-
-...
--pro=filename or --profile=filename
-    To simplify testing and switching .perltidyrc files, this command
-    may be used to specify a configuration file which will override the
-    default name of .perltidyrc. There must not be a space on either
-    side of the '=' sign. For example, the line
-
-       perltidy -pro=testcfg
-
-    would cause file testcfg to be used instead of the default
-    .perltidyrc.
-
-    A pathname begins with three dots, e.g. ".../.perltidyrc", indicates
-    that the file should be searched for starting in the current
-    directory and working upwards. This makes it easier to have multiple
-    projects each with their own .perltidyrc in their root directories.
-...
-</code></pre>
-
-<p>여기서 중요한것은 <code>...</code> 으로 시작하면 현재 디렉토리에서부터 위로
-올라가면서 이름으로 프로파일을 찾는다는 것</p>
-
-<p>global 설정은 <code>$HOME/.perltidyrc</code> 로 두고 각 프로젝트 root 마다
-<code>.perltidyrc</code> 파일을 두면 신경쓰지 않고 사용할 수 있다는 겁니다.</p>
-
-<p>굳</p>
-
-<p>alias 걸어두고 사용하면 편리하겠습니다.
-emacs 를 사용하는 인간이라면 <code>perltidy-mode</code> 의 <code>perltidy-bin</code> 을
-수정해주면 되겠습니다.</p>
-
-<p>선조들은 훌륭합니다.</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="2">&larr; Older</a>
@@ -818,6 +926,10 @@ emacs 를 사용하는 인간이라면 <code>perltidy-mode</code> 의 <code>perl
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2017/05/14/anyevent-reul-dasi-boneun-jung/">AnyEvent 를 다시 보는 중</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2017/05/12/git-deiteo-boggu/">Git 데이터 복구</a>
       </li>
     
@@ -831,10 +943,6 @@ emacs 를 사용하는 인간이라면 <code>perltidy-mode</code> 의 <code>perl
     
       <li class="post">
         <a href="/blog/2017/04/27/suyeong-2km/">수영 2km</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2017/04/26/yojeum-haneun-il/">요즘 하는 일</a>
       </li>
     
   </ul>

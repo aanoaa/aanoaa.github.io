@@ -4,7 +4,7 @@
   <title><![CDATA[Mustache :{]]></title>
   <link href="http://aanoaa.github.io/atom.xml" rel="self"/>
   <link href="http://aanoaa.github.io/"/>
-  <updated>2017-05-12T19:30:22+09:00</updated>
+  <updated>2017-05-14T05:16:24+09:00</updated>
   <id>http://aanoaa.github.io/</id>
   <author>
     <name><![CDATA[Hyungsuk Hong]]></name>
@@ -12,6 +12,157 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[AnyEvent 를 다시 보는 중]]></title>
+    <link href="http://aanoaa.github.io/blog/2017/05/14/anyevent-reul-dasi-boneun-jung/"/>
+    <updated>2017-05-14T04:57:19+09:00</updated>
+    <id>http://aanoaa.github.io/blog/2017/05/14/anyevent-reul-dasi-boneun-jung</id>
+    <content type="html"><![CDATA[<p>꽤 오래전부터 <code>#perl-kr@freenode</code> 채널에 hongbot(제가 운영하는 irc 봇)이 들어오지
+않았습니다.</p>
+
+<p>heroku 에서 Deprecated 된 Cedar-10 Stack? 을 사용했던게 문제였던 것 같습니다.
+여차저차 문서보고 Cedar-16? 으로 마이그레이숀 했습니다.</p>
+
+<p>아무튼 맨날 열린옷장 웹서비스만 하다가 오래간만에 irc bot 을 디버깅 하니까 재미가
+있었습니다.</p>
+
+<p>헌데, 모듈 의존성이 너무 많고 테스트가 어려운게 거슬려서</p>
+
+<ul>
+<li>의존성도 확 줄이고</li>
+<li>테스트코드를 추가(강화?)</li>
+</ul>
+
+
+<p>해서 lightweight hongbot 으로 운영하고 싶어졌습니다.
+요즘 들여다보면서 고치고 있습니다.</p>
+
+<p>머릿속에서 AnyEvent 가 싹 잊혀져서, 문서를 다시 처음부터 보고 있습니다.(조따 괴로운
+일입니다.)</p>
+
+<hr />
+
+<p>아무튼 오늘은 4시간 동안 삽질했습니다.</p>
+
+<p>뭐냐면, heroku 에서 idle 상태에 빠지지 않기 위해서 스스로 ping/pong 하는 기능의 테스트
+코드를 작성하던 중에 제대로 동작하지 않아서 괴로웠습니다.</p>
+
+<p>AnyEvent::HTTPD 에 등록된 콜백을 AnyEvent main loop 안에서 Blocking 연결로 요청하면
+동작하지 아니합니다.</p>
+
+<p>아래는 1초 뒤에 <code>GET http://localhost:5000/ping</code> 을 요청하는 간단한 코드입니다.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+<span class='line-number'>45</span>
+</pre></td><td class='code'><pre><code class='perl'><span class='line'><span class="k">use</span> <span class="n">utf8</span><span class="p">;</span>
+</span><span class='line'><span class="k">use</span> <span class="n">strict</span><span class="p">;</span>
+</span><span class='line'><span class="k">use</span> <span class="n">warnings</span><span class="p">;</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">use</span> <span class="n">AnyEvent</span><span class="p">;</span>
+</span><span class='line'><span class="k">use</span> <span class="nn">AnyEvent::</span><span class="n">HTTPD</span><span class="p">;</span>
+</span><span class='line'><span class="k">use</span> <span class="nn">HTTP::</span><span class="n">Tiny</span><span class="p">;</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">my</span> <span class="nv">$httpd</span> <span class="o">=</span> <span class="nn">AnyEvent::</span><span class="n">HTTPD</span><span class="o">-&gt;</span><span class="k">new</span><span class="p">(</span> <span class="n">host</span> <span class="o">=&gt;</span> <span class="s">&#39;0.0.0.0&#39;</span><span class="p">,</span> <span class="n">port</span> <span class="o">=&gt;</span> <span class="mi">5000</span> <span class="p">);</span>
+</span><span class='line'><span class="nv">$httpd</span><span class="o">-&gt;</span><span class="n">reg_cb</span><span class="p">(</span>
+</span><span class='line'>    <span class="s">&#39;/ping&#39;</span> <span class="o">=&gt;</span> <span class="k">sub </span><span class="p">{</span>
+</span><span class='line'>        <span class="k">my</span> <span class="p">(</span> <span class="nv">$httpd</span><span class="p">,</span> <span class="nv">$req</span> <span class="p">)</span> <span class="o">=</span> <span class="nv">@_</span><span class="p">;</span>
+</span><span class='line'>        <span class="nv">$req</span><span class="o">-&gt;</span><span class="n">respond</span><span class="p">(</span> <span class="p">{</span> <span class="n">content</span> <span class="o">=&gt;</span> <span class="p">[</span> <span class="s">&#39;text/plain&#39;</span><span class="p">,</span> <span class="s">&quot;pong&quot;</span> <span class="p">]</span> <span class="p">}</span> <span class="p">);</span>
+</span><span class='line'>    <span class="p">}</span>
+</span><span class='line'><span class="p">);</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">my</span> <span class="nv">$wait</span> <span class="o">=</span> <span class="n">AnyEvent</span><span class="o">-&gt;</span><span class="n">condvar</span><span class="p">;</span>
+</span><span class='line'><span class="k">my</span> <span class="nv">$t</span>    <span class="o">=</span> <span class="n">AnyEvent</span><span class="o">-&gt;</span><span class="n">timer</span><span class="p">(</span>
+</span><span class='line'>    <span class="n">after</span> <span class="o">=&gt;</span> <span class="mi">1</span><span class="p">,</span>   <span class="c1"># 1sec</span>
+</span><span class='line'>    <span class="n">cb</span>    <span class="o">=&gt;</span> <span class="k">sub </span><span class="p">{</span>
+</span><span class='line'>        <span class="k">my</span> <span class="nv">$http</span> <span class="o">=</span> <span class="nn">HTTP::</span><span class="n">Tiny</span><span class="o">-&gt;</span><span class="k">new</span><span class="p">(</span> <span class="n">timeout</span> <span class="o">=&gt;</span> <span class="mi">1</span> <span class="p">);</span>
+</span><span class='line'>        <span class="k">my</span> <span class="nv">$url</span> <span class="o">=</span> <span class="s">&#39;http://localhost:5000/ping&#39;</span><span class="p">;</span>
+</span><span class='line'>        <span class="k">print</span> <span class="s">&quot;GET $url\n&quot;</span><span class="p">;</span>
+</span><span class='line'>
+</span><span class='line'>        <span class="k">my</span> <span class="nv">$res</span> <span class="o">=</span> <span class="nv">$http</span><span class="o">-&gt;</span><span class="n">get</span><span class="p">(</span><span class="nv">$url</span><span class="p">);</span> <span class="c1"># &lt;- 여기서 멈춤</span>
+</span><span class='line'>        <span class="k">print</span> <span class="s">&quot;$res-&gt;{status}: $res-&gt;{reason}\n&quot;</span><span class="p">;</span>
+</span><span class='line'>
+</span><span class='line'>        <span class="c1">## my $res = $http-&gt;get(&#39;https://www.google.com&#39;); # 이거는 됨</span>
+</span><span class='line'>        <span class="c1">##</span>
+</span><span class='line'>        <span class="c1">## or</span>
+</span><span class='line'>        <span class="c1">##</span>
+</span><span class='line'>        <span class="c1">## AnyEvent::HTTP::ScopedClient-&gt;new($url)-&gt;get(</span>
+</span><span class='line'>        <span class="c1">##     sub {</span>
+</span><span class='line'>        <span class="c1">##         my ( $body, $hdr ) = @_;</span>
+</span><span class='line'>        <span class="c1">##         print &quot;$body\n&quot;; # pong</span>
+</span><span class='line'>        <span class="c1">##         $wait-&gt;send;</span>
+</span><span class='line'>        <span class="c1">##     }</span>
+</span><span class='line'>        <span class="c1">## );</span>
+</span><span class='line'>
+</span><span class='line'>        <span class="nv">$wait</span><span class="o">-&gt;</span><span class="nb">send</span><span class="p">;</span>
+</span><span class='line'>    <span class="p">}</span>
+</span><span class='line'><span class="p">);</span>
+</span><span class='line'>
+</span><span class='line'><span class="nv">$wait</span><span class="o">-&gt;</span><span class="nb">recv</span><span class="p">;</span>
+</span><span class='line'><span class="k">print</span> <span class="s">&quot;done\n&quot;</span><span class="p">;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<ol>
+<li>비동기 요청을 하도록 바꾸거나,</li>
+<li>AnyEvent::HTTPD 의 문제를 해결해야겠지요.</li>
+</ol>
+
+
+<p>뭐가 문제인지 들여다보고 싶은 맘은 없습니다.
+쉬운 1번 으로 해결할 것 같습니다.</p>
+
+<h2>See also</h2>
+
+<ul>
+<li><a href="AnyEvent">https://metacpan.org/pod/AnyEvent</a></li>
+</ul>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Git 데이터 복구]]></title>
@@ -1443,63 +1594,6 @@ $ hubot -c ~/Desktop/hubot
 협업간에 불화가 생길 수 있습니다.</p>
 
 <p>어떻게들 사용하시나요?</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Chrome Scrollbar Style]]></title>
-    <link href="http://aanoaa.github.io/blog/2012/07/02/chrome-scrollbar-style/"/>
-    <updated>2012-07-02T12:50:00+09:00</updated>
-    <id>http://aanoaa.github.io/blog/2012/07/02/chrome-scrollbar-style</id>
-    <content type="html"><![CDATA[<p><code>$HOME/.config/google-chrome/Default/User StyleSheets/Custom.css</code> 에다가
-아래 내용을 추가하면 scroll-bar 가 얄상하니 이쁩니다.</p>
-
-<p>근데 불편해서 안쓸라고.. 나중에 검색하기 힘들까봐 로그 남겨 둡니다.</p>
-
-<figure class='code'><figcaption><span>$HOME/.config/google-chrome/Default/User StyleSheets/Custom.css</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-</pre></td><td class='code'><pre><code class='css'><span class='line'><span class="o">:</span><span class="nd">:-webkit-scrollbar-track-piece</span><span class="p">{</span>
-</span><span class='line'>    <span class="k">background-color</span><span class="o">:</span><span class="m">#fff</span><span class="p">;</span>
-</span><span class='line'>    <span class="o">-</span><span class="n">webkit</span><span class="o">-</span><span class="k">border</span><span class="o">-</span><span class="n">radius</span><span class="o">:</span><span class="m">0</span><span class="p">;</span>
-</span><span class='line'><span class="p">}</span>
-</span><span class='line'><span class="o">:</span><span class="nd">:-webkit-scrollbar</span><span class="p">{</span>
-</span><span class='line'>    <span class="k">width</span><span class="o">:</span><span class="m">12px</span><span class="p">;</span>
-</span><span class='line'>    <span class="k">height</span><span class="o">:</span><span class="m">8px</span><span class="p">;</span>
-</span><span class='line'><span class="p">}</span>
-</span><span class='line'><span class="o">:</span><span class="nd">:-webkit-scrollbar-thumb</span><span class="p">{</span>
-</span><span class='line'>    <span class="k">height</span><span class="o">:</span><span class="m">50px</span><span class="p">;</span>
-</span><span class='line'>    <span class="k">background-color</span><span class="o">:</span><span class="m">#999</span><span class="p">;</span>
-</span><span class='line'>    <span class="o">-</span><span class="n">webkit</span><span class="o">-</span><span class="k">border</span><span class="o">-</span><span class="n">radius</span><span class="o">:</span><span class="m">4px</span><span class="p">;</span>
-</span><span class='line'>    <span class="k">outline</span><span class="o">:</span><span class="m">2px</span> <span class="k">solid</span> <span class="m">#fff</span><span class="p">;</span>
-</span><span class='line'>    <span class="k">outline</span><span class="o">-</span><span class="n">offset</span><span class="o">:-</span><span class="m">2px</span><span class="p">;</span>
-</span><span class='line'>    <span class="k">border</span><span class="o">:</span> <span class="m">2px</span> <span class="k">solid</span> <span class="m">#fff</span><span class="p">;</span>
-</span><span class='line'><span class="p">}</span>
-</span><span class='line'><span class="o">:</span><span class="nd">:-webkit-scrollbar-thumb:hover</span><span class="p">{</span>
-</span><span class='line'>    <span class="k">height</span><span class="o">:</span><span class="m">50px</span><span class="p">;</span>
-</span><span class='line'>    <span class="k">background-color</span><span class="o">:</span><span class="m">#9f9f9f</span><span class="p">;</span>
-</span><span class='line'>    <span class="o">-</span><span class="n">webkit</span><span class="o">-</span><span class="k">border</span><span class="o">-</span><span class="n">radius</span><span class="o">:</span><span class="m">4px</span><span class="p">;</span>
-</span><span class='line'><span class="p">}</span>
-</span></code></pre></td></tr></table></div></figure>
-
 ]]></content>
   </entry>
   

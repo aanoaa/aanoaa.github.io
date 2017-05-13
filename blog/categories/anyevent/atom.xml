@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Anyevent | Mustache :{]]></title>
+  <link href="http://aanoaa.github.io/blog/categories/anyevent/atom.xml" rel="self"/>
+  <link href="http://aanoaa.github.io/"/>
+  <updated>2017-05-14T05:16:24+09:00</updated>
+  <id>http://aanoaa.github.io/</id>
+  <author>
+    <name><![CDATA[Hyungsuk Hong]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[AnyEvent 를 다시 보는 중]]></title>
+    <link href="http://aanoaa.github.io/blog/2017/05/14/anyevent-reul-dasi-boneun-jung/"/>
+    <updated>2017-05-14T04:57:19+09:00</updated>
+    <id>http://aanoaa.github.io/blog/2017/05/14/anyevent-reul-dasi-boneun-jung</id>
+    <content type="html"><![CDATA[<p>꽤 오래전부터 <code>#perl-kr@freenode</code> 채널에 hongbot(제가 운영하는 irc 봇)이 들어오지
+않았습니다.</p>
+
+<p>heroku 에서 Deprecated 된 Cedar-10 Stack? 을 사용했던게 문제였던 것 같습니다.
+여차저차 문서보고 Cedar-16? 으로 마이그레이숀 했습니다.</p>
+
+<p>아무튼 맨날 열린옷장 웹서비스만 하다가 오래간만에 irc bot 을 디버깅 하니까 재미가
+있었습니다.</p>
+
+<p>헌데, 모듈 의존성이 너무 많고 테스트가 어려운게 거슬려서</p>
+
+<ul>
+<li>의존성도 확 줄이고</li>
+<li>테스트코드를 추가(강화?)</li>
+</ul>
+
+
+<p>해서 lightweight hongbot 으로 운영하고 싶어졌습니다.
+요즘 들여다보면서 고치고 있습니다.</p>
+
+<p>머릿속에서 AnyEvent 가 싹 잊혀져서, 문서를 다시 처음부터 보고 있습니다.(조따 괴로운
+일입니다.)</p>
+
+<hr />
+
+<p>아무튼 오늘은 4시간 동안 삽질했습니다.</p>
+
+<p>뭐냐면, heroku 에서 idle 상태에 빠지지 않기 위해서 스스로 ping/pong 하는 기능의 테스트
+코드를 작성하던 중에 제대로 동작하지 않아서 괴로웠습니다.</p>
+
+<p>AnyEvent::HTTPD 에 등록된 콜백을 AnyEvent main loop 안에서 Blocking 연결로 요청하면
+동작하지 아니합니다.</p>
+
+<p>아래는 1초 뒤에 <code>GET http://localhost:5000/ping</code> 을 요청하는 간단한 코드입니다.</p>
+
+<pre><code class="perl">use utf8;
+use strict;
+use warnings;
+
+use AnyEvent;
+use AnyEvent::HTTPD;
+use HTTP::Tiny;
+
+my $httpd = AnyEvent::HTTPD-&gt;new( host =&gt; '0.0.0.0', port =&gt; 5000 );
+$httpd-&gt;reg_cb(
+    '/ping' =&gt; sub {
+        my ( $httpd, $req ) = @_;
+        $req-&gt;respond( { content =&gt; [ 'text/plain', "pong" ] } );
+    }
+);
+
+my $wait = AnyEvent-&gt;condvar;
+my $t    = AnyEvent-&gt;timer(
+    after =&gt; 1,   # 1sec
+    cb    =&gt; sub {
+        my $http = HTTP::Tiny-&gt;new( timeout =&gt; 1 );
+        my $url = 'http://localhost:5000/ping';
+        print "GET $url\n";
+
+        my $res = $http-&gt;get($url); # &lt;- 여기서 멈춤
+        print "$res-&gt;{status}: $res-&gt;{reason}\n";
+
+        ## my $res = $http-&gt;get('https://www.google.com'); # 이거는 됨
+        ##
+        ## or
+        ##
+        ## AnyEvent::HTTP::ScopedClient-&gt;new($url)-&gt;get(
+        ##     sub {
+        ##         my ( $body, $hdr ) = @_;
+        ##         print "$body\n"; # pong
+        ##         $wait-&gt;send;
+        ##     }
+        ## );
+
+        $wait-&gt;send;
+    }
+);
+
+$wait-&gt;recv;
+print "done\n";
+</code></pre>
+
+<ol>
+<li>비동기 요청을 하도록 바꾸거나,</li>
+<li>AnyEvent::HTTPD 의 문제를 해결해야겠지요.</li>
+</ol>
+
+
+<p>뭐가 문제인지 들여다보고 싶은 맘은 없습니다.
+쉬운 1번 으로 해결할 것 같습니다.</p>
+
+<h2>See also</h2>
+
+<ul>
+<li><a href="AnyEvent">https://metacpan.org/pod/AnyEvent</a></li>
+</ul>
+
+]]></content>
+  </entry>
+  
+</feed>
