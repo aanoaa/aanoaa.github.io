@@ -4,7 +4,7 @@
   <title><![CDATA[Category: 수유동 | Mustache :{]]></title>
   <link href="http://aanoaa.github.io/blog/categories/suyudong/atom.xml" rel="self"/>
   <link href="http://aanoaa.github.io/"/>
-  <updated>2017-11-14T14:33:54+09:00</updated>
+  <updated>2017-11-14T18:17:28+09:00</updated>
   <id>http://aanoaa.github.io/</id>
   <author>
     <name><![CDATA[Hyungsuk Hong]]></name>
@@ -55,7 +55,7 @@
 
 <p>요식업을 하는 자영업자들이 많을테니 오픈소스로 음식 주문 서비스 플랫폼을 만들어서 투명하게
 운영해보면 어떨까 하는 생각도 해보았습니다.
-전화주문이 아닌 모바일 주문이 중요하다고 생각이 되서,</p>
+전화주문이 아닌 모바일 주문이 중요하다고 생각이 들어서,</p>
 
 <ul>
 <li>상호를 등록하고 메뉴를 편집할 수 있게 합니다.</li>
