@@ -1,0 +1,39 @@
+---
+title: gatsbyjs 뽕 맞는 중
+date: 2019-12-13
+---
+
+이 블로그를 jekyll(octopress) 에서 gatsbyjs 로 넘어옴
+
+wordpress 를 CMS 로 활용해서 데이터를 fetch 해와서 로컬에 캐시로 두고,
+graphql 로 데이터 질의해서 새로운 사이트를 생성하고 있는데 하던 중에 gatsbyjs 뽕 맞고
+아 내 버려진 블로그도 이걸 쓰면 그나마 좀 더 쓰지 않을까 싶어서 옮겨옴
+
+serverless application 어쩌고 하는게 뭔말인가 싶었는데 이렇듯 정적파일로 remote 의 데이터를 fetch
+해서 맨드는 걸 얘기하나 싶기도 하고.. 근데 그건 SPA 인데..
+
+업무로 워드프레스 맨지다가 이쪽 보니까 넘 힙해서 정신을 못 차리겠능
+
+rss feed 랑 disqus 살려야 하는데..
+
+static site generator 로 [hugo](https://gohugo.io/) 로 제작해서 netlify 로 배포하는 것도 해봤었는데,
+그건 jekyll 의 go 버전이랑 다를 바 없고(go template 수정하려면 암 걸림) 동적으로 페이지를 구성하는데에 있어서
+react 를 사용하는 gatsbyjs 가 더 편하지 않나 싶음
+
+게다가 mdx 로 컨텐츠를 작성할 수 있는데 이게 또 힙해서 뽕 맞는 중
+
+어서 emacs mdx-mode 를 달라.
+
+현재 테마 및 액션?은 `gatsby-theme-blog` 인데 `content/posts/*.mdx?` 파일들에 대해 transform 하고 블링블링하게
+변한해줌
+
+당장에 고민 하는 건 wordpress 로 데이터 가져온 것을(이건 md 포맷이 아님) md 포맷으로 변환해서 여기에 집어 넣는거.
+
+A 가 markdown 으로 작성한 컨텐츠랑 B 가 wordpress 에서 rich editor 로 작성한 컨텐츠를 취합해서 하나의 사이트에서 보여주고 싶은데,
+기본 기능을 변경하려면 삽질을 좀 해야 할듯
+
+그리고 react 가 익숙치 않아서 진짜 별거 아닌 거를 트러블슈팅 하느라 시간이 많이 걸림.
+
+ㅉㅉ 요즘 것들은 html 을 js 로 작성하다니 에잉 국이 짜자나
+
+개인적으로는 js 없이 동작하는 웹을 추구하는데 그럴리는 없겠지
