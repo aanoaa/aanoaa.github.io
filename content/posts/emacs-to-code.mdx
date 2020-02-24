@@ -1,0 +1,91 @@
+---
+title: Emacs to vscode
+date: 2020-02-24
+---
+
+요새 typescript 가 넘 좋아서 내가 선택할 수 있고, 각 잡고 무언가를 할 때에는 typescript 를 사용하고 있습니다.
+(한번 쓰고 말거 라던지 금방 슥슥 할거는 perl 쓰고..)
+
+[tide](https://github.com/ananthakumaran/tide) mode 가 있어서 emacs 에서 사용하는데에 전혀 문제가 없습니다.
+
+작년부터인가 들었던 생각인데, 아 너무 고여 있는 게 아닐까.. 하는 걱정이 있습니다.
+새로운 걸 시도하다가도 다시 되돌아 가버렸습니다.
+
+다른 에디터들은 MS, Github 등등 회사차원에서 서포트를 하는 반면에 Emacs 는 오픈소스 커뮤니티에 의해 기능들이 개발/추가 되어서 상대적으로 좀 느립니다.
+그렇다고 해서 제가 거기에 기여를 할 수 있는 실력도 안됩니다.
+elisp 넘 어려웡..
+
+그런 와중에 java/kotlin 을 해야만 했고, 이걸 emacs 에서 할 수는 없었습니다.
+(방법이야 있겠지만 too much hard way)
+
+어쩔 수 없이 intellij 를 배워서 써보는데 kotlin 도 좋고 intellij 도 넘 좋은 것 이었습니다.
+몹시 불편하긴 하지만 장점이 분명이 있었습니다.
+그래서 요즘에 진득허니 하다보면 좋은 점이 보이겠지 싶어서 일부러 typescript 프로젝트에는 vscode 를 주로 사용합니다.
+
+## 장점
+
+### 이쁘다
+
+이건 별 설정없이 이쁘다는 것을 말합니다.
+Emacs 도 설정하면 똑같이 이쁩니다.
+
+### debugger
+
+와 이건 넘 짱 입니다.
+GUI 의 은혜를 입었습니다.
+no more `console.log`
+
+### 지원이 빠르다
+
+language mode, 기타 utility 등등 뭐 없나 싶어서 찾아보면 다 있음
+
+### 설정이 거의 없음
+
+알아서 슥슥 다 되게 해놓았음
+
+몹.시.편.리
+
+### key binding
+
+vim key binding 을 씁니다. 야호. 넘 편해.
+
+## 단점
+
+### project switching
+
+이건 작업 스타일인데..
+저는 해야할 거라던지 아이디어를 캡쳐해서 org file 로 옮겨 적습니다.
+
+code 를 쓰니 이런 메모장 용도의 생각을 organize 할 공간이 없습니다.
+프로젝트 단위이다 보니.. org file 가볍게 하나 열려면 project 를 switching 해야 해서 몹시 불편합니다.
+
+### org-mode 가 없다
+
+내놔.
+흉내낸거 말고 똑같이.
+
+### magit 이 없다
+
+아니 무슨 버튼 눌러서 commit 을 하나?
+git-lens? 라고 있는데 넘 verbose
+
+commit 할때는 emacs 로 가서 합니다.
+이건 답이 없습니다.
+
+### IBuffer 가 없다
+
+검색한거, 커밋하다가 만거, readonly 로 열어놓은거, 업무용 org file, TODO list, eshell 등등을 열어놓고 손쉽게 switching 해서 사용할 수 있었는데,
+이거 안되는게 어마어마하게 불편.
+
+### Eshell 의 부재
+
+    Ctrl + `
+
+으로 terminal 을 열 수 있지만.. 뭔가 부족행..
+
+## 결론
+
+그딴거 없으..
+
+장단점을 파악하려는 노오력은 좋은 것 같습니다.
+진득하게 써보다가 상황에 맞는 툴을 골라서 잘 쓰면 될 것 같습니다.
