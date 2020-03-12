@@ -3,7 +3,7 @@ layout: post
 title: "picasa upload script"
 date: 2012-01-03 23:18
 comments: true
-categories: [perl, picasa]
+categories: perl picasa
 ---
 
 {% gist 1444684 %}
@@ -29,7 +29,7 @@ $ picasa-upload.pl <PHOTO.png>
     https://lh4.googleusercontent.com/-mmv40wXKaM4/TwMP0BKUVhI/AAAAAAAAABA/AM3KBgCuf8Q/s320/2011082200618_10.jpg
     https://lh4.googleusercontent.com/-mmv40wXKaM4/TwMP0BKUVhI/AAAAAAAAABA/AM3KBgCuf8Q/s400/2011082200618_10.jpg
     https://lh4.googleusercontent.com/-mmv40wXKaM4/TwMP0BKUVhI/AAAAAAAAABA/AM3KBgCuf8Q/s512/2011082200618_10.jpg
-    
+
 - s72
 - s144
 - s200

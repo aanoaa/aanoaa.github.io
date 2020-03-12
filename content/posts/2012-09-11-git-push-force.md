@@ -3,7 +3,7 @@ layout: post
 title: "git push --force"
 date: 2012-09-11 23:28
 comments: true
-categories: [git, workflow, rebase]
+categories: git workflow rebase
 ---
 
 저는 `pull-request workflow`가 갑이라고 생각합니다.
@@ -49,18 +49,18 @@ bfb49285 * [origin/master] [master] init commit
 ```
 
 두개의 `topic` 모두 `pull-request` 상태이고(github 을 사용한다고
-가정합니다), 매니저가 `topic1` 을 *merge* 합니다.
+가정합니다), 매니저가 `topic1` 을 _merge_ 합니다.
 
 ```
     ed02ed2e *   [origin/master] [master] Merged in aanoaa/test/topic1 (pull request #1)
-             |\  
+             |\
     c94f01bb | * [origin/topic1] [topic1] add b.c
     90d550b0 | * add a.c
-             |/  
+             |/
     bfb49285 * init commit
 ```
 
-`topic1` 이 먼저 *merge* 되었기에 `topic2` 에서 `master` 를 *rebase*
+`topic1` 이 먼저 _merge_ 되었기에 `topic2` 에서 `master` 를 _rebase_
 합니다.
 
 ```
@@ -68,14 +68,14 @@ bfb49285 * [origin/master] [master] init commit
     fcaba0cc * add d.c
     f28849aa * add c.c
     ed02ed2e *   [origin/master] [master] Merged in aanoaa/test/topic1 (pull request #1)
-             |\  
+             |\
     c94f01bb | * [origin/topic1] [topic1] add b.c
     90d550b0 | * add a.c
-             |/  
+             |/
     bfb49285 * init commit
 ```
 
-*rebase* 되었기 때문에 `topic2` 는 `origin/topic2 HEAD` 를 잃습니다.
+_rebase_ 되었기 때문에 `topic2` 는 `origin/topic2 HEAD` 를 잃습니다.
 이때 `push` 하게 되면 `reject` 됩니다.
 
 ```
@@ -87,7 +87,7 @@ bfb49285 * [origin/master] [master] init commit
 여기서 다른 사람들은 어떻게 처리하는지가 궁금합니다.
 두개의 방법이 있을 수 있습니다.
 
-- `$ git pull && git push` *non-fast-forward* 이기 때문에 쉽게 생각할 수
+- `$ git pull && git push` _non-fast-forward_ 이기 때문에 쉽게 생각할 수
   있는 방법입니다.
 - `$ git push --force origin topic2` remote 의 이력을 바꿔버립니다.
 
@@ -96,7 +96,7 @@ bfb49285 * [origin/master] [master] init commit
 
 ```
     9647d196 *   [topic2] Merge branch 'topic2' of ssh://example.com/aanoaa/test into topic2
-             |\  
+             |\
     b9f6b81a | * [origin/topic2] add e.c
     95ea73d0 | * add d.c
     2a44208b | * add c.c
@@ -104,19 +104,19 @@ bfb49285 * [origin/master] [master] init commit
     fcaba0cc * | add d.c
     f28849aa * | add c.c
     ed02ed2e * |   [origin/master] [master] Merged in aanoaa/test/topic1 (pull request #1)
-             |\ \  
-             | |/  
-             |/|   
+             |\ \
+             | |/
+             |/|
     c94f01bb | * [origin/topic1] [topic1] add b.c
     90d550b0 | * add a.c
-             |/  
+             |/
     bfb49285 * init commit
 ```
 
-*rebase* 의 동작방식을 이해한다면 당연한 결과입니다. 마지막의 *merge*
- 커밋도 *pull* 을 사용했기 때문에 이해할 수 있습니다.
+_rebase_ 의 동작방식을 이해한다면 당연한 결과입니다. 마지막의 _merge_
+커밋도 _pull_ 을 사용했기 때문에 이해할 수 있습니다.
 
-두번째 방식을 사용한다면 아까 `topic2` 에서 `master` 를 *rebase*
+두번째 방식을 사용한다면 아까 `topic2` 에서 `master` 를 _rebase_
 했을때의 이력을 가지게 됩니다만 공동작업에서 remote 의 이력을 변경하게
 되는 것이라서 부담이 생깁니다.
 

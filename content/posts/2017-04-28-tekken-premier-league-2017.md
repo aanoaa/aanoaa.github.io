@@ -3,7 +3,7 @@ layout: post
 title: "Tekken premier league 2017"
 date: 2017-04-28 00:42:49 +0900
 comments: true
-categories: [tekken, 철권]
+categories: tekken 철권
 ---
 
 {% youtube MIPBW8BbknI %}

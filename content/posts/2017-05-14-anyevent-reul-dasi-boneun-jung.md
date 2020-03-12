@@ -3,7 +3,7 @@ layout: post
 title: "AnyEvent 를 다시 보는 중"
 date: 2017-05-14 04:57:19 +0900
 comments: true
-categories: [AnyEvent]
+categories: AnyEvent
 ---
 
 꽤 오래전부터 `#perl-kr@freenode` 채널에 hongbot(제가 운영하는 irc 봇)이 들어오지
@@ -26,7 +26,7 @@ heroku 에서 Deprecated 된 Cedar-10 Stack? 을 사용했던게 문제였던 �
 머릿속에서 AnyEvent 가 싹 잊혀져서, 문서를 다시 처음부터 보고 있습니다.(조따 괴로운
 일입니다.)
 
--------------------------------
+---
 
 아무튼 오늘은 4시간 동안 삽질했습니다.
 
@@ -38,7 +38,7 @@ AnyEvent::HTTPD 에 등록된 콜백을 AnyEvent main loop 안에서 Blocking �
 
 아래는 1초 뒤에 `GET http://localhost:5000/ping` 을 요청하는 간단한 코드입니다.
 
-``` perl
+```perl
 use utf8;
 use strict;
 use warnings;
@@ -92,6 +92,6 @@ print "done\n";
 뭐가 문제인지 들여다보고 싶은 맘은 없습니다.
 쉬운 1번 으로 해결할 것 같습니다.
 
-## See also ##
+## See also
 
 - [AnyEvent](https://metacpan.org/pod/AnyEvent)

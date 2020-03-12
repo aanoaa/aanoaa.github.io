@@ -2,7 +2,7 @@
 layout: post
 title: "Firefox CSP problem at github"
 date: 2017-05-09 11:20:30 +0900
-categories: [firefox, github]
+categories: firefox github
 comments: true
 ---
 

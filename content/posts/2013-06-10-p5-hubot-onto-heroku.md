@@ -3,7 +3,7 @@ layout: post
 title: "p5-hubot onto heroku"
 date: 2013-06-10 17:31
 comments: true
-categories: [hubot,heroku]
+categories: hubot heroku
 ---
 
 오리지날 [hubot](https://github.com/github/hubot) 에는
@@ -11,7 +11,7 @@ categories: [hubot,heroku]
 
 이제 [p5-hubot](https://github.com/aanoaa/p5-hubot) 에서도 됩니다.
 
-### OVERVIEW ###
+### OVERVIEW
 
 ```bash
 $ cpanm Hubot                      # requires Hubot >= 0.2.0
@@ -32,7 +32,7 @@ $ git push heroku master
 `hubot-scripts.json` 파일에 적어주시고 그에 따른 모듈 의존성은
 `cpanfile` 에 적어서 해결해야 합니다.
 
-### CREATE A DEPLOYABLE HUBOT ###
+### CREATE A DEPLOYABLE HUBOT
 
 [CPAN](http://search.cpan.org/) 을 이용한다면,
 
@@ -89,7 +89,7 @@ $ git push heroku master
 
 나머지는 p5-hubot core 모듈입니다.(서비스엔 필요없는것도 잇지만..)
 
-### CREATE A HEROKU INSTANCE? ###
+### CREATE A HEROKU INSTANCE?
 
     $ heroku create --stack cedar --buildpack https://github.com/aanoaa/heroku-buildpack-perl.git
 
@@ -115,7 +115,7 @@ BUILDPACK_URL 은 git 저장소인데,
 
 그리고 heroku 에 push 하면 알아서 돌아갑니다(별일 없으면..)
 
-### SEE ALSO ###
+### SEE ALSO
 
 - [Deploying Hubot onto Heroku](https://github.com/github/hubot/wiki/Deploying-Hubot-onto-Heroku)
 - [heroku-buildpack-perl for Perl/hubot](https://github.com/aanoaa/heroku-buildpack-perl)

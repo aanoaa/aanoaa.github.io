@@ -3,7 +3,7 @@ layout: post
 title: "Git 데이터 복구"
 date: 2017-05-12 19:12:13 +0900
 comments: true
-categories: [git, reflog]
+categories: git reflog
 ---
 
 오늘 실수로 고객의 한달간의 데이터를 잃어버렸습니다.
@@ -58,6 +58,6 @@ http://stackoverflow.com/questions/5788037/recover-from-git-reset-hard
 
 > saved me too - perfect
 
-## See also ##
+## See also
 
 - [Git의 내부 - 운영 및 데이터 복구](https://git-scm.com/book/ko/v1/Git%EC%9D%98-%EB%82%B4%EB%B6%80-%EC%9A%B4%EC%98%81-%EB%B0%8F-%EB%8D%B0%EC%9D%B4%ED%84%B0-%EB%B3%B5%EA%B5%AC)

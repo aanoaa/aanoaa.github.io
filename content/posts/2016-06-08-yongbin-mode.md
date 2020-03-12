@@ -3,10 +3,10 @@ layout: post
 title: "yongbin-mode"
 date: 2016-06-08 00:22:00 +0900
 comments: true
-categories: [elisp]
+categories: elisp
 ---
 
-## 외래어의 한글표기 ##
+## 외래어의 한글표기
 
 보통 외래서를 한글로 적을때, `e` 는 `ㅔ` 로, `a` 또는 `ae` 는 `ㅐ` 로
 적습니다.
@@ -19,8 +19,7 @@ categories: [elisp]
 
 `생일`도 `셍일`로 적고, `요새`도 `요세` 적는걸 보면, 외래어만 그런 것 같진 않습니다.
 
-
-## *-mode ##
+## \*-mode
 
 제 작은소원은 조국의 통일도 편경장의 팔모가지도 아닙니다.
 제가 필요한 emacs의 mode 를 만드는 것입니다.
@@ -34,7 +33,7 @@ elisp 관련 책도 읽다가 포기한 적도 많습니다.
 라는 코멘트가 결정적인 계기가 되어서 `yongbin-mode` 를 만들어보자 라고
 결심하게 되었습니다.
 
-### yongbin-mode ###
+### yongbin-mode
 
 아이디어는 이랬습니다.
 
@@ -81,7 +80,7 @@ emacs 내에서 `ㅔ` 를 누르면 `ㅐ` 가 입력되고 `ㅐ`를 누르면 `�
 
 https://github.com/aanoaa/yongbin-mode
 
-## 느낀점 ##
+## 느낀점
 
 개발환경이 넘 구립니다. 코드 변경하고 `M-x eval-buffer` 해서 다시 컴파일
 하고 어디어디 찾아가서 `C-x C-e` 해서 한줄만 실행하고 등등..
@@ -98,7 +97,8 @@ https://github.com/aanoaa/yongbin-mode
     (with-current-buffer yongbinize-buffer-name
       (goto-char (point-min))
       (setq yongbinized-text (...)))
-      
+
+
 이런거?
 
 `point-min` 이라는걸 buffer 마다 가지고 있는 모양인데, 그게 context 에 따라
@@ -112,7 +112,7 @@ closure 는 있는데 이건 elisp 가 아니고..
 elisp 에 관심있는 emacs 사용자들에게서 뭔가 도움을 구해보고 싶습니다.
 관련된 커뮤니티를 알고 계시면 알려주세요.
 
-## 레알 결론 ##
+## 레알 결론
 
 `ㅔ` 와 `ㅐ` 가 바뀐게 보이면 너무 꼴보기 싫었습니다.
 이제 몇주동안 저도 똑같이 바꿔쓰면서 고통을 주도록 하겠습니다.

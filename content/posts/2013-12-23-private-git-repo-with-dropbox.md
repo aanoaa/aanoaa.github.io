@@ -3,7 +3,7 @@ layout: post
 title: "Private Git Repo With Dropbox"
 date: 2013-12-23 18:18:35 +0900
 comments: true
-categories: [dropbox,git,todo,todo.txt]
+categories: dropbox git todo todo.txt
 ---
 
 개인적인 private repo 는 bitbucket 을 사용하고 있었는데, 아래 링크를

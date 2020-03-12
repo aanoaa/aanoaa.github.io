@@ -3,7 +3,7 @@ layout: post
 title: "perltidy profile option"
 date: 2015-07-15 16:31:41 +0900
 comments: true
-categories: [perl,perltidy]
+categories: perl perltidy
 ---
 
     $ perldoc perltidy

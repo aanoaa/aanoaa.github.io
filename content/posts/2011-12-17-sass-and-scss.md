@@ -3,22 +3,23 @@ layout: post
 title: "sass &amp; scss"
 date: 2011-12-17 00:08
 comments: true
-categories: [css,scss]
+categories: css scss
 ---
 
 `oops.scss` 파일을 아래처럼 맨들고,
 
 ```scss oops.scss
 @import "compass/css3";
-#header,#footer {
-    margin: 0 auto;
+#header,
+#footer {
+  margin: 0 auto;
 }
 .error {
-    @include border-radius(5px);
-    background-color: #DD0000;
-    .important {
-        border-width: 3px;
-    }
+  @include border-radius(5px);
+  background-color: #dd0000;
+  .important {
+    border-width: 3px;
+  }
 }
 ```
 
@@ -41,7 +42,8 @@ or
 
 ```css oops.css
 /* line 2, ../sass/oops.scss */
-#header, #footer {
+#header,
+#footer {
   margin: 0 auto;
 }
 
@@ -53,7 +55,7 @@ or
   -ms-border-radius: 5px;
   -khtml-border-radius: 5px;
   border-radius: 5px;
-  background-color: #DD0000;
+  background-color: #dd0000;
 }
 /* line 8, ../sass/oops.scss */
 .error .important {
@@ -66,10 +68,9 @@ or
 장점으로는 `oops.scss`에서 `@include border-radius(5px);` 를 보듯이
 함수와 변수를 사용할 수 있다는 것입니다. 코드의 중복을 막아주고(Don't
 Repeat Yourself), 셀렉터들의 계층을 두어서 쉽게 작성할 수 있습니다.
-`compass`를 함께 사용하면 이미 흔하게 사용되고 있는 선조들의 `best
-practice`를 `import` 해서 쓸 수 있습니다.
+`compass`를 함께 사용하면 이미 흔하게 사용되고 있는 선조들의 `best practice`를 `import` 해서 쓸 수 있습니다.
 
-# 설치 및 사용 #
+# 설치 및 사용
 
 ```bash
 $ gem install sass compass    # 저는 compass도 씀
@@ -90,7 +91,7 @@ images_dir = "static/images"
 javascripts_dir = "static/scripts"
 ```
 
-# 그밖에.. #
+# 그밖에..
 
 emacs [scss-mode][scss-mode]를 사용하면 watcher 를 띄우지 않고도
 저장과 동시에 `css`파일을 맨들 수 있습니다.
@@ -105,7 +106,7 @@ emacs [scss-mode][scss-mode]를 사용하면 watcher 를 띄우지 않고도
 
 `octopress` 도 `scss`사용합니다.
 
-# 결론 #
+# 결론
 
 `ruby` 모듈이자 툴입니다. 저희 회사는 `perl`로 개발합니다만 물론
 사용할 수 있습니다. 너무나도 훌륭한 오픈소스 입니다.
@@ -114,8 +115,6 @@ emacs [scss-mode][scss-mode]를 사용하면 watcher 를 띄우지 않고도
 잡으면 한없이 약해지는 분들이라면 간단한 `scss`문법을 공부하고
 `compass`툴 사용법을 익혀서 써먹으면 좋을 것 같습니다.
 
-
-
-[sass-lang]:    http://sass-lang.com/
-[blueprint]:    http://blueprintcss.org/
-[scss-mode]:    http://www.emacswiki.org/emacs/ScssMode
+[sass-lang]: http://sass-lang.com/
+[blueprint]: http://blueprintcss.org/
+[scss-mode]: http://www.emacswiki.org/emacs/ScssMode

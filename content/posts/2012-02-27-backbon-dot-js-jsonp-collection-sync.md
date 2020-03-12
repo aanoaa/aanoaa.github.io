@@ -3,7 +3,7 @@ layout: post
 title: "backbon.js jsonp collection sync"
 date: 2012-02-27 05:07
 comments: true
-categories: [backbone.js, jsonp]
+categories: backbone.js jsonp
 ---
 
 외부 도메인을 사용하고자 할때 `jsonp` 를 이용해야 하는데,
