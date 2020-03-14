@@ -1,4 +1,66 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Mustache :{ RSS Feed]]></title><description><![CDATA[What the..]]></description><link>https://aanoaa.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Thu, 12 Mar 2020 13:42:52 GMT</lastBuildDate><item><title><![CDATA[better back]]></title><description><![CDATA[…]]></description><link>https://aanoaa.github.io/better-back/</link><guid isPermaLink="false">https://aanoaa.github.io/better-back/</guid><pubDate>Tue, 03 Mar 2020 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;우리 주부님들~ 좋은 상품 하나 소개~ 는 구라고&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Mustache :{ RSS Feed]]></title><description><![CDATA[What the..]]></description><link>https://aanoaa.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Sat, 14 Mar 2020 12:29:31 GMT</lastBuildDate><item><title><![CDATA[Sign in with apple]]></title><description><![CDATA[apple 이 제 3자 서비스 인증을 활용하는 app 에 대해서, apple 로 로그인 기능을 넣으라고 협박하고 있습니다.
+지가 뭔데 남의 서비스에 감 놔라 배 놔라 하는지 모르겠습니다. https://developer.apple.com/news…]]></description><link>https://aanoaa.github.io/signin-with-apple/</link><guid isPermaLink="false">https://aanoaa.github.io/signin-with-apple/</guid><pubDate>Sat, 14 Mar 2020 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;apple 이 제 3자 서비스 인증을 활용하는 app 에 대해서, apple 로 로그인 기능을 넣으라고 협박하고 있습니다.
+지가 뭔데 남의 서비스에 감 놔라 배 놔라 하는지 모르겠습니다.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://developer.apple.com/news/?id=09122019b&quot;&gt;https://developer.apple.com/news/?id=09122019b&lt;/a&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;We’ve updated the App Store Review Guidelines to provide criteria for
+when apps are required to use Sign in with Apple. Starting today, new
+apps submitted to the App Store must follow these guidelines. Existing
+apps and app updates must follow them by April 2020. We’ve also
+provided new guidelines for using Sign in with Apple on the web and
+other platforms.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;a href=&quot;https://developer.apple.com/app-store/review/guidelines/#sign-in-with-apple&quot;&gt;https://developer.apple.com/app-store/review/guidelines/#sign-in-with-apple&lt;/a&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Apps that use a third-party or social login service (such as Facebook
+Login, Google Sign-In, Sign in with Twitter, Sign In with LinkedIn,
+Login with Amazon, or WeChat Login) to set up or authenticate the
+user’s primary account with the app must also offer Sign in with
+Apple as an equivalent option. A user’s primary account is the
+account they establish with your app for the purposes of identifying
+themselves, signing in, and accessing your features and associated
+services.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1&gt;함정&lt;/h1&gt;
+&lt;p&gt;어케 맨질일이 있어서 경험해봤는데 함정이 곳곳에 있습니다.
+일반적인 OAuth provider 가 아닙니다.&lt;/p&gt;
+&lt;p&gt;함정은..&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;access_token 으로 사용자 profile 을 얻어올 수 있는 REST API 가 없고(..못찾겠고)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;callback 이 POST 로 오고&lt;/strong&gt; (..scope 지정하면)&lt;/li&gt;
+&lt;li&gt;token 요청할때 &lt;code&gt;client_secret&lt;/code&gt; 을 제공받은 key 파일로 암호화 해서 생성해야하고,&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;사용자 프로필이 callback&lt;/strong&gt; 의 body 에 들어있는데,&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;이게 최초 한번만&lt;/strong&gt; 옵니다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;홀리쉿&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;../assets/signin-with-apple-sequence-diagram.png&quot; alt=&quot;img&quot;&gt;&lt;/p&gt;
+&lt;h2&gt;callback 이 POST (..scope 을 지정했을때)&lt;/h2&gt;
+&lt;p&gt;일반적인 OAuth provider 는 사용자 인증후에 token 교환에 필요한 &lt;code&gt;code&lt;/code&gt; 와 위변조여부를 체크 하기 위한 &lt;code&gt;state&lt;/code&gt; 를 줍니다.
+근데 apple 은 여기에 사용자 profile 을 최초 한번만 줍니다.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;state=0b24bxxxxx&amp;#x26;
+code=xxxxxxxxxxx.0.nsww.XX2b-XXXXKqm2JYHb4Pyeg&amp;#x26;
+user=%7B%22name%22%3A%7B%22firstName%22%3A%22xxxxx%22%2C%22middleName%22%3A%22%22%2C%22lastName%22%3A%22xxxx%22%7D%2C%22email%22%3A%2227xxxxkb%40privaterelay.appleid.com%22%7D
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;이런식인데 body 에 담아서 POST request 로 주는데 그 와중에 &lt;code&gt;user&lt;/code&gt; keyword 는 또 json string 입니다.
+사용자가 최초로 인증한 이후에는 &lt;code&gt;user&lt;/code&gt; parameter 없이 옵니다.&lt;/p&gt;
+&lt;p&gt;보통의 경우에는 &lt;code&gt;access_token&lt;/code&gt; 으로 사용자 profile 을 fetch 할 수 있는 REST API 를 제공하는데,
+apple 은 그런 api 없습니다.(못찾음)&lt;/p&gt;
+&lt;h2&gt;Create a signed jwt&lt;/h2&gt;
+&lt;p&gt;appleid 에 OAuth application 설정할때에 &lt;code&gt;.p8&lt;/code&gt; key 파일을 줍니다.
+이 key 파일로 &lt;a href=&quot;https://appleid.apple.com/auth/token&quot;&gt;https://appleid.apple.com/auth/token&lt;/a&gt; 에 전달할 jwt 를 sign 합니다.
+이 jwt 가 &lt;code&gt;client_secret&lt;/code&gt; 입니다.&lt;/p&gt;
+&lt;p&gt;expiration 때문에 생성해놓지 못하고 요청마다 생성해서 전달해야 합니다.&lt;/p&gt;
+&lt;h1&gt;passport-apple&lt;/h1&gt;
+&lt;p&gt;typescript 프로젝트에서 &lt;a href=&quot;http://www.passportjs.org/&quot;&gt;passport&lt;/a&gt; 를 사용했습니다.
+&lt;a href=&quot;https://github.com/ananay/passport-apple&quot;&gt;https://github.com/ananay/passport-apple&lt;/a&gt; 이라는 훌륭한 오픈소스가 있지만 이걸로는 부족합니다.
+scope 을 지원하지 않고, token 으로 profile 을 얻는 구조가 아니라서 hacky 하게 prototype 건들여가면서 고쳐써야 합니다.&lt;/p&gt;
+&lt;p&gt;여력이 있다면 남들도 잘 쓸 수 있게 고쳐서 PR 하고 싶은데 능력과 여력이 안됩니다.&lt;/p&gt;
+&lt;h1&gt;See Also&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://sarunw.com/posts/sign-in-with-apple-1/&quot;&gt;https://sarunw.com/posts/sign-in-with-apple-1/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://developer.okta.com/blog/2019/06/04/what-the-heck-is-sign-in-with-apple&quot;&gt;https://developer.okta.com/blog/2019/06/04/what-the-heck-is-sign-in-with-apple&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://forums.developer.apple.com/thread/118209&quot;&gt;https://forums.developer.apple.com/thread/118209&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[better back]]></title><description><![CDATA[…]]></description><link>https://aanoaa.github.io/better-back/</link><guid isPermaLink="false">https://aanoaa.github.io/better-back/</guid><pubDate>Tue, 03 Mar 2020 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;우리 주부님들~ 좋은 상품 하나 소개~ 는 구라고&lt;/p&gt;
 &lt;p&gt;오래 전에 허리가 한번 넘 아파서 자세를 올바르게 하기 위해 노력하면서 이것 저것 좀 써봤다.&lt;/p&gt;
 &lt;p&gt;개인적인 소감임&lt;/p&gt;
 &lt;p&gt;요즘 좀 보이는 &apos;ㄴ&apos; 처럼 생긴 방석? 이건 별 건 없는데 인식 해주는 효과는 있는 것 같다.
