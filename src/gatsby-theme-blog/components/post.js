@@ -19,7 +19,7 @@ const Post = ({
   next,
 }) => {
   let disqusConfig = {
-    url: `aanoaa.github.io${location.pathname}`,
+    url: `https://aanoaa.github.io${location.pathname}`,
     identifier: post.id,
     title: post.title,
   }
