@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Mustache :{ RSS Feed]]></title><description><![CDATA[What the..]]></description><link>https://aanoaa.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Sat, 14 Mar 2020 12:29:31 GMT</lastBuildDate><item><title><![CDATA[Sign in with apple]]></title><description><![CDATA[apple 이 제 3자 서비스 인증을 활용하는 app 에 대해서, apple 로 로그인 기능을 넣으라고 협박하고 있습니다.
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Mustache :{ RSS Feed]]></title><description><![CDATA[What the..]]></description><link>https://aanoaa.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Sat, 11 Apr 2020 01:43:21 GMT</lastBuildDate><item><title><![CDATA[Sign in with apple]]></title><description><![CDATA[apple 이 제 3자 서비스 인증을 활용하는 app 에 대해서, apple 로 로그인 기능을 넣으라고 협박하고 있습니다.
 지가 뭔데 남의 서비스에 감 놔라 배 놔라 하는지 모르겠습니다. https://developer.apple.com/news…]]></description><link>https://aanoaa.github.io/signin-with-apple/</link><guid isPermaLink="false">https://aanoaa.github.io/signin-with-apple/</guid><pubDate>Sat, 14 Mar 2020 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;apple 이 제 3자 서비스 인증을 활용하는 app 에 대해서, apple 로 로그인 기능을 넣으라고 협박하고 있습니다.
 지가 뭔데 남의 서비스에 감 놔라 배 놔라 하는지 모르겠습니다.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://developer.apple.com/news/?id=09122019b&quot;&gt;https://developer.apple.com/news/?id=09122019b&lt;/a&gt;&lt;/p&gt;
@@ -141,7 +141,7 @@ $ source venv/bin/activate
 &lt;/ul&gt;
 &lt;p&gt;하나 팔면 3-4천원 남습니다.
 이걸로 남겨서 월세도 내야 하니까 우와 이건 너무 힘든 일입니다.&lt;/p&gt;
-&lt;p&gt;{% img /images/posts/수도시락-메뉴.jpg %}&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;../assets/soodosirak-menu.jpg&quot; alt=&quot;수도시락-메뉴&quot;&gt;&lt;/p&gt;
 &lt;p&gt;왜 사진이 가로로 나오지..&lt;/p&gt;
 &lt;p&gt;도시락류를 먹어봤는데 메인메뉴 + 5가지 반찬에 국도 줍니다.
 맛집 블로거가 아니라 평가가 서툴지만 맛있게 먹었습니다.&lt;/p&gt;
@@ -166,7 +166,7 @@ $ source venv/bin/activate
 &lt;p&gt;흠 뭔가 도전해보고 싶어집니다.&lt;/p&gt;
 &lt;p&gt;작게 시작해서 꾸준하게 하면 좋을 것 같지만 여력이 없고 혼자서는 감당 못할 것 같습니다.&lt;/p&gt;
 &lt;p&gt;수도시락 많이 사랑해주세요. &lt;code&gt;&apos;-&apos;]/ ♥&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;{% img /images/posts/수도시락-포스트잇.jpg 300 %}&lt;/p&gt;</content:encoded></item><item><title><![CDATA[AnyEvent 를 다시 보는 중]]></title><description><![CDATA[꽤 오래전부터 #perl-kr@freenode 채널에 hongbot(제가 운영하는 irc 봇)이 들어오지
+&lt;p&gt;&lt;img src=&quot;../assets/soodosirak-postit.jpg&quot; alt=&quot;수도시락-포스트잇&quot;&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[AnyEvent 를 다시 보는 중]]></title><description><![CDATA[꽤 오래전부터 #perl-kr@freenode 채널에 hongbot(제가 운영하는 irc 봇)이 들어오지
 않았습니다. heroku 에서 Deprecated 된 Cedar-10 Stack…]]></description><link>https://aanoaa.github.io/2017-05-14-anyevent-reul-dasi-boneun-jung/</link><guid isPermaLink="false">https://aanoaa.github.io/2017-05-14-anyevent-reul-dasi-boneun-jung/</guid><pubDate>Sat, 13 May 2017 19:57:19 GMT</pubDate><content:encoded>&lt;p&gt;꽤 오래전부터 &lt;code&gt;#perl-kr@freenode&lt;/code&gt; 채널에 hongbot(제가 운영하는 irc 봇)이 들어오지
 않았습니다.&lt;/p&gt;
 &lt;p&gt;heroku 에서 Deprecated 된 Cedar-10 Stack? 을 사용했던게 문제였던 것 같습니다.
@@ -303,7 +303,7 @@ d5d92ec HEAD@{0}: reset: moving to HEAD^
 firefox 를 사용하고 있습니다.(&lt;code&gt;firefox ESR 45.9.0&lt;/code&gt;)&lt;/p&gt;
 &lt;p&gt;그런데 오늘(2017-05-09 투표날) github project 도 안보이고 assignee 도 지정할 수 없고
 comment 에 사진도 업로드가 아니되는 것 입니다.&lt;/p&gt;
-&lt;p&gt;{% img /images/posts/firefox-csp-at-github.png %}&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;../assets/firefox-csp-at-github.png&quot; alt=&quot;firefox-csp-at-github&quot;&gt;&lt;/p&gt;
 &lt;p&gt;크롬이나 다른 브라우저 쓰면 되긴 하지만, 여러 플러그인 설정과&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;https://addons.mozilla.org/en-US/firefox/addon/vimfx/&quot;&gt;vimfx&lt;/a&gt;&lt;/li&gt;
@@ -313,7 +313,17 @@ comment 에 사진도 업로드가 아니되는 것 입니다.&lt;/p&gt;
 &lt;li&gt;awesome screenshot&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;북마크등을 옮기려고 생각하면 아찔합니다.&lt;/p&gt;
-&lt;p&gt;괴롭다..&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Tekken premier league 2017]]></title><description><![CDATA[{% youtube MIPBW8BbknI %} 철권은 조빱이지만 철권 방송은 재밌게 보고 있습니다. 오랜만에 철권대회 입니다. 1등 상금이 60만원? 입니다. 나중에 1,000만원으로 오른다고 하는데 비인기 종목은 e…]]></description><link>https://aanoaa.github.io/2017-04-28-tekken-premier-league-2017/</link><guid isPermaLink="false">https://aanoaa.github.io/2017-04-28-tekken-premier-league-2017/</guid><pubDate>Thu, 27 Apr 2017 15:42:49 GMT</pubDate><content:encoded>&lt;p&gt;{% youtube MIPBW8BbknI %}&lt;/p&gt;
+&lt;p&gt;괴롭다..&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Tekken premier league 2017]]></title><description><![CDATA[철권은 조빱이지만 철권 방송은 재밌게 보고 있습니다. 오랜만에 철권대회 입니다. 1등 상금이 60만원? 입니다. 나중에 1,000만원으로 오른다고 하는데 비인기 종목은 e스포츠에서도 서러운 것 같습니다. 오랜만의 철권대회라서 반갑긴한데 해설이 hols…]]></description><link>https://aanoaa.github.io/2017-04-28-tekken-premier-league-2017/</link><guid isPermaLink="false">https://aanoaa.github.io/2017-04-28-tekken-premier-league-2017/</guid><pubDate>Thu, 27 Apr 2017 15:42:49 GMT</pubDate><content:encoded>&lt;p&gt;
+        &lt;div class=&quot;embedVideo-container&quot;&gt;
+            &lt;iframe
+              width=&quot;800&quot;
+              height=&quot;452&quot;
+              src=&quot;https://www.youtube.com/embed/MIPBW8BbknI?rel=0&quot;
+              class=&quot;embedVideo-iframe&quot;
+              style=&quot;border:0&quot;
+              allowfullscreen
+            &gt;&lt;/iframe&gt;
+        &lt;/div&gt;&lt;/p&gt;
 &lt;p&gt;철권은 조빱이지만 철권 방송은 재밌게 보고 있습니다.&lt;/p&gt;
 &lt;p&gt;오랜만에 철권대회 입니다.&lt;/p&gt;
 &lt;p&gt;1등 상금이 60만원? 입니다.&lt;/p&gt;
@@ -321,18 +331,17 @@ comment 에 사진도 업로드가 아니되는 것 입니다.&lt;/p&gt;
 &lt;p&gt;오랜만의 철권대회라서 반갑긴한데 해설이 hols(나겜사장) 입니다.
 철권의 ㅊ도 모르는 사람이 해설해서 많이 별로 입니다.&lt;/p&gt;
 &lt;p&gt;무릎 출전 안했으니까 지난번 오락실 매치처럼 인드라+무릎 시키면 좋을 것 같은데 역시
-게임방송도 돈이 문제인 것 같습니다.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[수영 2km]]></title><description><![CDATA[간만에 블로그 쓴다고 늦게 자서 늦게 인나고 늦게 출근했습니다.
-도착하니 점심시간이었습니다. 보통은 민들레에서 백반 먹는데, 어제 중길씨가 국밥 좋아한다고 해서 둘이 고흥순대국 다녀왔습니다. {% img /images/posts/민들레쿠폰.jpg…]]></description><link>https://aanoaa.github.io/2017-04-27-suyeong-2km/</link><guid isPermaLink="false">https://aanoaa.github.io/2017-04-27-suyeong-2km/</guid><pubDate>Thu, 27 Apr 2017 14:57:48 GMT</pubDate><content:encoded>&lt;p&gt;간만에 블로그 쓴다고 늦게 자서 늦게 인나고 늦게 출근했습니다.
+게임방송도 돈이 문제인 것 같습니다.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[수영 2km]]></title><description><![CDATA[…]]></description><link>https://aanoaa.github.io/2017-04-27-suyeong-2km/</link><guid isPermaLink="false">https://aanoaa.github.io/2017-04-27-suyeong-2km/</guid><pubDate>Thu, 27 Apr 2017 14:57:48 GMT</pubDate><content:encoded>&lt;p&gt;간만에 블로그 쓴다고 늦게 자서 늦게 인나고 늦게 출근했습니다.
 도착하니 점심시간이었습니다.&lt;/p&gt;
 &lt;p&gt;보통은 민들레에서 백반 먹는데, 어제 중길씨가 국밥 좋아한다고 해서 둘이 고흥순대국 다녀왔습니다.&lt;/p&gt;
-&lt;p&gt;{% img /images/posts/민들레쿠폰.jpg 300 %}&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;../assets/mindle-coupon.jpg&quot; alt=&quot;민들레쿠폰&quot;&gt;&lt;/p&gt;
 &lt;p&gt;민들레는 제가 가장 좋아하는 식당입니다.&lt;/p&gt;
 &lt;p&gt;밥먹고 일했습니다. 요새는 딴짓도 잘 안하고 일만하는 것 같습니다.
 하루종일 컴피터 앞에 앉아 있는데 하루종일 바쁜 것 같습니다. 담배도 안피니까 화장실 가는거
 말고는 계속 컴피터 합니다.&lt;/p&gt;
 &lt;p&gt;집중을 오래하다보면 무기력해지곤 합니다. 딴짓을 섞어줘야 하는데 얹혀지내기 시작한 이후로는
 벽을 바라보고 앉기 때문에 남들이 제 모니터를 볼까봐 딴짓을 못합니다.&lt;/p&gt;
-&lt;p&gt;{% img /images/posts/github액자.jpg 300 %}&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;../assets/github-frame.jpg&quot; alt=&quot;github액자&quot;&gt;&lt;/p&gt;
 &lt;p&gt;열린옷장의 대여비를 %로 할인해주는 쿠폰시스템을 만드는 중 입니다.
 한벌대여쿠폰, 10,000원 쿠폰 이런게 있었는데 이번에 요구가 있어서 합니다.
 점점 복잡해져서 걱정입니다. &quot;%할인 못한다&quot; 라고 하고 시스템을 되도록 단순하게 유지하고
@@ -360,7 +369,7 @@ comment 에 사진도 업로드가 아니되는 것 입니다.&lt;/p&gt;
 이력은
 &lt;a href=&quot;https://github.com/opencloset/opencloset/issues?q=assignee%3Aaanoaa+is%3Aopen&quot;&gt;opencloset/opencloset assignee:aanoaa is:open&lt;/a&gt; 에서
 볼 수 있습니다.&lt;/p&gt;
-&lt;p&gt;{% img /images/posts/assignee-aanoaa.png %}&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;../assets/assignee-aanoaa.png&quot; alt=&quot;assignee-aanoaa&quot;&gt;&lt;/p&gt;
 &lt;p&gt;열린옷장 직원은 아닙니다. 열린옷장 옆사무실에 SILEX 라는 소프트웨어 회사 댕기고
 있는데(이번에 건물에서 쫓겨나서 옆사무실 아님) 초창기에 열린옷장 재고관리 라는 작은
 프로젝트를 계기로 일하게 되었는데 어쩌다보니 이것만 하고 있습니다.&lt;/p&gt;
@@ -925,8 +934,8 @@ module.exports = (robot) -&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;http://silexkr.github.com/blog/2012/02/21/irc-bot/&quot;&gt;irc-bot&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;http://theprogrammingbutler.com/blog/archives/2011/10/28/hubot-scripts-explained/&quot;&gt;hubot Scripts Explained&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[tidyall]]></title><description><![CDATA[Perl 에는 Best Practices 가 있습니다. {% img http://akamaicovers.oreilly.com/images/9780596001735/cat.gif %} Damian Conway (일명 '대곤이횽') 의 Perl Best…]]></description><link>https://aanoaa.github.io/2012-09-12-tidyall/</link><guid isPermaLink="false">https://aanoaa.github.io/2012-09-12-tidyall/</guid><pubDate>Tue, 11 Sep 2012 16:11:00 GMT</pubDate><content:encoded>&lt;p&gt;Perl 에는 Best Practices 가 있습니다.&lt;/p&gt;
-&lt;p&gt;{% img &lt;a href=&quot;http://akamaicovers.oreilly.com/images/9780596001735/cat.gif&quot;&gt;http://akamaicovers.oreilly.com/images/9780596001735/cat.gif&lt;/a&gt; %}&lt;/p&gt;
+&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[tidyall]]></title><description><![CDATA[Perl 에는 Best Practices 가 있습니다. cat Damian Conway (일명 '대곤이횽') 의 Perl Best Practices 가 그것입니다. (저는 아직 안읽어봤습니다) Perl::Critic은 정적 소스코드 분석기로써 Perl…]]></description><link>https://aanoaa.github.io/2012-09-12-tidyall/</link><guid isPermaLink="false">https://aanoaa.github.io/2012-09-12-tidyall/</guid><pubDate>Tue, 11 Sep 2012 16:11:00 GMT</pubDate><content:encoded>&lt;p&gt;Perl 에는 Best Practices 가 있습니다.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://akamaicovers.oreilly.com/images/9780596001735/cat.gif&quot; alt=&quot;cat&quot;&gt;&lt;/p&gt;
 &lt;p&gt;Damian Conway (일명 &apos;대곤이횽&apos;) 의 &lt;a href=&quot;http://shop.oreilly.com/product/9780596001735.do&quot;&gt;Perl Best Practices&lt;/a&gt; 가 그것입니다. (저는 아직 안읽어봤습니다)&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;http://search.cpan.org/~thaljef/Perl-Critic-1.118/lib/Perl/Critic.pm&quot;&gt;Perl::Critic&lt;/a&gt;은 정적 소스코드 분석기로써 &lt;code&gt;Perl Best Practices&lt;/code&gt; 의 정책을 따릅니다.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;http://search.cpan.org/~shancock/Perl-Tidy-20120714/bin/perltidy&quot;&gt;perltidy&lt;/a&gt; 도 있습니다.
@@ -1345,8 +1354,7 @@ iphone app 도 있습니다. 근데 배우고 알아야 할게 너무 많습니�
 같습니다.&lt;/p&gt;
 &lt;p&gt;github 만세입니다.&lt;/p&gt;
 &lt;h3&gt;결론은 버킹검&lt;/h3&gt;
-&lt;p&gt;아아 뭔소리래..&lt;/p&gt;</content:encoded></item><item><title><![CDATA[picasa upload script]]></title><description><![CDATA[{% gist 1444684 %} $HOME/.google.conf 에다가 자신의 계정 정보를 슥슥하고요. 이중보안 설정한 계정은 업로드 안됩니다. 제가 샘플로 올린 이미지 퍼블릭 링크입니다. 어쩌고저쩌고/s[SIZE]/파일명.jpg…]]></description><link>https://aanoaa.github.io/2012-01-03-picasa-upload-script/</link><guid isPermaLink="false">https://aanoaa.github.io/2012-01-03-picasa-upload-script/</guid><pubDate>Tue, 03 Jan 2012 14:18:00 GMT</pubDate><content:encoded>&lt;p&gt;{% gist 1444684 %}&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;$HOME/.google.conf&lt;/code&gt; 에다가 자신의 계정 정보를 슥슥하고요.&lt;/p&gt;
+&lt;p&gt;아아 뭔소리래..&lt;/p&gt;</content:encoded></item><item><title><![CDATA[picasa upload script]]></title><description><![CDATA[$HOME/.google.conf 에다가 자신의 계정 정보를 슥슥하고요. 이중보안 설정한 계정은 업로드 안됩니다. 제가 샘플로 올린 이미지 퍼블릭 링크입니다. 어쩌고저쩌고/s[SIZE]/파일명.jpg…]]></description><link>https://aanoaa.github.io/2012-01-03-picasa-upload-script/</link><guid isPermaLink="false">https://aanoaa.github.io/2012-01-03-picasa-upload-script/</guid><pubDate>Tue, 03 Jan 2012 14:18:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;code&gt;$HOME/.google.conf&lt;/code&gt; 에다가 자신의 계정 정보를 슥슥하고요.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;이중보안 설정한 계정은 업로드 안됩니다.&lt;/strong&gt;&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;$ picasa-upload.pl &amp;#x3C;PHOTO.png&gt;
 &lt;/code&gt;&lt;/pre&gt;
@@ -1562,13 +1570,8 @@ l
 &lt;li&gt;내가 했던거면 말없이 수정하고, 남이 한거면 &lt;em&gt;Scratch&lt;/em&gt; 에 메세지를
 남겨두거나 바로 지적질 합니다.(아직 어케 할지 몰겟네요)&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2&gt;캡쳐화면&lt;/h2&gt;
-&lt;p&gt;{% img &lt;a href=&quot;http://k.minus.com/jwKlv6EpzfEwJ.png&quot;&gt;http://k.minus.com/jwKlv6EpzfEwJ.png&lt;/a&gt; %}
-{% img &lt;a href=&quot;http://k.minus.com/jIDbCjAJe4qWD.png&quot;&gt;http://k.minus.com/jIDbCjAJe4qWD.png&lt;/a&gt; %}
-{% img &lt;a href=&quot;http://k.minus.com/jG5TPNm1TKCVP.png&quot;&gt;http://k.minus.com/jG5TPNm1TKCVP.png&lt;/a&gt; %}&lt;/p&gt;
 &lt;h1&gt;결론&lt;/h1&gt;
-&lt;h1&gt;vim 이 뭐져?&lt;/h1&gt;</content:encoded></item><item><title><![CDATA[termiator]]></title><description><![CDATA[{% img http://k.minus.com/jO0Dl3TGpMeZW.png %} terminator를 사용하면 emacs를 쓰지 않고도 하나의 window 내에서 여러개의 terminal 을 사용할 수 있습니다. install ubuntu…]]></description><link>https://aanoaa.github.io/2011-11-10-termiator/</link><guid isPermaLink="false">https://aanoaa.github.io/2011-11-10-termiator/</guid><pubDate>Wed, 09 Nov 2011 20:59:00 GMT</pubDate><content:encoded>&lt;p&gt;{% img &lt;a href=&quot;http://k.minus.com/jO0Dl3TGpMeZW.png&quot;&gt;http://k.minus.com/jO0Dl3TGpMeZW.png&lt;/a&gt; %}&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://launchpad.net/terminator/+download&quot;&gt;terminator&lt;/a&gt;를 사용하면 emacs를 쓰지 않고도 하나의 window 내에서 여러개의 terminal 을 사용할 수 있습니다.&lt;/p&gt;
+&lt;h1&gt;vim 이 뭐져?&lt;/h1&gt;</content:encoded></item><item><title><![CDATA[termiator]]></title><description><![CDATA[terminator를 사용하면 emacs를 쓰지 않고도 하나의 window 내에서 여러개의 terminal 을 사용할 수 있습니다. install ubuntu: 기본적으로 등록되어 있는 keybinding 은 아래와 같습니다. Ctrl + Shift…]]></description><link>https://aanoaa.github.io/2011-11-10-termiator/</link><guid isPermaLink="false">https://aanoaa.github.io/2011-11-10-termiator/</guid><pubDate>Wed, 09 Nov 2011 20:59:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;a href=&quot;https://launchpad.net/terminator/+download&quot;&gt;terminator&lt;/a&gt;를 사용하면 emacs를 쓰지 않고도 하나의 window 내에서 여러개의 terminal 을 사용할 수 있습니다.&lt;/p&gt;
 &lt;h2&gt;install&lt;/h2&gt;
 &lt;p&gt;ubuntu:&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;$ sudo apt-get install terminator
