@@ -5,6 +5,12 @@ module.exports = {
       options: {},
     },
     {
+      resolve: `gatsby-plugin-disqus`,
+      options: {
+        shortname: `aanoaa-mustache`,
+      },
+    },
+    {
       resolve: `gatsby-transformer-remark`,
       options: {
         tableOfContents: {
