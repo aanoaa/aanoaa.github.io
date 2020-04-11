@@ -6,7 +6,7 @@ comments: true
 categories: perl picasa
 ---
 
-{% gist 1444684 %}
+`gist:1444684`
 
 `$HOME/.google.conf` 에다가 자신의 계정 정보를 슥슥하고요.
 

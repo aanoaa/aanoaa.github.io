@@ -7,6 +7,10 @@ module.exports = {
     {
       resolve: `gatsby-transformer-remark`,
       options: {
+        tableOfContents: {
+          heading: null,
+          maxDepth: 6,
+        },
         // CommonMark mode (default: true)
         commonmark: true,
         // Footnotes mode (default: true)
@@ -22,6 +26,9 @@ module.exports = {
             options: {
               width: 800,
             },
+          },
+          {
+            resolve: "gatsby-remark-embed-gist",
           },
         ],
       },
