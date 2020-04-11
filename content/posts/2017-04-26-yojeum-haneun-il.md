@@ -3,7 +3,7 @@ layout: post
 title: "요즘 하는 일"
 date: 2017-04-26 23:37:35 +0900
 comments: true
-categories: 
+categories:
 ---
 
 요즘이랄까 제작년부터 거의 [열린옷장](https://www.theopencloset.net/)의 서비스를 만들고
@@ -25,7 +25,7 @@ categories:
 [opencloset/opencloset assignee:aanoaa is:open](https://github.com/opencloset/opencloset/issues?q=assignee%3Aaanoaa+is%3Aopen) 에서
 볼 수 있습니다.
 
-{% img /images/posts/assignee-aanoaa.png %}
+![assignee-aanoaa](../assets/assignee-aanoaa.png)
 
 열린옷장 직원은 아닙니다. 열린옷장 옆사무실에 SILEX 라는 소프트웨어 회사 댕기고
 있는데(이번에 건물에서 쫓겨나서 옆사무실 아님) 초창기에 열린옷장 재고관리 라는 작은

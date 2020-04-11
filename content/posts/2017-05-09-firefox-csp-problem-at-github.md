@@ -18,7 +18,7 @@ firefox 를 사용하고 있습니다.(`firefox ESR 45.9.0`)
 그런데 오늘(2017-05-09 투표날) github project 도 안보이고 assignee 도 지정할 수 없고
 comment 에 사진도 업로드가 아니되는 것 입니다.
 
-{% img /images/posts/firefox-csp-at-github.png %}
+![firefox-csp-at-github](../assets/firefox-csp-at-github.png)
 
 크롬이나 다른 브라우저 쓰면 되긴 하지만, 여러 플러그인 설정과
 

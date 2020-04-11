@@ -24,7 +24,7 @@ categories: 수유동 도시락 수유동 도시락
 하나 팔면 3-4천원 남습니다.
 이걸로 남겨서 월세도 내야 하니까 우와 이건 너무 힘든 일입니다.
 
-{% img /images/posts/수도시락-메뉴.jpg %}
+![수도시락-메뉴](../assets/soodosirak-menu.jpg)
 
 왜 사진이 가로로 나오지..
 
@@ -60,4 +60,4 @@ categories: 수유동 도시락 수유동 도시락
 
 수도시락 많이 사랑해주세요. `'-']/ ♥`
 
-{% img /images/posts/수도시락-포스트잇.jpg 300 %}
+![수도시락-포스트잇](../assets/soodosirak-postit.jpg)

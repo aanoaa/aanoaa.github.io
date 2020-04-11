@@ -6,9 +6,6 @@ comments: true
 categories: utility
 ---
 
-{% img http://k.minus.com/jO0Dl3TGpMeZW.png %}
-
-
 [terminator][terminator]를 사용하면 emacs를 쓰지 않고도 하나의 window 내에서 여러개의 terminal 을 사용할 수 있습니다.
 
 install

@@ -6,7 +6,7 @@ comments: true
 categories: tekken 철권
 ---
 
-{% youtube MIPBW8BbknI %}
+`youtube: MIPBW8BbknI`
 
 철권은 조빱이지만 철권 방송은 재밌게 보고 있습니다.
 

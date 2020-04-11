@@ -117,14 +117,6 @@ mo-git-blame
   남겨두거나 바로 지적질 합니다.(아직 어케 할지 몰겟네요)
 
 
-캡쳐화면
--------
-
-{% img http://k.minus.com/jwKlv6EpzfEwJ.png %}
-{% img http://k.minus.com/jIDbCjAJe4qWD.png %}
-{% img http://k.minus.com/jG5TPNm1TKCVP.png %}
-
-
 결론
 ====
 
