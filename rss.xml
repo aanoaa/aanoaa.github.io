@@ -1,4 +1,119 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Mustache :{ RSS Feed]]></title><description><![CDATA[What the..]]></description><link>https://aanoaa.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Fri, 15 Jan 2021 12:45:39 GMT</lastBuildDate><item><title><![CDATA[미국책 주문]]></title><description><![CDATA[쇼핑을 거의 안하는(못하는?) 편인데, 미국책이 필요했다. 용사장한테 물어보니까 amazon.com 에서 사면 된다고..
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Mustache :{ RSS Feed]]></title><description><![CDATA[What the..]]></description><link>https://aanoaa.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Sat, 30 Jan 2021 03:01:25 GMT</lastBuildDate><item><title><![CDATA[golang pointer receiver]]></title><description><![CDATA[golang 을 만지다가 이게 뭔일이여 싶어서..
+pointer receiver method 안에서 address 가 아닌 value 로 사용해도 동작한다? https://tour.golang.org/methods/…]]></description><link>https://aanoaa.github.io/go-lang-pointer-receiver/</link><guid isPermaLink="false">https://aanoaa.github.io/go-lang-pointer-receiver/</guid><pubDate>Sat, 30 Jan 2021 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;golang 을 만지다가 이게 뭔일이여 싶어서..
+pointer receiver method 안에서 address 가 아닌 value 로 사용해도 동작한다?&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://tour.golang.org/methods/4&quot;&gt;https://tour.golang.org/methods/4&lt;/a&gt; 여기에서 예제를 보니까 pointer receiver 메소드 안에서,
+value 를 사용하길래 어? 이상하다 했는데 테스트해보니까 그러함&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-go&quot;&gt;package main
+
+import (
+    &quot;fmt&quot;
+    &quot;math&quot;
+)
+
+type Vertex struct {
+    X, Y float64
+}
+
+func (v Vertex) Abs() float64 {
+    return math.Sqrt(v.X*v.X + v.Y*v.Y)
+}
+
+func (v *Vertex) Scale(f float64) {
+    v.X = v.X * f
+    v.Y = v.Y * f
+}
+
+func main() {
+    v := Vertex{3, 4}
+    v.Scale(10)
+    fmt.Println(v.Abs())
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;모르겠는 부분은 여기&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-go&quot;&gt;func (v *Vertex) Scale(f float64) {
+    v.X = v.X * f
+    v.Y = v.Y * f
+
+    // 왜 이게 아니고..
+    // (*v).X = (*v).X * f
+    // (*v).Y = (*v).Y * f
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;아래는 테스트 해본거&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-go&quot;&gt;package test
+
+type multiset struct {
+    values []int
+}
+
+// pointer receiver (1)
+func (m *multiset) append(val int) {
+    for _, v := range (*m).values {
+        if v == val {
+            return
+        }
+    }
+
+    (*m).values = append((*m).values, val)
+}
+
+// pointer receiver (2)    &amp;#x3C;- 왜 됨?
+func (m *multiset) append(val int) {
+    for _, v := range m.values {
+        if v == val {
+            return
+        }
+    }
+
+    m.values = append(m.values, val)
+}
+
+// value receiver (3)
+func (m multiset) append(val int) {
+    for _, v := range m.values {
+        if v == val {
+            return
+        }
+    }
+
+    m.values = append(m.values, val)
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&quot;language-go&quot;&gt;package test
+
+import &quot;fmt&quot;
+
+func Example_pr() {
+    var ms multiset
+    ms = multiset{[]int{1, 2, 3}}
+    fmt.Println(ms) // 123
+
+    ms.append(4)
+    fmt.Println(ms) // 1234
+
+    ms.append(4)
+    fmt.Println(ms) // 1234
+
+    // Output:
+    // {[1 2 3]}
+    // {[1 2 3 4]}
+    // {[1 2 3 4]}
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;각 케이스 별로 위 테스트 돌리면..&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;(1) 성공&lt;/li&gt;
+&lt;li&gt;(2) 실패&lt;/li&gt;
+&lt;li&gt;(3) 실패&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;로 예상했는데&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;(1) 성공&lt;/li&gt;
+&lt;li&gt;(2) 성공 &amp;#x3C;- ???&lt;/li&gt;
+&lt;li&gt;(3) 실패&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;가 됨&lt;/p&gt;
+&lt;p&gt;왜죠?&lt;/p&gt;</content:encoded></item><item><title><![CDATA[미국책 주문]]></title><description><![CDATA[쇼핑을 거의 안하는(못하는?) 편인데, 미국책이 필요했다. 용사장한테 물어보니까 amazon.com 에서 사면 된다고..
 배달 받으려면 미국식 주소명이 필요해서 https://www.jusoen.com…]]></description><link>https://aanoaa.github.io/american-book-order/</link><guid isPermaLink="false">https://aanoaa.github.io/american-book-order/</guid><pubDate>Fri, 15 Jan 2021 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;쇼핑을 거의 안하는(못하는?) 편인데, 미국책이 필요했다.&lt;/p&gt;
 &lt;p&gt;용사장한테 물어보니까 amazon.com 에서 사면 된다고..
 배달 받으려면 미국식 주소명이 필요해서&lt;/p&gt;
