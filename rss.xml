@@ -1,4 +1,54 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Mustache :{ RSS Feed]]></title><description><![CDATA[What the..]]></description><link>https://aanoaa.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Sun, 31 Jan 2021 01:49:05 GMT</lastBuildDate><item><title><![CDATA[golang pointer receiver]]></title><description><![CDATA[golang 을 만지다가 이게 뭔일이여 싶어서..
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Mustache :{ RSS Feed]]></title><description><![CDATA[What the..]]></description><link>https://aanoaa.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Sun, 31 Jan 2021 16:15:55 GMT</lastBuildDate><item><title><![CDATA[yasnippet 안의 elisp]]></title><description><![CDATA[typescript 의 시작을 emacs 로 했었는데, 이때 lsp 을 사용해서 넘 경쾌하게 썼었다.
+근데 IDE 써봐야지 하면서 억지로 vscode 썼는데 이것도 쓰다보니 훌륭. 그러다 보니 go…]]></description><link>https://aanoaa.github.io/elisp/</link><guid isPermaLink="false">https://aanoaa.github.io/elisp/</guid><pubDate>Mon, 01 Feb 2021 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;typescript 의 시작을 emacs 로 했었는데, 이때 lsp 을 사용해서 넘 경쾌하게 썼었다.
+근데 IDE 써봐야지 하면서 억지로 vscode 썼는데 이것도 쓰다보니 훌륭.&lt;/p&gt;
+&lt;p&gt;그러다 보니 go 작업할때에 설정없이 간편하게 시작할 수 있어서 vscode 를 썼었다.
+버튼 누르면 알아서 다되더라고.&lt;/p&gt;
+&lt;p&gt;그러다가 go 를 script 처럼 쓰려고 다시 emacs 에 설정해서 쓰는데 경쾌함이 다르다.
+&lt;a href=&quot;https://github.com/dominikh/go-mode.el&quot;&gt;go-mode.el&lt;/a&gt; 이 외부 툴 연동도 훌륭하고,
+vscode 에서의 답답함이 없다.&lt;/p&gt;
+&lt;p&gt;맥부기라서 그랬나..&lt;/p&gt;
+&lt;p&gt;답답함을 느꼈던 건 vscode on macOS
+지금은 emacs on linux&lt;/p&gt;
+&lt;p&gt;아무튼 다시 설정 지옥에 빠져서 &quot;그래 반복되는 타이핑을 줄이자&quot; snippet 을 작성.
+남의 snippet 중에 뭐 쓸거 없나 구경하던차에..&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-emacs-lisp&quot;&gt;package ${1:`(car (last (split-string (file-name-directory buffer-file-name) &quot;/&quot;) 2))`}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;요런게 보였음.
+alias 로 걸어둔 &lt;code&gt;pkg&lt;/code&gt; 또는 &lt;code&gt;package&lt;/code&gt; 를 입력하고 tab 누르면&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;package &amp;#x3C;현재디렉토리명&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;이 뙇&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;${1:`()`}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;back quote 로 감싼 괄호 안에서 elisp 표현식을 써서 default 값을 지정할 수 있음&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-go&quot;&gt;Example_foo() {
+
+    // Output:
+    // .
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;이거 매번 작성하기 조띠 귀찮아서 perl 로 template 만들어서 사용했는데 그럴 필요가 없었던 거임.
+그래서 저 lisp 좀만 변경하면 어케 될 거 같아서 스슥.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-emacs-lisp&quot;&gt;(car (last (split-string (file-name-directory buffer-file-name) &quot;/&quot;) 2))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;ㅋㅋㅋ lisp 는 어케 매번 새로움&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-emacs-lisp&quot;&gt;(buffer-file-name) ;; 현재 버퍼의 파일명 foo_test.go 여기서 내가 필요한게 foo
+(file-name-directory FILE) ;; 전체 경로 주는 건데 이건 필요없음
+(split-string STRING &amp;#x26;optional SEPARATOR...) ;; 구분자로 잘라주겠거니..
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;어케어케 해서 &lt;code&gt;foo_test.go&lt;/code&gt; 파일에서 &lt;code&gt;foo&lt;/code&gt; 가져와야 하는데 &lt;code&gt;foo_test&lt;/code&gt; 까진 됐음&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-emacs-lisp&quot;&gt;(car (last (split-string (car (last (split-string (buffer-file-name) &quot;\\.&quot;) 2)) &quot;/&quot;)))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;영역잡고 괄호열면 양 끝에 괄호 열어주고 괄호 닫으면 pair 괄호 닫아주고 신통방통&lt;/p&gt;
+&lt;p&gt;이번에 하나 얻은건 표현식 값을 확인하는 방법
+지금까지는 젤 마지막 괄호에 대해서만 동작하는 줄 알았는데, 중간 괄호에 대고 &lt;code&gt;C-x C-e&lt;/code&gt; eval-last-sexp 해주면 이게 동작해서 잘라서 확인해볼 수 있음&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-emacs-lisp&quot;&gt;(car (last (split-string (car (last (split-string (buffer-file-name) &quot;\\.&quot;) 2)) &quot;/&quot;))) ;; a  &amp;#x3C;- current-buffer 가 a.el 이라서
+
+
+(last (split-string (buffer-file-name) &quot;\\.&quot;) 2) ;; (&quot;...&quot; &quot;el&quot;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;뭐 이런식으로 넓혔다가 좁혔다가 하고 eldoc 보면서 어케어케&lt;/p&gt;
+&lt;p&gt;암튼 go 개발환경으로써 emacs 조띠 좋음&lt;/p&gt;</content:encoded></item><item><title><![CDATA[golang pointer receiver]]></title><description><![CDATA[golang 을 만지다가 이게 뭔일이여 싶어서..
 pointer receiver method 안에서 address 가 아닌 value 로 사용해도 동작한다? https://tour.golang.org/methods/…]]></description><link>https://aanoaa.github.io/go-lang-pointer-receiver/</link><guid isPermaLink="false">https://aanoaa.github.io/go-lang-pointer-receiver/</guid><pubDate>Sat, 30 Jan 2021 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;golang 을 만지다가 이게 뭔일이여 싶어서..
 pointer receiver method 안에서 address 가 아닌 value 로 사용해도 동작한다?&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://tour.golang.org/methods/4&quot;&gt;https://tour.golang.org/methods/4&lt;/a&gt; 여기에서 예제를 보니까 pointer receiver 메소드 안에서,
