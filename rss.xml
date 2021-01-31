@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Mustache :{ RSS Feed]]></title><description><![CDATA[What the..]]></description><link>https://aanoaa.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Sat, 30 Jan 2021 03:01:25 GMT</lastBuildDate><item><title><![CDATA[golang pointer receiver]]></title><description><![CDATA[golang 을 만지다가 이게 뭔일이여 싶어서..
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Mustache :{ RSS Feed]]></title><description><![CDATA[What the..]]></description><link>https://aanoaa.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Sun, 31 Jan 2021 01:49:05 GMT</lastBuildDate><item><title><![CDATA[golang pointer receiver]]></title><description><![CDATA[golang 을 만지다가 이게 뭔일이여 싶어서..
 pointer receiver method 안에서 address 가 아닌 value 로 사용해도 동작한다? https://tour.golang.org/methods/…]]></description><link>https://aanoaa.github.io/go-lang-pointer-receiver/</link><guid isPermaLink="false">https://aanoaa.github.io/go-lang-pointer-receiver/</guid><pubDate>Sat, 30 Jan 2021 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;golang 을 만지다가 이게 뭔일이여 싶어서..
 pointer receiver method 안에서 address 가 아닌 value 로 사용해도 동작한다?&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://tour.golang.org/methods/4&quot;&gt;https://tour.golang.org/methods/4&lt;/a&gt; 여기에서 예제를 보니까 pointer receiver 메소드 안에서,
@@ -113,7 +113,127 @@ func Example_pr() {
 &lt;li&gt;(3) 실패&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;가 됨&lt;/p&gt;
-&lt;p&gt;왜죠?&lt;/p&gt;</content:encoded></item><item><title><![CDATA[미국책 주문]]></title><description><![CDATA[쇼핑을 거의 안하는(못하는?) 편인데, 미국책이 필요했다. 용사장한테 물어보니까 amazon.com 에서 사면 된다고..
+&lt;p&gt;왜죠?&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;이것은 포인트 리시버와 무관하고, struct 에 대한 내용이다.
+그리고 그것을 사용하는 표현식.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;some := mystruct{}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;some 은 struct 의 값인데, 배열/슬라이스와 마찬가지로 다른 데이터들의 집합을 가리키는 값을 가진다.
+(struct 가 기본자료형의 alias 가 아니라면)&lt;/p&gt;
+&lt;p&gt;struct 와 struct pointer 둘다 dot 표기법 사용이 가능하다.
+뭘 써야 되는지는 아직 모르겠지만..&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://tour.golang.org/methods/4&quot;&gt;https://tour.golang.org/methods/4&lt;/a&gt; 예제에서는 간결한 표현을 위해서인지 struct 의 value 대신에 struct 의 pointer 를 사용.&lt;/p&gt;
+&lt;p&gt;이거..&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-go&quot;&gt;func (v *Vertex) Scale(f float64) {
+    v.X = v.X * f
+    v.Y = v.Y * f
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;어느 구루께서 명쾌하게 이거써~ 하면 그거 쓸텐데 일단 이렇게 써야..&lt;/p&gt;
+&lt;p&gt;이건 caller 가 struct data type 이 아니고 내부 자료형일때에..
+헛갈리지 않는다.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-go&quot;&gt;type myint int
+
+func (m *myint) increase() myint {
+    fmt.Println(&quot;  m&quot;, m)  //  m 0xc000014168
+    fmt.Println(&quot; *m&quot;, *m) // *m 1
+    (*m)++
+    return (*m)
+}
+
+func Example_myint() {
+    var mi myint
+    mi = myint(1)
+    fmt.Println(mi)  // 1
+    fmt.Println(&amp;#x26;mi) // 0xc000014168
+
+    mi.increase()
+    fmt.Println(mi) // 2
+
+    // Output:
+    // 1
+    // 0xc000014168
+    //   m 0xc000014168
+    //  *m 1
+    // 2
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;이건 caller 가 struct data type&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;fmt&lt;/code&gt; 에서 struct 의 address 는 실제 주소대신에 &lt;code&gt;&amp;#x26;{x}&lt;/code&gt; 이런식으로 표현해주어서 &lt;code&gt;%p&lt;/code&gt; 포매터로 확인&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-go&quot;&gt;type mystruct struct {
+    foo int
+}
+
+func (m *mystruct) increase() int {
+    fmt.Printf(&quot;  m %d %p\n&quot;, m, m) //  m &amp;#x26;{1} 0xc0000a0050
+    fmt.Println(&quot; *m&quot;, *m)          // *m {1}
+
+    m.foo++
+    return m.foo
+}
+
+func Example_mystruct() {
+    var ms mystruct
+    ms = mystruct{1}
+    fmt.Println(ms)  // {1}
+    fmt.Println(&amp;#x26;ms) // &amp;#x26;{1}
+
+    ms.increase()
+    fmt.Println(ms) // 2
+
+    // Output:
+    // {1}
+    // &amp;#x26;{1}
+    //   m &amp;#x26;{1} 0xc0000a0050
+    //  *m {1}
+    // {2}
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;struct 의 pointer 와 struct 의 첫번째 멤버의 pointer 가 같음
+값은 같지만 자료형에 따라 사용방법이 달라짐&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-go&quot;&gt;func Example_mystruct2() {
+    var ms mystruct
+    ms = mystruct{1}
+
+    var msp *mystruct
+    var foop *int
+
+    msp = &amp;#x26;ms
+    foop = &amp;#x26;(ms.foo)
+
+    fmt.Printf(&quot;%d %p\n&quot;, msp, msp)                                // &amp;#x26;{1} 0xc0000141a8
+    fmt.Println(foop)                                              // 0xc0000141a8
+    fmt.Println(fmt.Sprintf(&quot;%p&quot;, msp) == fmt.Sprintf(&quot;%p&quot;, foop)) // true
+
+    // 일반적인 사용법
+    ms.foo++
+
+    // compile error! invalid operation
+    // *msp 는 *foo 와 같지만 내부에 metadata 가 있어서 구별하는 듯
+    (*msp)++    // 요거 에러남
+
+    // msp 는 ms 의 pointer 이지만 dot notation 으로 사용가능
+    // 왜 가능? 그렇게 만들어놨으니까 가능. 이건 내부 구현을 몰라서 되는갑다 하능..
+    // pointer reciever method 에서 이렇게 사용
+    msp.foo++
+
+    (*msp).foo++ // 이제 이게 요상해보이네..
+    (*foop)++    // struct 내부의 값을 직접변경
+
+    fmt.Println(ms)
+
+    // Output:
+    // &amp;#x26;{1} 0xc00010c050
+    // 0xc00010c050
+    // true
+    // {5}
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;struct 의 pointer 에서 struct 처럼 dot notation 을 사용할 수 있다.
+정도가 되겠다.&lt;/p&gt;
+&lt;p&gt;다른 예외케이스가 있는지 모르겠지만..&lt;/p&gt;
+&lt;p&gt;컴파일러가 알아서 해주겠지.. 믿습니다.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[미국책 주문]]></title><description><![CDATA[쇼핑을 거의 안하는(못하는?) 편인데, 미국책이 필요했다. 용사장한테 물어보니까 amazon.com 에서 사면 된다고..
 배달 받으려면 미국식 주소명이 필요해서 https://www.jusoen.com…]]></description><link>https://aanoaa.github.io/american-book-order/</link><guid isPermaLink="false">https://aanoaa.github.io/american-book-order/</guid><pubDate>Fri, 15 Jan 2021 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;쇼핑을 거의 안하는(못하는?) 편인데, 미국책이 필요했다.&lt;/p&gt;
 &lt;p&gt;용사장한테 물어보니까 amazon.com 에서 사면 된다고..
 배달 받으려면 미국식 주소명이 필요해서&lt;/p&gt;
