@@ -1,4 +1,109 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Mustache :{ RSS Feed]]></title><description><![CDATA[What the..]]></description><link>https://aanoaa.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Sat, 27 Feb 2021 00:38:09 GMT</lastBuildDate><item><title><![CDATA[강남빵집]]></title><description><![CDATA[어제 강남역 근처 어디 빵집(카페?) 갔는데, 프랑스밀가루 안데스솔트(소금) 을 사용한 프리미엄 빵을 팔더라.
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Mustache :{ RSS Feed]]></title><description><![CDATA[What the..]]></description><link>https://aanoaa.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Fri, 12 Mar 2021 01:32:28 GMT</lastBuildDate><item><title><![CDATA[kubelet 요청에 대한 kube-apiserver 의 응답실패]]></title><description><![CDATA[on-premise 에서 운영중이던 1.20 클러스터에서 KubeAPIErrorBudgetBurn alert 이 발생 The API server is burning too much error budget.
+API…]]></description><link>https://aanoaa.github.io/apiserver-kubelet-resource-version/</link><guid isPermaLink="false">https://aanoaa.github.io/apiserver-kubelet-resource-version/</guid><pubDate>Fri, 12 Mar 2021 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;on-premise 에서 운영중이던 &lt;code&gt;1.20&lt;/code&gt; 클러스터에서 &lt;a href=&quot;https://monitoring.mixins.dev/kubernetes/#kube-apiserver-slos&quot;&gt;KubeAPIErrorBudgetBurn&lt;/a&gt; alert 이 발생&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;The API server is burning too much error budget.
+API 서버가 너무 많은 오류 예산을 소모하고 있습니다.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;용어가 생소해서 무서웡.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://sre.google/workbook/alerting-on-slos/#4-alert-on-burn-rate&quot;&gt;burn rate&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.atlassian.com/incident-management/kpis/error-budget&quot;&gt;error budget&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;SLI: Service Level Indicator&lt;/li&gt;
+&lt;li&gt;SLA: Service Level Agreement&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;얼추 SLA 가 99% 라고 가정한다면, (우리 서비스는 연 99% 의 가용성을 보장합니다. 라고 뻥쳤다면..)
+burn rate 가 늘어나면 이를 만족 시킬 수 없음.
+시간이 지남에 따라 burn rate 에 비례해서 SLA 도 낮아짐.&lt;/p&gt;
+&lt;p&gt;이러한 상황을 대비해서 전문가형님들이 &lt;code&gt;KubeAPIErrorBudgetBurn&lt;/code&gt; 이라는 alert rule 을 정의해 놓은 것인데 이게 발생.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;alert: KubeAPIErrorBudgetBurn
+annotations:
+  description: The API server is burning too much error budget.
+  runbook_url: https://github.com/kubernetes-monitoring/kubernetes-mixin/tree/master/runbook.md#alert-name-kubeapierrorbudgetburn
+  summary: The API server is burning too much error budget.
+expr: |
+  sum(apiserver_request:burnrate1h) &gt; (14.40 * 0.01000)
+  and
+  sum(apiserver_request:burnrate5m) &gt; (14.40 * 0.01000)
+for: 2m
+labels:
+  long: 1h
+  severity: critical
+  short: 5m
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;대충 쓰면.. kube apiserver 요청에서 최근 1시간동안 burnrate 높으면 발생.&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;img src=&quot;../assets/grafana-kube-apiserver.png&quot; alt=&quot;grafana-kube-apiserver&quot;&gt;&lt;/p&gt;
+&lt;p&gt;실제로 grpc, http 요청에 대해서 404, 504 에러가 1 rps 정도로 발생.&lt;/p&gt;
+&lt;p&gt;apiservice 는 존나 많은데 어디에서 발생하는거지? 를 파악해야 하는데, 친절하게도 &lt;code&gt;READ SLI - Errors&lt;/code&gt; 에 서비스이름이 표시됨.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;apiserver_request_total{code=&quot;504&quot;}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;로 질의해보니까 꾸준히 증가하고 있었음.&lt;/p&gt;
+&lt;p&gt;kube api-server 로그에는 실패한 request 에 대한 로그가 나타남.
+on-premise 환경이라서 control plane 은 pods 가 아닌 host 노드에 docker 서비스로 실행 중.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ docker logs -f kube-apiserver
+...
+I0311 06:34:27.831861       1 trace.go:205] Trace[499901619]: &quot;List&quot; url:/apis/node.k8s.io/v1beta1/runtimeclasses,user-agent:kubelet/v1.19.4 (linux/amd64) kubernetes/d360454,client:10.107.100.22 (11-Mar-2021 06:34:24.831) (total time: 3000ms):
+Trace[499901619]: [3.000718126s] [3.000718126s] END
+I0311 06:34:27.863066       1 trace.go:205] Trace[1117820138]: &quot;cacher list&quot; type:*storage.CSIDriver (11-Mar-2021 06:34:24.862) (total time: 3000ms):
+Trace[1117820138]: [3.000170923s] [3.000170923s] END
+I0311 06:34:27.863518       1 trace.go:205] Trace[1580916889]: &quot;List&quot; url:/apis/storage.k8s.io/v1/csidrivers,user-agent:kubelet/v1.19.4 (linux/amd64) kubernetes/d360454,client:10.107.100.16 (11-Mar-2021 06:34:24.862) (total time: 3000ms):
+Trace[1580916889]: [3.000655319s] [3.000655319s] END
+I0311 06:34:31.843461       1 trace.go:205] Trace[8763432]: &quot;cacher list&quot; type:*node.RuntimeClass (11-Mar-2021 06:34:28.843) (total time: 3000ms):
+Trace[8763432]: [3.0001488s] [3.0001488s] END
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;뭔말인지 모르겠고, 지표에 나타난 csidriver 랑 runtimeclass api 목록조회 요청임. 이게 실패한다고?&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ kubectl get runtimeclass
+No resources found
+
+$ kubectl get csidriver
+NAME                            ATTACHREQUIRED   PODINFOONMOUNT   MODES        AGE
+rook-ceph.cephfs.csi.ceph.com   true             false            Persistent   38d
+rook-ceph.rbd.csi.ceph.com      true             false            Persistent   38d
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;실패안하는데?&lt;/p&gt;
+&lt;p&gt;kubectl 말고 api 에 대한 raw 요청을 시도.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ kubectl get --raw /apis/node.k8s.io/v1beta1/runtimeclasses | jq .
+$ kubectl get --raw /apis/storage.k8s.io/v1/csidrivers | jq .
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;둘다 OK.&lt;/p&gt;
+&lt;p&gt;???&lt;/p&gt;
+&lt;p&gt;아 그냥 EKS 쓰고 싶음.&lt;/p&gt;
+&lt;p&gt;control plane 에는 &lt;code&gt;/var/log/kube-audit/&lt;/code&gt; 디렉토리에 audit log 가 쌓임.&lt;/p&gt;
+&lt;p&gt;여기에서 조회하니까&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;  &quot;userAgent&quot;: &quot;kubelet/v1.19.4 (linux/amd64) kubernetes/d360454&quot;,
+  &quot;requestURI&quot;: &quot;/apis/node.k8s.io/v1beta1/runtimeclasses?resourceVersion=191700552&quot;,
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;kubelet 에서 오류가 발생하는 apiservice 를 이용할때에 resourceVersion parameter 를 넘겨줌&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ kubectl get --raw /apis/node.k8s.io/v1beta1/runtimeclasses?resourceVersion=191700552 | jq .
+Error from server (Timeout): Timeout: Too large resource version: 191700552, current: 187970861
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/kubernetes/kubernetes/issues/91073&quot;&gt;https://github.com/kubernetes/kubernetes/issues/91073&lt;/a&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;It handled the &quot;too old RV&quot; error, but it doesn&apos;t handle &quot;too large RV&quot; correctly. What it should be doing instead is to:&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;위 형님께서 이미 다 알고 계셨고 패치 하셨음.&lt;/p&gt;
+&lt;p&gt;근데 왜 나만? EKS 로 옮겨야..&lt;/p&gt;
+&lt;p&gt;kubelet 이 사용하는 resource version 을 patch 해주면 되지 않을까?
+(configmap 등을 뒤져봤는데 map 데이터 못찾겠음)&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/kubernetes/kubernetes/issues/70674&quot;&gt;https://github.com/kubernetes/kubernetes/issues/70674&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;그런거 없음.&lt;/p&gt;
+&lt;p&gt;그러던 와중에 audit log 에서 source ip 를 발견&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;  &quot;sourceIPs&quot;: [
+    &quot;10.107.1.2&quot;
+  ],
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;저건 예전에 사용하던 worker 노드의 ip.&lt;/p&gt;
+&lt;p&gt;들어가보니 kubelet 이 떠 있음.&lt;/p&gt;
+&lt;p&gt;홀리..&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;추적하면서 github 이슈 및 패치된 소스코드등을 훑어봤는데 존나 대단.
+존경합니다 형님들.&lt;/p&gt;
+&lt;p&gt;이렇게 사이즈가 큰 프로젝트도 잘 굴리는구나..&lt;/p&gt;
+&lt;p&gt;교훈.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;청소를 잘하자.&lt;/li&gt;
+&lt;li&gt;alert 님 말씀 잘 듣자.&lt;/li&gt;
+&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[강남빵집]]></title><description><![CDATA[어제 강남역 근처 어디 빵집(카페?) 갔는데, 프랑스밀가루 안데스솔트(소금) 을 사용한 프리미엄 빵을 팔더라.
 쬐간하고 비싸. 맛있냐면 뭐 그냥 빵. 안데스솔트 뭔데 프랑스밀가루 ㅋㅋㅋ 뒤진다.]]></description><link>https://aanoaa.github.io/gangnam-bread/</link><guid isPermaLink="false">https://aanoaa.github.io/gangnam-bread/</guid><pubDate>Sat, 27 Feb 2021 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;어제 강남역 근처 어디 빵집(카페?) 갔는데,&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;프랑스밀가루&lt;/strong&gt;&lt;/li&gt;
